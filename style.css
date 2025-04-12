@@ -1,0 +1,470 @@
+/* Basic Reset & Defaults */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* For smooth scrolling */
+    font-size: 100%; /* Base font size */
+}
+
+body {
+    font-family: Verdana, Geneva, sans-serif; /* Updated font stack */
+    line-height: 1.7; /* Increased line height */
+    color: #333; /* Default text color */
+    background-color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent extra space below images */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #0274be; /* Link color from original */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Added transition */
+}
+
+a:hover,
+a:focus {
+    color: #4db6ac; /* Accent color for hover/focus */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif; /* Updated font stack */
+    margin-bottom: 1em; /* Adjusted margin */
+    line-height: 1.3;
+    color: #000; /* Default heading color */
+}
+
+h2 { font-size: 2.5rem; } /* Increased size */
+h3 { font-size: 2.0rem; margin-bottom: 0.7em; } /* Increased size, adjusted margin */
+h4 { font-size: 1.5rem; }
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+    background-color: #f1f1f1;
+    color: #21759b;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.skip-link:focus {
+    left: 6px;
+    top: 7px;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    z-index: 100000;
+}
+
+/* Layout */
+.container {
+    max-width: 1140px; /* Standard container width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+section {
+    padding: 80px 0; /* Increased padding */
+}
+
+/* Header & Navigation */
+.site-header {
+    background-color: #393E46; /* Dark background from original */
+    padding: 10px 0;
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-navigation ul {
+    display: flex;
+    justify-content: center; /* Center navigation items */
+}
+
+.main-navigation li {
+    margin: 0 15px;
+}
+
+.main-navigation a {
+    color: #fff; /* White links on dark header */
+    padding: 10px 5px;
+    display: block;
+    font-weight: bold;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    background-color: #555; /* Added background on hover/focus */
+    color: #fff; /* Ensure text remains white */
+}
+
+/* Hero Section (#home) */
+.hero-section {
+    min-height: 291px; /* From original */
+    background-color: #393E46;
+    /* Using relative path for background */
+    background-image: url('./assets/images/hero-background.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Apply thick gradient border below */
+    border-bottom: 8px solid transparent;
+    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1; /* Dark -> White -> Dark */
+}
+
+.hero-section .container {
+    padding: 20px; /* Added padding */
+    /* Removed background color from text container */
+    display: inline-block; /* Keep display for potential future use */
+    padding: 45px; /* From original */
+    color: #fff;
+    margin-top: 0; /* Remove default section padding */
+    padding-top: 80px; /* Adjust for sticky header */
+    padding-bottom: 40px;
+}
+
+.hero-section h4 {
+    color: #fff; /* White text */
+    font-size: 2.5rem; /* Adjusted size */
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Intro Statement Section */
+.intro-section {
+    background-color: #fff;
+    color: #000;
+    padding: 30px 0; /* Reduced padding */
+    text-align: center;
+    /* Apply thick gradient border above */
+    border-top: 8px solid transparent;
+    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1; /* Dark -> White -> Dark */
+    /* Apply thick gradient border below */
+    border-bottom: 8px solid transparent;
+    border-image: linear-gradient(to right, #fff 20%, #393E46 50%, #fff 80%) 1; /* White -> Dark -> White */
+}
+
+.intro-section h4 {
+    color: #000;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    letter-spacing: 0.05em; /* Added letter spacing */
+    font-weight: 600; /* Slightly bolder */
+}
+
+/* Services Section */
+.services-section {
+    background-color: #393E46; /* Dark background */
+    color: #fff;
+}
+
+.services-section h2,
+.services-section h3 {
+    color: #fff;
+    text-align: center;
+}
+.services-section h2 {
+    margin-bottom: 40px;
+    font-size: 3.0rem; /* Increased size */
+}
+.services-section h3 {
+     color: #4db6ac; /* Accent color */
+     margin-bottom: 20px;
+     font-size: 1.8rem; /* Increased size */
+     font-weight: 600;
+}
+
+.service-item {
+    display: flex;
+    align-items: center; /* Default alignment */
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+/* Ensure items with .reverse class have image on the right on desktop */
+.service-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-item img {
+    flex: 1;
+    max-width: 50%; /* Limit image width */
+    object-fit: cover;
+    border-radius: 5px; /* Optional: slight rounding */
+    transition: transform 0.2s ease; /* Added transition for hover */
+}
+
+.service-content {
+    flex: 1;
+    text-align: center; /* Center align text */
+}
+
+.service-content ul {
+    margin-left: 0; /* Remove default list indent */
+    padding-left: 0; /* Remove default list padding */
+    margin-bottom: 1em;
+}
+.service-content li {
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+.service-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+.service-content p strong {
+    font-weight: 600;
+}
+.service-item img:hover {
+    transform: scale(1.03); /* Scale effect on hover */
+}
+
+
+/* About Section */
+.about-section {
+    background-color: #fff; /* White background */
+    color: #000;
+    padding: 50px 0; /* Reduced padding */
+    /* Apply thick gradient border above */
+    border-top: 8px solid transparent;
+    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1; /* Dark -> White -> Dark */
+    /* Apply thick gradient border below */
+    border-bottom: 8px solid transparent;
+    border-image: linear-gradient(to right, #fff 20%, #393E46 50%, #fff 80%) 1; /* White -> Dark -> White */
+}
+.about-section .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.about-section img {
+    flex-basis: 27%; /* Approximate width from original */
+    max-width: 300px; /* Max width from original */
+}
+.about-content {
+    flex: 1;
+}
+.about-content h2 {
+    font-size: 3.0rem; /* Increased size */
+    color: #000;
+    margin-bottom: 20px;
+}
+.about-content p {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7; /* Consistent with body */
+    margin-bottom: 1em;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #393E46; /* Dark background */
+    color: #fff;
+    /* Apply thick gradient border above */
+    border-top: 8px solid transparent;
+    border-image: linear-gradient(to right, #fff 20%, #393E46 50%, #fff 80%) 1; /* White -> Dark -> White */
+}
+.contact-section .container {
+    max-width: 600px; /* Max width from original */
+    text-align: center;
+}
+.contact-section h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.8rem; /* Increased size */
+    margin-bottom: 30px;
+}
+.contact-details {
+    background-color: #fff; /* White inner box */
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+}
+.contact-details img {
+    max-width: 300px; /* From original */
+    margin: 15px auto; /* Center image */
+}
+.contact-details hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc; /* Lighter separator */
+    margin: 15px 0;
+}
+.contact-details p {
+    margin: 15px 0;
+    line-height: 1.7;
+}
+.contact-details a {
+    color: #0274be;
+}
+.contact-details a:hover,
+.contact-details a:focus {
+    color: #4db6ac; /* Accent color */
+}
+.social-links {
+    padding-top: 10px;
+}
+.social-links img {
+    width: 35px; /* From original */
+    height: auto;
+    display: inline-block; /* Align side-by-side */
+    margin: 0 10px;
+    transition: transform 0.2s ease; /* Added transition for hover */
+}
+.social-links img:hover {
+    transform: scale(1.03); /* Scale effect on hover */
+}
+
+/* Footer */
+.site-footer {
+    background-color: #393E46; /* Dark background */
+    color: #ccc; /* Lighter text color */
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.footer-navigation ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+.footer-navigation li {
+    margin: 5px 10px;
+}
+.footer-navigation a {
+    color: #ccc;
+}
+.footer-navigation a:hover,
+.footer-navigation a:focus {
+    color: #4db6ac; /* Accent color */
+}
+.copyright {
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    h2 { font-size: 2.2rem; } /* Adjusted size */
+    h3 { font-size: 1.8rem; } /* Adjusted size */
+    h4 { font-size: 1.4rem; } /* Adjusted size */
+    .intro-section h4 { font-size: 1.6rem; } /* Adjusted size */
+
+    .service-item,
+    .service-item.reverse {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+    .service-item img {
+        max-width: 80%; /* Allow image to be larger on smaller screens */
+        margin-bottom: 20px;
+    }
+    /* Text alignment is now handled by base style */
+    .service-content {
+        order: 2; /* Default order for content */
+    }
+    .service-item img {
+         order: 1; /* Default order for image */
+    }
+    /* Ensure image comes first even in reversed items on mobile */
+    .service-item.reverse img {
+        order: 1; /* Image first */
+    }
+     .service-item.reverse .service-content {
+        order: 2; /* Text second */
+    }
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-section img {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 95%; }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-navigation li {
+        margin: 5px 0;
+    }
+    .site-header {
+        padding: 5px 0;
+        position: static; /* Remove sticky header on mobile */
+    }
+    .hero-section {
+        padding-top: 40px; /* Reset padding */
+        min-height: 250px; /* Increased min-height for mobile */
+        background-size: cover; /* Cover mobile screen, allow cropping */
+    }
+     .hero-section h4 {
+        font-size: 2rem;
+    }
+    section {
+        padding: 60px 0; /* Default adjusted padding */
+    }
+    .intro-section { padding: 25px 0; } /* Override for intro */
+    .about-section { padding: 40px 0; } /* Override for about */
+     .services-section h2,
+     .about-content h2,
+     .contact-section h2 {
+        font-size: 2.4rem; /* Adjusted size */
+     }
+     .intro-section h4 { font-size: 1.7rem; } /* Adjusted size */
+}
+
+@media (max-width: 576px) {
+    html { font-size: 90%; }
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .hero-section h4 {
+        font-size: 2.0rem; /* Adjusted size */
+    }
+    .service-item img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .intro-section { padding: 20px 0; } /* Override for intro */
+    .about-section { padding: 30px 0; } /* Override for about */
+}
