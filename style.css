@@ -125,8 +125,9 @@ section {
 
 /* Hero Section (#home) */
 .hero-section {
-    min-height: 291px;
+    min-height: 291px; /* From original */
     background-color: #393E46;
+    /* Using relative path for background */
     background-image: url('./assets/images/hero-background.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -135,43 +136,27 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* Apply thick gradient border below */
     border-bottom: 8px solid transparent;
-    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1;
+    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1; /* Dark -> White -> Dark */
 }
 
-.hero-content {
-    max-width: 760px;
+.hero-section .container {
+    padding: 20px; /* Added padding */
+    /* Removed background color from text container */
+    display: inline-block; /* Keep display for potential future use */
+    padding: 45px; /* From original */
     color: #fff;
-    margin-top: 0;
-    padding-top: 80px;
+    margin-top: 0; /* Remove default section padding */
+    padding-top: 80px; /* Adjust for sticky header */
     padding-bottom: 40px;
 }
 
-.hero-content h1 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 2.2rem;
-}
-
-.hero-content p {
-    margin: 0 auto 1.2rem;
-    max-width: 680px;
-    color: #f0f3f7;
-}
-
-.hero-cta {
-    display: inline-block;
-    padding: 0.55rem 1rem;
-    border: 1px solid #ffffff;
-    border-radius: 6px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.hero-cta:hover,
-.hero-cta:focus {
-    background: #ffffff;
-    color: #393E46;
+.hero-section h4 {
+    color: #fff; /* White text */
+    font-size: 2.5rem; /* Adjusted size */
+    font-weight: 300;
+    margin: 0;
 }
 
 /* Intro Statement Section */
@@ -449,8 +434,8 @@ section {
         min-height: 250px; /* Increased min-height for mobile */
         background-size: cover; /* Cover mobile screen, allow cropping */
     }
-     .hero-content h1 {
-        font-size: 1.95rem;
+     .hero-section h4 {
+        font-size: 2rem;
     }
     section {
         padding: 60px 0; /* Default adjusted padding */
@@ -471,8 +456,8 @@ section {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .hero-content h1 {
-        font-size: 1.7rem;
+    .hero-section h4 {
+        font-size: 2.0rem; /* Adjusted size */
     }
     .service-item img {
         max-width: 100%;
