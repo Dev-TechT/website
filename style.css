@@ -305,7 +305,12 @@ section {
     color: #fff;
     font-weight: 600;
     font-size: 2.8rem; /* Increased size */
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-note {
+    color: #d7dde4;
+    margin-bottom: 24px;
 }
 .contact-details {
     background-color: #fff; /* White inner box */
