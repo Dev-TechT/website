@@ -123,7 +123,7 @@
                     <p>My name is Antonios. I have over a decade of experience in IT and enjoy building practical solutions for real-world technical challenges.</p>
                     <p>Over the years, I’ve had the opportunity to contribute to significant projects for large enterprise organizations, build successful teams and share my knowledge with others. I take pride in my accomplishments and look forward to future challenges and opportunities.</p>
                     <p>I actively explore modern AI, especially open-source tools, across web development, programming, security analysis and content workflows, and I share practical findings over time.</p>
-                    <p>This website is a personal profile page and does not constitute a commercial offer of services.</p>
+                    <p>This website is a personal profile and portfolio page. Freelance or project inquiries are handled individually by direct contact.</p>
                     <p>To learn more about me, check out my <a href="https://www.linkedin.com/in/antonios-chatzigiagkos-53ab1b171/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &amp; <a href="https://www.xing.com/profile/Antonios_Chatzigiagkos/cv" target="_blank" rel="noopener noreferrer">Xing</a> accounts. For exchange and networking, contact me via email: <a href="mailto:ac@it-expert.io">ac@it-expert.io</a>.</p>
                  </div>
             </div>
@@ -145,37 +145,77 @@
         <section id="work" class="work-section">
             <div class="container work-container">
                 <h2>Projects &amp; Tested Methods</h2>
-                <p class="work-intro">A short, practical list of things I have built, tested or improved. Some are product experiments, some are operating methods. I keep it easy to scan on purpose.</p>
+                <p class="work-intro">A short, practical list of things I have built, tested or improved. The stronger business-facing items are first; the more experimental work sits in the dropdown.</p>
 
                 <div class="work-grid">
                     <article class="work-card featured">
-                        <h3>TraceTrust / Agent Marketplace</h3>
-                        <p>Built a read-only public demo for a trust-first AI agent workflow: scoped tasks, execution evidence, reviewer decisions and payout evidence.</p>
-                        <p class="work-tags">AI agents · trust workflow · web demo · QA</p>
+                        <h3>Autonomous GitHub repo fixes</h3>
+                        <p>Used agents to inspect GitHub repositories, make small fixes, run checks, and prepare clean pull request notes a maintainer can review.</p>
+                        <p class="work-tags">GitHub · code review · automation · testing</p>
                     </article>
 
                     <article class="work-card">
-                        <h3>Agent workflow hardening</h3>
-                        <p>Tested reviewer routing, dispute handling, evidence packets, sanctions, receipts and audit trails so agent work can be checked before anyone trusts the result.</p>
-                        <p class="work-tags">process design · auditability · risk control</p>
+                        <h3>Responsible security and bug bounty testing</h3>
+                        <p>Tested apps in a responsible, private-first way: scoped targets, safe reproduction steps, and clear reports for teams to fix.</p>
+                        <p class="work-tags">security · bug bounty programs · responsible disclosure</p>
                     </article>
 
                     <article class="work-card">
-                        <h3>OpenClaw browser threads spike</h3>
-                        <p>Prototyped multi-conversation browser UX for an agent interface behind an experimental flag. Kept the live runtime untouched and verified behavior in an isolated browser test lane.</p>
-                        <p class="work-tags">agent UX · isolation · browser QA</p>
+                        <h3>Dependency security remediation</h3>
+                        <p>Reduced a web app npm audit from reported issues to zero, then checked lint, tests and production build instead of treating the audit output as the finish line.</p>
+                        <p class="work-tags">security · maintenance · web apps · QA</p>
                     </article>
 
                     <article class="work-card">
-                        <h3>OpenViking memory for agents</h3>
-                        <p>Set up local semantic memory for agent sessions with OpenViking and local embeddings, then added watchdog checks so search, recall and runtime health stay visible.</p>
-                        <p class="work-tags">local-first AI · memory · operations</p>
+                        <h3>Browser QA automation</h3>
+                        <p>Built repeatable browser checks for demo flows, logout behavior, task detail pages, theme switching and trust UI.</p>
+                        <p class="work-tags">QA · browser testing · regression checks</p>
+                    </article>
+
+                    <article class="work-card">
+                        <h3>Homelab operations and monitoring</h3>
+                        <p>Operate a private Linux homelab with self-hosted collaboration, search, automation and local AI services, backed by health checks for uptime, disk, memory and web endpoints.</p>
+                        <p class="work-tags">Linux · monitoring · self-hosting · automation</p>
+                    </article>
+
+                    <article class="work-card">
+                        <h3>Local and private AI stack</h3>
+                        <p>Set up local AI tools for private search, drafting and experimentation without sending every task to a hosted service.</p>
+                        <p class="work-tags">local AI · privacy · search · homelab</p>
                     </article>
                 </div>
 
                 <details class="work-more">
                     <summary>More project notes and tested methods</summary>
                     <div class="work-list">
+                        <article>
+                            <h3>Agent workflow hardening</h3>
+                            <p>Turned loose agent runs into safer workflows with checks, logs, clearer handoffs and review points before anything important changes.</p>
+                        </article>
+                        <article>
+                            <h3>Agent-assisted idea scoring</h3>
+                            <p>Built a lightweight scoring flow to compare commercial ideas by market signal, effort, risk and personal fit before investing more time.</p>
+                        </article>
+                        <article>
+                            <h3>Paid repo maintenance workflow</h3>
+                            <p>Tested a workflow for finding real maintenance work, checking buyer signals, preparing fixes and avoiding vague low-trust tasks.</p>
+                        </article>
+                        <article>
+                            <h3>TraceTrust / Agent Marketplace</h3>
+                            <p>Built a read-only public demo for a trust-first AI agent workflow: scoped tasks, execution evidence, reviewer decisions and payout evidence.</p>
+                        </article>
+                        <article>
+                            <h3>Payment rails and pilot economics</h3>
+                            <p>Compared marketplace payment patterns and chose a EUR-first pilot path. The reason is simple: less friction, clearer accounting and better dispute handling for early validation.</p>
+                        </article>
+                        <article>
+                            <h3>OpenClaw browser threads spike</h3>
+                            <p>Prototyped multi-conversation browser UX for an agent interface behind an experimental flag. Kept the live runtime untouched and verified behavior in an isolated browser test lane.</p>
+                        </article>
+                        <article>
+                            <h3>OpenViking memory for agents</h3>
+                            <p>Set up local semantic memory for agent sessions with OpenViking and local embeddings, then added watchdog checks so search, recall and runtime health stay visible.</p>
+                        </article>
                         <article>
                             <h3>Hermes / OpenClaw migration</h3>
                             <p>Migrated useful OpenClaw routines into Hermes, cleaned up stale services and kept rollback notes. The focus was boring on purpose: preserve what works, remove what silently breaks.</p>
@@ -185,24 +225,8 @@
                             <p>Recovered Matrix delivery for local agent notifications, including self-signed TLS handling, room trust rules and smoke tests with real Matrix events.</p>
                         </article>
                         <article>
-                            <h3>Buyer-present opportunity scout</h3>
-                            <p>Built an internal scout that looks for real posted technical opportunities with buyer and budget signals. It filters out vague leads instead of spraying proposals.</p>
-                        </article>
-                        <article>
                             <h3>Nextcloud-backed task system</h3>
                             <p>Kept Nextcloud Tables as the source of truth for tasks, with local mirrors only used for automation and summaries. This avoids the usual mess of two competing task systems.</p>
-                        </article>
-                        <article>
-                            <h3>Local search and private AI stack</h3>
-                            <p>Worked with local SearXNG, local LLM endpoints and private automation patterns so research and agent workflows do not depend on pushing everything into hosted tools.</p>
-                        </article>
-                        <article>
-                            <h3>Dependency security remediation</h3>
-                            <p>Reduced a web app npm audit from reported issues to zero, then checked lint, tests and production build instead of treating the audit output as the finish line.</p>
-                        </article>
-                        <article>
-                            <h3>Browser QA scripts</h3>
-                            <p>Wrote repeatable browser checks for demo flows, logout behavior, task detail pages, theme switching and trust UI. Screenshots and JSON artifacts made failures easier to discuss.</p>
                         </article>
                         <article>
                             <h3>A2UI structured output spike</h3>
@@ -213,8 +237,8 @@
                             <p>Reviewed outside agent methods and only adopted the useful parts: rollback-ready change checklists, compact handoffs, blast-radius reviews and plain-language output checks.</p>
                         </article>
                         <article>
-                            <h3>Payment rails and pilot economics</h3>
-                            <p>Compared marketplace payment patterns and chose a EUR-first pilot path. The reason is simple: less friction, clearer accounting and better dispute handling for early validation.</p>
+                            <h3>AI music go-to-market</h3>
+                            <p>Explored how AI music tools could reach real users by testing positioning, creator workflows and practical launch angles.</p>
                         </article>
                     </div>
                 </details>
@@ -224,11 +248,11 @@
         <section id="contact" class="contact-section">
              <div class="container">
                 <h2>Contact</h2>
-                <p class="contact-note">Personal profile page, no direct service offering.</p>
+                <p class="contact-note">Freelance and project inquiries are welcome. For legal details, see the Impressum.</p>
                 <div class="contact-details">
-                    <img src="./assets/images/contact-graphic.jpg" alt="Contact graphic with email icon" loading="lazy">
+                    <img src="./assets/images/contact-graphic.jpg" alt="" aria-hidden="true" loading="lazy">
                     <hr>
-                    <p>Antonios Chatzigiagkos<br>Germany / Bavaria<br>+49 1511 5572841<br><a href="mailto:AC@IT-Expert.io">AC@IT-Expert.io</a></p>
+                    <p><strong>Antonios Chatzigiagkos</strong><br>IT Expert / Freelancer<br>Germany / Bavaria<br>Phone: <a href="tel:+4915115572841">+49 1511 5572841</a><br>Email: <a href="mailto:ac@it-expert.io">ac@it-expert.io</a><br><a href="impressum.html">Impressum / Legal Notice</a></p>
                     <hr>
                     <div class="social-links">
                         <a href="https://www.xing.com/profile/Antonios_Chatzigiagkos/cv" target="_blank" rel="noopener noreferrer" aria-label="Xing Profile">
@@ -250,6 +274,7 @@
                     <li><a href="#project">Current Project</a></li>
                     <li><a href="#work">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
                 </ul>
             </nav>
