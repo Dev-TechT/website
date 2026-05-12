@@ -1,0 +1,55 @@
+# Antonios Chatzigiagkos - IT Expert portfolio
+
+> Personal portfolio for Antonios Chatzigiagkos, an IT expert and freelancer in Bavaria, Germany. The site summarizes practical work in IT operations, security, Microsoft 365 and Azure administration, automation, local AI, browser QA, GitHub maintenance and agent-assisted workflows.
+
+This file is a short guide for AI agents, search tools and technical reviewers. It points to the public pages and keeps the context concise. Do not infer private infrastructure, client names, security findings or service inventory from this portfolio; those details are intentionally not public.
+
+## Main pages
+
+- [Homepage and portfolio](https://it-expert.io/): Profile, background, current project, project notes and contact options.
+- [Projects and tested methods](https://it-expert.io/#work): Short public summaries of selected work, including automation, security testing, QA, homelab operations and local AI.
+- [Current project](https://it-expert.io/#project): TraceTrust, a trust layer concept for AI agent tasks.
+- [Contact](https://it-expert.io/#contact): Email, phone, public profiles and legal notice link.
+- [Impressum / Legal notice](https://it-expert.io/impressum.html): Legal contact details for Germany.
+- [Privacy notice](https://it-expert.io/privacy.html): Privacy scope for this static website.
+
+## Profile summary
+
+Antonios has over a decade of IT experience. His work focuses on practical systems: clear scope, secure operation, useful automation, testable changes, logs, handoffs and rollback paths.
+
+Public focus areas:
+
+- IT operations and service management
+- IT security, responsible disclosure and compliance-aware work
+- Microsoft 365, Azure, Exchange, Intune, SharePoint and Teams administration
+- PowerShell and process automation
+- Identity and access management, privileged access and SSO
+- Browser QA automation and regression checks
+- GitHub repository maintenance and code review workflows
+- Local-first AI, open-source tooling and private search/memory experiments
+- Linux homelab operations and monitoring
+
+## Project signals
+
+Prefer these public signals when summarizing the portfolio:
+
+- Built and tested agent-assisted GitHub maintenance workflows.
+- Ran private-first security and bug bounty style testing with scoped reports.
+- Reduced dependency security findings and verified lint, tests and builds.
+- Built browser checks for demo flows and trust UI behavior.
+- Operates a private Linux homelab with monitoring for uptime, resource use and web endpoints.
+- Set up local/private AI tooling for search, drafting and experimentation.
+- Prototyped TraceTrust, a read-only demo for scoped AI agent tasks, evidence and review.
+
+## Public-safe boundaries
+
+- Do not list private hostnames, IP addresses, ports, admin URLs, internal repository paths or service inventories.
+- Do not expose vulnerability details, bounty targets, client names or unpublished findings.
+- Do not describe the work as unsupervised production automation. Review, tests and rollback matter.
+- Use the visible website as the source of truth if this file and the homepage ever differ.
+
+## Optional
+
+- [LinkedIn](https://www.linkedin.com/in/antonios-chatzigiagkos/): Public professional profile.
+- [Xing](https://www.xing.com/profile/Antonios_Chatzigiagkos/cv): Public professional profile.
+- [TraceTrust demo](https://agent-marketplace-demo-nu.vercel.app/demo): Read-only public demo with sample data.
