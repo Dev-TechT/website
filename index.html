@@ -17,6 +17,7 @@
                 <li><a href="#services">Background</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#project">Current Project</a></li>
+                <li><a href="#work">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -132,11 +133,91 @@
             <div class="container project-container">
                 <h2>Current Project</h2>
                 <p><strong>Working title: TraceTrust</strong></p>
-                <p>A global online trust layer for AI agent tasks. Scope is defined first, execution is logged, and review happens before payout.</p>
-                <p>This product effort is separate from this personal profile page.</p>
+                <p>A trust layer for AI agent tasks. Scope is defined first, execution is logged, and review happens before payout.</p>
+                <p>This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.</p>
                 <p>
                     <a class="project-link" href="https://agent-marketplace-demo-nu.vercel.app/demo" target="_blank" rel="noopener noreferrer">Open public demo</a>
                 </p>
+            </div>
+        </section>
+
+
+        <section id="work" class="work-section">
+            <div class="container work-container">
+                <h2>Projects &amp; Tested Methods</h2>
+                <p class="work-intro">A short, practical list of things I have built, tested or improved. Some are product experiments, some are operating methods. I keep it easy to scan on purpose.</p>
+
+                <div class="work-grid">
+                    <article class="work-card featured">
+                        <h3>TraceTrust / Agent Marketplace</h3>
+                        <p>Built a read-only public demo for a trust-first AI agent workflow: scoped tasks, execution evidence, reviewer decisions and payout evidence.</p>
+                        <p class="work-tags">AI agents · trust workflow · web demo · QA</p>
+                    </article>
+
+                    <article class="work-card">
+                        <h3>Agent workflow hardening</h3>
+                        <p>Tested reviewer routing, dispute handling, evidence packets, sanctions, receipts and audit trails so agent work can be checked before anyone trusts the result.</p>
+                        <p class="work-tags">process design · auditability · risk control</p>
+                    </article>
+
+                    <article class="work-card">
+                        <h3>OpenClaw browser threads spike</h3>
+                        <p>Prototyped multi-conversation browser UX for an agent interface behind an experimental flag. Kept the live runtime untouched and verified behavior in an isolated browser test lane.</p>
+                        <p class="work-tags">agent UX · isolation · browser QA</p>
+                    </article>
+
+                    <article class="work-card">
+                        <h3>OpenViking memory for agents</h3>
+                        <p>Set up local semantic memory for agent sessions with OpenViking and local embeddings, then added watchdog checks so search, recall and runtime health stay visible.</p>
+                        <p class="work-tags">local-first AI · memory · operations</p>
+                    </article>
+                </div>
+
+                <details class="work-more">
+                    <summary>More project notes and tested methods</summary>
+                    <div class="work-list">
+                        <article>
+                            <h3>Hermes / OpenClaw migration</h3>
+                            <p>Migrated useful OpenClaw routines into Hermes, cleaned up stale services and kept rollback notes. The focus was boring on purpose: preserve what works, remove what silently breaks.</p>
+                        </article>
+                        <article>
+                            <h3>Matrix-based agent delivery</h3>
+                            <p>Recovered Matrix delivery for local agent notifications, including self-signed TLS handling, room trust rules and smoke tests with real Matrix events.</p>
+                        </article>
+                        <article>
+                            <h3>Buyer-present opportunity scout</h3>
+                            <p>Built an internal scout that looks for real posted technical opportunities with buyer and budget signals. It filters out vague leads instead of spraying proposals.</p>
+                        </article>
+                        <article>
+                            <h3>Nextcloud-backed task system</h3>
+                            <p>Kept Nextcloud Tables as the source of truth for tasks, with local mirrors only used for automation and summaries. This avoids the usual mess of two competing task systems.</p>
+                        </article>
+                        <article>
+                            <h3>Local search and private AI stack</h3>
+                            <p>Worked with local SearXNG, local LLM endpoints and private automation patterns so research and agent workflows do not depend on pushing everything into hosted tools.</p>
+                        </article>
+                        <article>
+                            <h3>Dependency security remediation</h3>
+                            <p>Reduced a web app npm audit from reported issues to zero, then checked lint, tests and production build instead of treating the audit output as the finish line.</p>
+                        </article>
+                        <article>
+                            <h3>Browser QA scripts</h3>
+                            <p>Wrote repeatable browser checks for demo flows, logout behavior, task detail pages, theme switching and trust UI. Screenshots and JSON artifacts made failures easier to discuss.</p>
+                        </article>
+                        <article>
+                            <h3>A2UI structured output spike</h3>
+                            <p>Tested small UI cards for agent outputs such as health checks, approval decisions and research shortlists. Useful for review-heavy work; less useful for raw coding logs.</p>
+                        </article>
+                        <article>
+                            <h3>Agent method review</h3>
+                            <p>Reviewed outside agent methods and only adopted the useful parts: rollback-ready change checklists, compact handoffs, blast-radius reviews and plain-language output checks.</p>
+                        </article>
+                        <article>
+                            <h3>Payment rails and pilot economics</h3>
+                            <p>Compared marketplace payment patterns and chose a EUR-first pilot path. The reason is simple: less friction, clearer accounting and better dispute handling for early validation.</p>
+                        </article>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -167,6 +248,7 @@
             <nav class="footer-navigation" aria-label="Footer navigation">
                 <ul>
                     <li><a href="#project">Current Project</a></li>
+                    <li><a href="#work">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
                 </ul>
