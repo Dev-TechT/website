@@ -439,6 +439,109 @@ section {
     box-shadow: none;
 }
 
+/* AI automation audit section */
+.audit-section {
+    background: #fff;
+    color: #000;
+    padding: 60px 0;
+    border-top: 8px solid transparent;
+    border-image: linear-gradient(to right, #393E46 20%, #fff 50%, #393E46 80%) 1;
+    border-bottom: 8px solid transparent;
+    border-image: linear-gradient(to right, #fff 20%, #393E46 50%, #fff 80%) 1;
+}
+
+.audit-container {
+    max-width: 980px;
+}
+
+.section-kicker {
+    color: #0274be;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+
+.audit-container h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+}
+
+.audit-lede {
+    max-width: 780px;
+    margin: 0 auto 28px;
+    text-align: center;
+    font-size: 1.08rem;
+}
+
+.audit-panel,
+.audit-card,
+.audit-boundaries {
+    border: 1px solid #dce3ea;
+    border-radius: 10px;
+    background: #f7fafc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.audit-panel-main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.audit-panel h3,
+.audit-card h3,
+.audit-boundaries h3 {
+    color: #000;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.audit-panel p,
+.audit-card p,
+.audit-boundaries li {
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+.audit-panel ul,
+.audit-boundaries ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+}
+
+.audit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.audit-card {
+    padding: 22px;
+}
+
+.audit-tags {
+    color: #3d4650;
+    font-size: 0.88rem !important;
+    font-weight: 600;
+    margin-top: 0.8rem;
+}
+
+.audit-boundaries {
+    padding: 22px;
+    background: #fff;
+}
+
+.audit-cta {
+    text-align: center;
+    margin-top: 24px;
+}
+
 /* Contact Section */
 .contact-section {
     background-color: #393E46; /* Dark background */
@@ -599,7 +702,9 @@ section {
     .about-section { padding: 40px 0; } /* Override for about */
     .work-section { padding: 50px 0; }
     .work-grid,
-    .work-list {
+    .work-list,
+    .audit-panel-main,
+    .audit-grid {
         grid-template-columns: 1fr;
     }
      .services-section h2,
@@ -636,6 +741,9 @@ section {
     .service-content,
     .work-card,
     .work-list article,
+    .audit-panel,
+    .audit-card,
+    .audit-boundaries,
     .contact-details {
         min-width: 0;
     }
@@ -643,6 +751,10 @@ section {
     .service-content p,
     .work-card p,
     .work-list p,
+    .audit-panel p,
+    .audit-panel li,
+    .audit-card p,
+    .audit-boundaries li,
     .contact-details p {
         overflow-wrap: anywhere;
         word-break: normal;
@@ -651,7 +763,10 @@ section {
         max-width: 100%;
     }
     .work-card,
-    .work-list article {
+    .work-list article,
+    .audit-panel-main,
+    .audit-card,
+    .audit-boundaries {
         padding: 18px;
     }
     .work-more summary {
