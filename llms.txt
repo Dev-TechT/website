@@ -9,6 +9,7 @@ This file is a short guide for AI agents, search tools and technical reviewers. 
 - [Homepage and portfolio](https://it-expert.io/): Profile, background, current project, project notes and contact options.
 - [Projects and tested methods](https://it-expert.io/#work): Short public summaries of selected work, including automation, security testing, QA, homelab operations and local AI.
 - [Current project](https://it-expert.io/#project): TraceTrust, a trust layer concept for AI agent tasks.
+- [Sample AI automation audit](https://it-expert.io/sample-audit.html): Fictional, client-safe example of the audit format and boundaries.
 - [Contact](https://it-expert.io/#contact): Email, phone, public profiles and legal notice link.
 - [Impressum / Legal notice](https://it-expert.io/impressum.html): Legal contact details for Germany.
 - [Privacy notice](https://it-expert.io/privacy.html): Privacy scope for this static website.
