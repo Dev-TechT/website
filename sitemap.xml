@@ -17,6 +17,10 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://it-expert.io/audit-example.md</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://it-expert.io/llms.txt</loc>
     <priority>0.5</priority>
   </url>

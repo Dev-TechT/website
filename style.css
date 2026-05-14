@@ -561,7 +561,19 @@ section {
 
 .audit-proof .project-link {
     display: inline-block;
-    margin-top: 10px;
+    margin: 10px 6px 0;
+}
+
+.secondary-link {
+    background: #fff;
+}
+
+.sample-next-step {
+    border: 1px solid #dce3ea;
+    border-radius: 10px;
+    background: #eef7f6;
+    padding: 22px;
+    margin: 1.5rem 0;
 }
 
 .audit-card {
