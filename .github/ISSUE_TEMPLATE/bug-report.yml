@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a broken page, link, image, layout, or accessibility issue.
+title: "Bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue. Please avoid including private client data, credentials, or personal documents.
+  - type: input
+    id: page
+    attributes:
+      label: Page or URL
+      description: Which page has the issue?
+      placeholder: https://it-expert.io/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Describe the visible problem or broken behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should happen instead?
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, device, OS, viewport size, assistive technology if relevant.
+      placeholder: Firefox 126, Android, 390px wide

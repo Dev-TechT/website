@@ -1,0 +1,42 @@
+name: Agent-friendly task
+description: A small, scoped task suitable for coding agents or contributors.
+title: "Agent task: "
+labels: ["agent-friendly", "needs-triage"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Files/sections likely involved and what is out of scope.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Bullet list of objective done conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Suggested verification
+      value: |
+        ```bash
+        python3 scripts/check_static_site.py
+        ```
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Privacy and public-claim boundaries
+      value: |
+        - Do not add trackers, cookies, third-party scripts, or embeds.
+        - Do not add private client/customer details.
+        - Do not add unsupported compliance/security claims.

@@ -1,0 +1,28 @@
+name: Content improvement
+description: Suggest clearer portfolio copy, SEO metadata, or public wording.
+title: "Content: "
+labels: ["content", "documentation", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest public-facing wording changes here. Do not paste confidential client material or unsupported compliance/security claims.
+  - type: textarea
+    id: current
+    attributes:
+      label: Current wording or location
+      description: Paste the relevant public text or point to the section.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed wording
+      description: What should it say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this better?
+      description: Clarity, accuracy, SEO, accessibility, tone, or legal-risk reason.
