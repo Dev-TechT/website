@@ -283,7 +283,7 @@ async function run() {
         }
         const failures = [];
         if (value.afterDe.lang !== "de") failures.push("DE click did not set html lang=de");
-        if (!value.afterDe.heading.includes("Riskante KI")) failures.push("DE heading mismatch");
+        if (!value.afterDe.heading.includes("IT-Arbeit mit KI")) failures.push("DE heading mismatch");
         if (!value.afterDe.nav.includes("Über mich")) failures.push("DE nav missing Über mich");
         if (value.afterDe.aboutKicker !== "Über mich") failures.push("DE about kicker mismatch");
         if (!value.afterDe.aboutParagraphs[0]?.startsWith("Mein Name ist Antonios")) failures.push("DE about first paragraph mismatch");
@@ -291,7 +291,7 @@ async function run() {
         if (value.afterDe.projectLink !== "Öffentliche Demo öffnen") failures.push("DE project link mismatch");
         if (value.afterDe.dePressed !== "true" || value.afterDe.enPressed !== "false") failures.push("DE aria-pressed state wrong");
         if (value.afterEn.lang !== "en") failures.push("EN click did not set html lang=en");
-        if (!value.afterEn.heading.includes("Audit risky")) failures.push("EN heading mismatch");
+        if (!value.afterEn.heading.includes("Automate IT work")) failures.push("EN heading mismatch");
         if (!value.afterEn.nav.includes("About")) failures.push("EN nav missing About");
         if (value.afterEn.aboutKicker !== "About") failures.push("EN about kicker mismatch");
         if (!value.afterEn.aboutParagraphs[0]?.startsWith("My name is Antonios")) failures.push("EN about first paragraph mismatch");

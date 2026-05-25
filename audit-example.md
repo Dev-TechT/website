@@ -1,10 +1,10 @@
-# Small AI/dev automation audit — one-page example
+# Example AI/dev automation audit — one-page handout
 
 This is a fictional, client-safe example. It shows the shape of the work before anyone shares private repositories, customer data, secrets or vulnerability details.
 
 ## Scenario
 
-A small software team wants to reduce repeated PR review and documentation cleanup work. They use GitHub and private repositories, but they do not want bots posting comments, sending client emails or changing production systems.
+A software team wants to reduce repeated PR review and documentation cleanup work. They use GitHub and private repositories, but they do not want bots posting comments, sending client emails or changing production systems.
 
 ## What I check
 
@@ -12,7 +12,7 @@ A small software team wants to reduce repeated PR review and documentation clean
 - What data the workflow touches.
 - Which tools and accounts are involved.
 - Where human approval is required.
-- Whether a small private quick win is safe enough for a two-week test.
+- Whether a focused private quick win is safe enough for a two-week test.
 
 ## Example finding
 

@@ -7,11 +7,11 @@
     const auditMail = {
         en: {
             subject: "AI automation audit inquiry",
-            body: "Hi Antonios,\n\nI’d like to ask about a small AI/dev automation audit.\n\nWorkflow I want to improve:\nTeam/company type:\nCurrent tools:\nData sensitivity: public / internal / sensitive / unsure\nWhat would count as useful after two weeks:\n\nI will not include secrets, credentials, customer data, private repo contents or vulnerability details in this first message."
+            body: "Hi Antonios,\n\nI’d like to ask about an AI/dev automation audit.\n\nWorkflow I want to improve:\nTeam/company type:\nCurrent tools:\nData sensitivity: public / internal / sensitive / unsure\nWhat would count as useful after two weeks:\n\nI will not include secrets, credentials, customer data, private repo contents or vulnerability details in this first message."
         },
         de: {
             subject: "Anfrage AI-/Dev-Automation-Audit",
-            body: "Hallo Antonios,\n\nich möchte wegen eines kleinen AI-/Dev-Automation-Audits anfragen.\n\nWorkflow, den ich verbessern möchte:\nTeam-/Unternehmensart:\nAktuelle Tools:\nDatensensibilität: öffentlich / intern / sensibel / unsicher\nWas nach zwei Wochen nützlich wäre:\n\nIch sende in dieser ersten Nachricht keine Secrets, Zugangsdaten, Kundendaten, privaten Repository-Inhalte oder vertraulichen Schwachstellendetails."
+            body: "Hallo Antonios,\n\nich möchte wegen eines AI-/Dev-Automation-Audits anfragen.\n\nWorkflow, den ich verbessern möchte:\nTeam-/Unternehmensart:\nAktuelle Tools:\nDatensensibilität: öffentlich / intern / sensibel / unsicher\nWas nach zwei Wochen nützlich wäre:\n\nIch sende in dieser ersten Nachricht keine Secrets, Zugangsdaten, Kundendaten, privaten Repository-Inhalte oder vertraulichen Schwachstellendetails."
         }
     };
 
@@ -27,18 +27,18 @@
         { selector: ".main-navigation a[href='#contact']", en: "Contact", de: "Kontakt" },
 
         { selector: ".site-brand", en: "IT-Expert", de: "IT-Expert" },
-        { selector: "#home .hero-kicker", en: "IT security · AI workflow audits", de: "IT-Sicherheit · KI-Workflow-Audits" },
-        { selector: "#home h1", en: "Audit risky AI workflows before launch.", de: "Riskante KI-Workflows vor dem Start prüfen." },
-        { selector: "#home .hero-lede", en: "Before an AI workflow touches repos, tickets, docs, or customer data, I identify the risk points and give you a clear next step.", de: "Bevor ein KI-Workflow Repos, Tickets, Dokus oder Kundendaten berührt, identifiziere ich die Risikopunkte und den nächsten sicheren Schritt." },
+        { selector: "#home .hero-kicker", en: "For IT and software teams", de: "Für IT- und Softwareteams" },
+        { selector: "#home h1", en: "Automate IT work with AI without losing control.", de: "IT-Arbeit mit KI automatisieren, ohne die Kontrolle zu verlieren." },
+        { selector: "#home .hero-lede", en: "I review one real workflow, map the data, tools, and approval risks, and show what can be automated safely, what needs human review, and the clearest practical next step.", de: "Ich prüfe einen konkreten Workflow, ordne Daten-, Tool- und Freigaberisiken ein und zeige, was sicher automatisiert werden kann, was menschliche Prüfung braucht und welcher nächste Schritt praktisch sinnvoll ist." },
         { selector: "#home .hero-actions .secondary-button", en: "View sample audit", de: "Beispiel-Audit ansehen" },
         { selector: "#home .trust-strip li:nth-child(1)", en: "10+ years IT experience", de: "10+ Jahre IT-Erfahrung" },
         { selector: "#home .trust-strip li:nth-child(2)", en: "Security / ITSM / Microsoft 365 / Azure", de: "Security / ITSM / Microsoft 365 / Azure" },
         { selector: "#home .trust-strip li:nth-child(3)", en: "Germany / EU / remote", de: "Deutschland / EU / Remote" },
         { selector: "#home .trust-strip li:nth-child(4)", en: "No secrets in the first message", de: "Keine Zugangsdaten in der ersten Nachricht" },
-        { selector: "#home .hero-card-label", en: "What I check before launch", de: "Was ich vor dem Start prüfe" },
-        { selector: "#home .hero-card li:nth-child(1)", html: true, en: "<strong>Data access</strong><span>What the workflow can read, write, or expose.</span>", de: "<strong>Datenzugriff</strong><span>Was der Workflow lesen, schreiben oder offenlegen kann.</span>" },
-        { selector: "#home .hero-card li:nth-child(2)", html: true, en: "<strong>Tool behavior</strong><span>Which apps, repos, tickets, or docs it touches.</span>", de: "<strong>Tool-Verhalten</strong><span>Welche Apps, Repos, Tickets oder Dokus betroffen sind.</span>" },
-        { selector: "#home .hero-card li:nth-child(3)", html: true, en: "<strong>Human approval</strong><span>Where review is required before it goes live.</span>", de: "<strong>Menschliche Freigabe</strong><span>Wo vor dem Go-live eine Prüfung nötig ist.</span>" },
+        { selector: "#home .hero-card-label", en: "What you get", de: "Was Sie bekommen" },
+        { selector: "#home .hero-card li:nth-child(1)", html: true, en: "<strong>Clear risk map</strong><span>Which data, tools, repos, tickets, and docs the workflow touches.</span>", de: "<strong>Klare Risikoübersicht</strong><span>Welche Daten, Tools, Repos, Tickets und Dokumentationen der Workflow berührt.</span>" },
+        { selector: "#home .hero-card li:nth-child(2)", html: true, en: "<strong>Safe automation boundary</strong><span>What can run automatically, what needs human review, and what should wait.</span>", de: "<strong>Klare Automatisierungsgrenzen</strong><span>Was automatisch laufen kann, was menschliche Prüfung braucht und was zunächst warten sollte.</span>" },
+        { selector: "#home .hero-card li:nth-child(3)", html: true, en: "<strong>Practical next step</strong><span>A short report and, when low risk, one validated quick win your team can use.</span>", de: "<strong>Praktischer nächster Schritt</strong><span>Ein kurzer Bericht und, wenn mit geringem Risiko möglich, eine validierte Verbesserung für Ihr Team.</span>" },
         { selector: "[data-audit-mail]", en: "Request a workflow review", de: "Workflow prüfen lassen" },
 
         { selector: "#services > .container > .section-kicker", en: "Experience areas", de: "Erfahrungsbereiche" },
@@ -98,21 +98,21 @@
 
         { selector: "#project .section-kicker", en: "Current product experiment", de: "Aktuelles Produktexperiment" },
         { selector: "#project h2", en: "TraceTrust", de: "TraceTrust" },
-        { selector: "#project p:nth-of-type(1)", html: true, en: "<strong>A trust layer for AI agent tasks.</strong>", de: "<strong>Eine Vertrauensebene für AI-Agent-Aufgaben.</strong>" },
-        { selector: "#project p:nth-of-type(2)", en: "Scope is defined first, execution is logged, and review happens before payout. This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.", de: "Erst wird der Scope geklärt, dann wird die Ausführung protokolliert, und vor einer Auszahlung gibt es Review. Dieses Produktprojekt ist von dieser persönlichen Profilseite getrennt. Die öffentliche Demo ist read-only und nutzt Beispieldaten." },
+        { selector: "#project .project-tagline", html: true, en: "<strong>A trust layer for AI agent tasks.</strong>", de: "<strong>Eine Vertrauensebene für AI-Agent-Aufgaben.</strong>" },
+        { selector: "#project .project-description", en: "Scope is defined first, execution is logged, and review happens before payout. This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.", de: "Erst wird der Scope geklärt, dann wird die Ausführung protokolliert, und vor einer Auszahlung gibt es Review. Dieses Produktprojekt ist von dieser persönlichen Profilseite getrennt. Die öffentliche Demo ist read-only und nutzt Beispieldaten." },
 
         { selector: "#project .project-link", en: "Open public demo", de: "Öffentliche Demo öffnen" },
 
         { selector: "#ai-automation-audit .section-kicker", en: "AI and dev automation audit", de: "AI- und Dev-Automation-Audit" },
         { selector: "#ai-automation-audit h2", en: "No-drama AI and dev automation", de: "AI- und Dev-Automation ohne Drama" },
-        { selector: "#ai-automation-audit .audit-lede", en: "For small IT and software teams that want to clean up repeated PR, documentation, QA or support work without handing sensitive workflows to an unchecked bot.", de: "Für kleine IT- und Softwareteams, die wiederkehrende PR-, Doku-, QA- oder Supportarbeit aufräumen wollen, ohne sensible Abläufe einem ungeprüften Bot zu überlassen." },
+        { selector: "#ai-automation-audit .audit-lede", en: "For IT and software teams that want to clean up repeated PR, documentation, QA or support work without handing sensitive workflows to an unchecked bot.", de: "Für IT- und Softwareteams, die wiederkehrende PR-, Doku-, QA- oder Supportarbeit aufräumen wollen, ohne sensible Abläufe einem ungeprüften Bot zu überlassen." },
         { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(1) h3", en: "What I check", de: "Was ich prüfe" },
-        { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(1) p", en: "I review one concrete workflow, map the data and approval boundaries, and produce a short report with practical next steps. If the scope is safe enough, I can also prepare one small human-reviewed quick win.", de: "Ich prüfe einen konkreten Workflow, ordne Daten- und Freigabegrenzen ein und liefere einen kurzen Bericht mit praktischen nächsten Schritten. Wenn der Scope sicher genug ist, kann ich auch einen kleinen, menschlich geprüften Quick Win vorbereiten." },
+        { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(1) p", en: "I review one concrete workflow, map the data and approval boundaries, and produce a short report with practical next steps. If the scope is safe enough, I can also prepare one focused, human-reviewed quick win.", de: "Ich prüfe einen konkreten Workflow, ordne Daten- und Freigabegrenzen ein und liefere einen kurzen Bericht mit praktischen nächsten Schritten. Wenn der Scope sicher genug ist, kann ich auch eine fokussierte, menschlich geprüfte Verbesserung vorbereiten." },
         { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) h3", en: "Typical outputs", de: "Typische Ergebnisse" },
         { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) li:nth-child(1)", en: "Private repo or documentation review report", de: "Privater Repo- oder Dokumentations-Review-Bericht" },
         { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) li:nth-child(2)", en: "Docs-gap or QA checklist", de: "Docs-Gap- oder QA-Checkliste" },
         { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) li:nth-child(3)", en: "Risk notes for data, tools and approvals", de: "Risikohinweise zu Daten, Tools und Freigaben" },
-        { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) li:nth-child(4)", en: "One small patch, script or draft workflow if it is low risk", de: "Ein kleiner Patch, ein Skript oder ein Workflow-Entwurf, wenn das risikoarm möglich ist" },
+        { selector: "#ai-automation-audit .audit-panel-main > div:nth-child(2) li:nth-child(4)", en: "One focused patch, script or draft workflow if it is low risk", de: "Ein fokussierter Patch, ein Skript oder ein Workflow-Entwurf, wenn das risikoarm möglich ist" },
         { selector: "#ai-automation-audit .audit-grid", attr: "aria-label", en: "Audit packages", de: "Audit-Pakete" },
         { selector: "#ai-automation-audit .audit-card:nth-child(1) h3", en: "Quick audit", de: "Quick Audit" },
         { selector: "#ai-automation-audit .audit-card:nth-child(1) p:nth-of-type(1)", en: "Best when you want a clear yes/no on whether one workflow is worth automating.", de: "Sinnvoll, wenn Sie eine klare Einschätzung brauchen, ob sich ein Workflow überhaupt zur Automatisierung eignet." },
@@ -149,7 +149,7 @@
 
         { selector: "#work > .container > .section-kicker", en: "Public-safe proof", de: "Öffentlich sichere Nachweise" },
         { selector: "#work h2", en: "Projects & Tested Methods", de: "Projekte & getestete Methoden" },
-        { selector: "#work .work-intro", en: "I keep this section selective. The four cards below are the strongest public examples right now; the expandable list keeps smaller experiments visible without turning the page into a changelog.", de: "Ich halte diesen Bereich bewusst selektiv. Die vier Karten unten sind aktuell die stärksten öffentlichen Beispiele; die aufklappbare Liste zeigt kleinere Experimente, ohne die Seite in ein Changelog zu verwandeln." },
+        { selector: "#work .work-intro", en: "I keep this section selective. The four cards below are the strongest public examples right now; the expandable list keeps focused experiments visible without turning the page into a changelog.", de: "Ich halte diesen Bereich bewusst selektiv. Die vier Karten unten sind aktuell die stärksten öffentlichen Beispiele; die aufklappbare Liste zeigt fokussierte Experimente, ohne die Seite in ein Changelog zu verwandeln." },
 
         { selector: "#work .work-card:nth-child(1) h3", en: "Local-first e-invoice converter", de: "Local-first E-Rechnung-Konverter" },
         { selector: "#work .work-card:nth-child(1) p:nth-of-type(1)", en: "Built a browser and CLI workflow for preparing XRechnung and EN16931 invoice XML candidates. The project keeps invoice handling local, uses structured field checks, and treats KoSIT validation as the reference for real submission claims.", de: "Browser- und CLI-Workflow zum Vorbereiten von XRechnung- und EN16931-Rechnungs-XML-Kandidaten. Das Projekt hält Rechnungsdaten lokal, nutzt strukturierte Feldprüfungen und behandelt KoSIT-Validierung als Referenz für echte Einreichungsclaims." },
@@ -158,7 +158,7 @@
         { selector: "#work .work-card:nth-child(2) p:nth-of-type(1)", en: "Contributed tested production-readiness slices to a browser CAD sketcher: DXF import safety, STL reference-mesh validation, project-file guards, delete-shortcut behavior, and rotated push/pull correctness.", de: "Getestete Production-Readiness-Slices für einen Browser-CAD-Sketcher beigesteuert: sichere DXF-Imports, STL-Referenzmesh-Validierung, Projektdatei-Guards, Delete-Shortcut-Verhalten und korrekte rotierte Push/Pull-Operationen." },
         { selector: "#work .work-card:nth-child(2) .work-tags", en: "CAD · TypeScript · browser QA · regression tests", de: "CAD · TypeScript · Browser-QA · Regressionstests" },
         { selector: "#work .work-card:nth-child(3) h3", en: "Agent-assisted GitHub maintenance", de: "Agent-gestützte GitHub-Wartung" },
-        { selector: "#work .work-card:nth-child(3) p:nth-of-type(1)", en: "Used agents to inspect repositories, make small scoped fixes, run local and CI checks, prepare maintainer-readable pull requests, and re-check live GitHub state before marking work complete.", de: "Agents genutzt, um Repositories zu prüfen, kleine klar abgegrenzte Fixes umzusetzen, lokale und CI-Checks auszuführen, maintainer-taugliche Pull Requests vorzubereiten und den Live-GitHub-Status vor Abschluss erneut zu prüfen." },
+        { selector: "#work .work-card:nth-child(3) p:nth-of-type(1)", en: "Used agents to inspect repositories, make focused scoped fixes, run local and CI checks, prepare maintainer-readable pull requests, and re-check live GitHub state before marking work complete.", de: "Agents genutzt, um Repositories zu prüfen, fokussierte klar abgegrenzte Fixes umzusetzen, lokale und CI-Checks auszuführen, maintainer-taugliche Pull Requests vorzubereiten und den Live-GitHub-Status vor Abschluss erneut zu prüfen." },
         { selector: "#work .work-card:nth-child(3) .work-tags", en: "GitHub · code review · CI · automation", de: "GitHub · Code Review · CI · Automatisierung" },
         { selector: "#work .work-card:nth-child(4) h3", en: "Private evidence packs", de: "Private Evidence Packs" },
         { selector: "#work .work-card:nth-child(4) p:nth-of-type(1)", en: "Built local proof packages for security questionnaires, DORA ICT evidence prompts, finance exception reports, accessibility snapshots and technical data rooms. They use synthetic data and approval gates by default.", de: "Lokale Proof-Pakete für Security Questionnaires, DORA-ICT-Evidence-Prompts, Finance-Exception-Reports, Accessibility-Snapshots und technische Datenräume gebaut. Standardmäßig nutzen sie synthetische Daten und Freigabe-Gates." },
@@ -172,7 +172,7 @@
         { selector: "#work .work-list article:nth-child(3) h3", en: "Security Questionnaire / Trust Evidence Pack", de: "Security Questionnaire / Trust Evidence Pack" },
         { selector: "#work .work-list article:nth-child(3) p", en: "Built a private, synthetic package that organizes questionnaire answers, evidence owners, freshness status and approval gates before any real customer security data is touched.", de: "Privates, synthetisches Paket gebaut, das Questionnaire-Antworten, Evidence Owner, Freshness-Status und Freigabe-Gates organisiert, bevor echte Kundensicherheitsdaten berührt werden." },
         { selector: "#work .work-list article:nth-child(4) h3", en: "DORA ICT Register Preflight", de: "DORA-ICT-Register-Preflight" },
-        { selector: "#work .work-list article:nth-child(4) p", en: "Built a local spreadsheet-first preflight for small ICT providers answering DORA-driven customer due-diligence requests. It is evidence organization, not legal or compliance certification.", de: "Lokalen Spreadsheet-first-Preflight für kleine ICT-Anbieter gebaut, die DORA-getriebene Due-Diligence-Anfragen beantworten. Das ist Evidence-Organisation, keine Rechts- oder Compliance-Zertifizierung." },
+        { selector: "#work .work-list article:nth-child(4) p", en: "Built a local spreadsheet-first preflight for ICT providers answering DORA-driven customer due-diligence requests. It is evidence organization, not legal or compliance certification.", de: "Lokalen Spreadsheet-first-Preflight für ICT-Anbieter gebaut, die DORA-getriebene Due-Diligence-Anfragen beantworten. Das ist Evidence-Organisation, keine Rechts- oder Compliance-Zertifizierung." },
         { selector: "#work .work-list article:nth-child(5) h3", en: "Acquire-ready Technical Data Room Kit", de: "Acquire-ready Technical Data Room Kit" },
         { selector: "#work .work-list article:nth-child(5) p", en: "Built a private kit for micro-SaaS technical diligence: architecture notes, repository inventory, dependency evidence, runbooks, access prompts and buyer FAQ material using demo data.", de: "Privates Kit für technische Micro-SaaS-Diligence gebaut: Architekturnotizen, Repository-Inventar, Dependency Evidence, Runbooks, Access-Prompts und Käufer-FAQ mit Demodaten." },
         { selector: "#work .work-list article:nth-child(6) h3", en: "Finance Exception Radar", de: "Finance Exception Radar" },
@@ -180,7 +180,7 @@
         { selector: "#work .work-list article:nth-child(7) h3", en: "TenderOps Revenue Kit", de: "TenderOps Revenue Kit" },
         { selector: "#work .work-list article:nth-child(7) p", en: "Built a private bid-pack prototype that turns public tender notices into a bid/no-bid memo, source notes and a short buyer-safe sample. It is a proof package, not a procurement promise.", de: "Privaten Bid-Pack-Prototyp gebaut, der öffentliche Ausschreibungen in ein Bid/No-Bid-Memo, Source Notes und ein kurzes buyer-safe Sample übersetzt. Das ist ein Proof-Paket, kein Beschaffungsversprechen." },
         { selector: "#work .work-list article:nth-child(8) h3", en: "Accessibility Snapshot", de: "Accessibility Snapshot" },
-        { selector: "#work .work-list article:nth-child(8) p", en: "Built a small page triage check that flags common accessibility issues with selectors and plain notes for developers. Useful before a real WCAG audit, not a replacement for one.", de: "Kleinen Page-Triage-Check gebaut, der typische Accessibility-Probleme mit Selektoren und klaren Developer-Notizen markiert. Nützlich vor einem echten WCAG-Audit, aber kein Ersatz dafür." },
+        { selector: "#work .work-list article:nth-child(8) p", en: "Built a page triage check that flags common accessibility issues with selectors and plain notes for developers. Useful before a real WCAG audit, not a replacement for one.", de: "Page-Triage-Check gebaut, der typische Accessibility-Probleme mit Selektoren und klaren Developer-Notizen markiert. Nützlich vor einem echten WCAG-Audit, aber kein Ersatz dafür." },
         { selector: "#work .work-list article:nth-child(9) h3", en: "Responsible security and bug bounty testing", de: "Verantwortungsvolle Security- und Bug-Bounty-Tests" },
         { selector: "#work .work-list article:nth-child(9) p", en: "Tested apps in a responsible, private-first way: scoped targets, safe reproduction steps, and clear reports for teams to fix.", de: "Apps verantwortungsvoll und private-first getestet: abgegrenzte Targets, sichere Reproduktionsschritte und klare Reports für die zuständigen Teams." },
         { selector: "#work .work-list article:nth-child(10) h3", en: "Homelab operations and monitoring", de: "Homelab-Betrieb und Monitoring" },
@@ -208,7 +208,7 @@
         { selector: "#work .work-list article:nth-child(21) h3", en: "Nextcloud-backed task system", de: "Nextcloud-gestütztes Task-System" },
         { selector: "#work .work-list article:nth-child(21) p", en: "Kept Nextcloud Tables as the source of truth for tasks, with local mirrors only used for automation and summaries. This avoids the usual mess of two competing task systems.", de: "Nextcloud Tables als Source of Truth für Aufgaben beibehalten; lokale Mirrors dienen nur Automatisierung und Zusammenfassungen. So entsteht nicht das übliche Chaos aus zwei konkurrierenden Task-Systemen." },
         { selector: "#work .work-list article:nth-child(22) h3", en: "A2UI structured output spike", de: "A2UI Structured-Output-Spike" },
-        { selector: "#work .work-list article:nth-child(22) p", en: "Tested small UI cards for agent outputs such as health checks, approval decisions and research shortlists. Useful for review-heavy work; less useful for raw coding logs.", de: "Kleine UI-Karten für Agent-Outputs wie Health Checks, Freigabeentscheidungen und Research-Shortlists getestet. Nützlich für review-lastige Arbeit, weniger nützlich für rohe Coding-Logs." },
+        { selector: "#work .work-list article:nth-child(22) p", en: "Tested compact UI cards for agent outputs such as health checks, approval decisions and research shortlists. Useful for review-heavy work; less useful for raw coding logs.", de: "Kompakte UI-Karten für Agent-Outputs wie Health Checks, Freigabeentscheidungen und Research-Shortlists getestet. Nützlich für review-lastige Arbeit, weniger nützlich für rohe Coding-Logs." },
         { selector: "#work .work-list article:nth-child(23) h3", en: "Agent method review", de: "Agent-Methodenreview" },
         { selector: "#work .work-list article:nth-child(23) p", en: "Reviewed outside agent methods and only adopted the useful parts: rollback-ready change checklists, compact handoffs, blast-radius reviews and plain-language output checks.", de: "Externe Agent-Methoden geprüft und nur die nützlichen Teile übernommen: rollback-fähige Change-Checklisten, kompakte Handoffs, Blast-Radius-Reviews und Klartext-Output-Checks." },
         { selector: "#work .work-list article:nth-child(24) h3", en: "AI music go-to-market", de: "AI-Music Go-to-Market" },
@@ -236,12 +236,12 @@
 
     const pageMeta = {
         en: {
-            title: "Antonios Chatzigiagkos - IT security and AI workflow audits",
-            description: "Antonios Chatzigiagkos helps small IT and software teams audit risky AI workflows, data boundaries, tools, approvals and evidence before launch."
+            title: "Antonios Chatzigiagkos - Safe AI automation for IT teams",
+            description: "Antonios Chatzigiagkos helps IT and software teams use AI automation safely by reviewing data access, tool behavior, approvals and practical next steps."
         },
         de: {
-            title: "Antonios Chatzigiagkos - IT-Sicherheit und KI-Workflow-Audits",
-            description: "Antonios Chatzigiagkos hilft kleinen IT- und Softwareteams, riskante KI-Workflows, Datenflüsse, Tools, Freigaben und Nachweise vor dem Start zu prüfen."
+            title: "Antonios Chatzigiagkos - Sichere KI-Automatisierung für IT-Teams",
+            description: "Antonios Chatzigiagkos hilft IT- und Softwareteams, KI-Automatisierung sicher zu nutzen, mit Prüfung von Datenzugriff, Tool-Verhalten, Freigaben und praktischen nächsten Schritten."
         }
     };
 
