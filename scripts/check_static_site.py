@@ -18,6 +18,7 @@ REQUIRED_FILES = [
     "style.css",
     "robots.txt",
     "sitemap.xml",
+    "CNAME",
 ]
 
 
@@ -53,7 +54,7 @@ class LinkAndImageParser(HTMLParser):
 
 def is_external(url: str) -> bool:
     parsed = urlparse(url)
-    return parsed.scheme in {"http", "https", "mailto", "tel"}
+    return parsed.scheme in {"http", "https", "mailto", "tel", "data"}
 
 
 def local_path_for(url: str, source: Path) -> Path | None:

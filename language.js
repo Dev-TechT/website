@@ -19,16 +19,31 @@
         { selector: ".skip-link", en: "Skip to main content", de: "Zum Hauptinhalt springen" },
         { selector: ".main-navigation", attr: "aria-label", en: "Main navigation", de: "Hauptnavigation" },
         { selector: ".language-switcher", attr: "aria-label", en: "Language selection", de: "Sprachauswahl" },
-        { selector: ".main-navigation a[href='#services']", en: "Background", de: "Profil" },
-        { selector: ".main-navigation a[href='#about']", en: "About Me", de: "Über mich" },
+        { selector: ".main-navigation a[href='#services']", en: "Expertise", de: "Expertise" },
+        { selector: ".main-navigation a[href='#about']", en: "About", de: "Über mich" },
         { selector: ".main-navigation a[href='#project']", en: "Current Project", de: "Aktuelles Projekt" },
         { selector: ".main-navigation a[href='#ai-automation-audit']", en: "AI Audit", de: "AI-Audit" },
-        { selector: ".main-navigation a[href='#work']", en: "Projects", de: "Projekte" },
+        { selector: ".main-navigation a[href='#work']", en: "Proof", de: "Nachweise" },
         { selector: ".main-navigation a[href='#contact']", en: "Contact", de: "Kontakt" },
 
-        { selector: "#intro-statement h4", en: "Your Professional IT-Expert", de: "Ihr professioneller IT-Experte" },
+        { selector: ".site-brand", en: "IT-Expert", de: "IT-Expert" },
+        { selector: "#home .hero-kicker", en: "IT security · automation · AI workflow reviews", de: "IT-Security · Automatisierung · AI-Workflow-Reviews" },
+        { selector: "#home h1", en: "Practical IT and AI automation audits before risky changes go public.", de: "Praktische IT- und AI-Automation-Audits, bevor riskante Änderungen öffentlich werden." },
+        { selector: "#home .hero-lede", en: "I help small IT and software teams review one workflow at a time: data boundaries, tools, approvals, test evidence and the safest first quick win.", de: "Ich helfe kleinen IT- und Softwareteams, jeweils einen Workflow sauber zu prüfen: Datengrenzen, Tools, Freigaben, Test-Evidence und den sichersten ersten Quick Win." },
+        { selector: "#home .hero-actions .secondary-button", en: "View sample audit", de: "Beispiel-Audit ansehen" },
+        { selector: "#home .trust-strip li:nth-child(1)", en: "10+ years IT experience", de: "10+ Jahre IT-Erfahrung" },
+        { selector: "#home .trust-strip li:nth-child(2)", en: "Security / ITSM / Microsoft 365 / Azure", de: "Security / ITSM / Microsoft 365 / Azure" },
+        { selector: "#home .trust-strip li:nth-child(3)", en: "Germany / EU / remote", de: "Deutschland / EU / remote" },
+        { selector: "#home .trust-strip li:nth-child(4)", en: "No secrets in the first message", de: "Keine Secrets in der ersten Nachricht" },
+        { selector: "#home .hero-card-label", en: "How I work", de: "So arbeite ich" },
+        { selector: "#home .hero-card li:nth-child(1)", html: true, en: "<strong>Scope first.</strong> One workflow, one decision, no vague automation promises.", de: "<strong>Erst Scope.</strong> Ein Workflow, eine Entscheidung, keine vagen Automatisierungsversprechen." },
+        { selector: "#home .hero-card li:nth-child(2)", html: true, en: "<strong>Evidence next.</strong> Local checks, browser QA, repo notes and risk boundaries.", de: "<strong>Dann Evidence.</strong> Lokale Checks, Browser-QA, Repo-Notizen und Risikogrenzen." },
+        { selector: "#home .hero-card li:nth-child(3)", html: true, en: "<strong>Human approval.</strong> Drafts and fixes stay private until someone reviews them.", de: "<strong>Menschliche Freigabe.</strong> Entwürfe und Fixes bleiben privat, bis sie geprüft sind." },
+        { selector: "[data-audit-mail]", en: "Email me about a workflow", de: "Workflow per E-Mail anfragen" },
 
-        { selector: "#services h2", en: "Background & Experience", de: "Profil & Erfahrung" },
+        { selector: "#services > .container > .section-kicker", en: "Experience areas", de: "Erfahrungsbereiche" },
+        { selector: "#services h2", en: "IT work that stays practical and reviewable", de: "IT-Arbeit, die praktisch und prüfbar bleibt" },
+        { selector: "#services > .container > .section-intro", en: "The lists below preserve the full background, but the common thread is simple: clearer scope, safer access, better handoffs, tested changes and fewer surprises.", de: "Die Listen unten bewahren den vollständigen Hintergrund. Der rote Faden ist einfach: klarerer Scope, sicherere Zugänge, bessere Übergaben, getestete Änderungen und weniger Überraschungen." },
         { selector: "#services .service-item:nth-of-type(1) img", attr: "alt", en: "Abstract network security concept image", de: "Abstraktes Bild zum Thema Netzwerksicherheit" },
         { selector: "#services .service-item:nth-of-type(1) h3", en: "Security", de: "Security" },
         { selector: "#services .service-item:nth-of-type(1) p", en: "Topics I work with and continue to study in day-to-day IT security.", de: "Themen, mit denen ich in der IT-Sicherheit arbeite und die ich laufend vertiefe." },
@@ -61,7 +76,7 @@
         { selector: "#services .service-item:nth-of-type(3) li:nth-child(4)", en: "Microsoft Exchange Server Management and Migration", de: "Microsoft Exchange Server Management und Migration" },
         { selector: "#services .service-item:nth-of-type(3) li:nth-child(5)", en: "Modern Cloud-Based HelpDesk Solutions", de: "Moderne cloudbasierte Helpdesk-Lösungen" },
         { selector: "#services .service-item:nth-of-type(3) li:nth-child(6)", en: "Professional Website and E-commerce Platform Development", de: "Website- und E-Commerce-Entwicklung" },
-        { selector: "#services .service-item:nth-of-type(3) li:nth-child(7)", en: "Ensuring GDPR & ISO 27001 Compliance", de: "Unterstützung bei DSGVO- und ISO-27001-nahen Kontrollen" },
+        { selector: "#services .service-item:nth-of-type(3) li:nth-child(7)", en: "GDPR and ISO 27001 compliance support", de: "Unterstützung bei DSGVO- und ISO-27001-nahen Kontrollen" },
 
         { selector: "#services .service-item:nth-of-type(4) img", attr: "alt", en: "Person working on a laptop in a creative setting", de: "Person arbeitet an einem Laptop" },
         { selector: "#services .service-item:nth-of-type(4) h3", en: "Community & Learning", de: "Community & Lernen" },
@@ -73,17 +88,19 @@
         { selector: "#services .service-item:nth-of-type(4) p:nth-of-type(2)", en: "Open source projects I follow and support:", de: "Open-Source-Projekte, die ich verfolge und unterstütze:" },
 
         { selector: "#about img", attr: "alt", en: "Portrait of Antonios Chatzigiagkos", de: "Porträt von Antonios Chatzigiagkos" },
+        { selector: "#about .section-kicker", en: "About", de: "Über mich" },
         { selector: "#about h2", en: "About Me", de: "Über mich" },
-        { selector: "#about p:nth-of-type(1)", en: "My name is Antonios Chatzigiagkos. I have over a decade of experience in IT and build practical solutions for real-world technical challenges.", de: "Mein Name ist Antonios Chatzigiagkos. Ich habe über zehn Jahre Erfahrung in der IT und baue praktische Lösungen für echte technische Probleme." },
-        { selector: "#about p:nth-of-type(2)", en: "My work covers IT operations, security, Microsoft 365 and Azure administration, automation, service management and modern AI tooling. I like useful systems: clear scope, good handoffs, tests, logs and rollback paths.", de: "Meine Arbeit umfasst IT-Betrieb, Security, Microsoft 365 und Azure Administration, Automatisierung, Service Management und moderne AI-Tools. Ich mag Systeme, die funktionieren: klare Grenzen, saubere Übergaben, Tests, Logs und Rollback-Wege." },
-        { selector: "#about p:nth-of-type(3)", en: "I actively explore open-source and local-first AI across web development, programming, security analysis and content workflows, then turn the useful parts into working methods.", de: "Ich beschäftige mich aktiv mit Open Source und Local-First-AI für Webentwicklung, Programmierung, Security-Analyse und Content-Workflows und überführe die nützlichen Teile in belastbare Arbeitsweisen." },
-        { selector: "#about p:nth-of-type(4)", en: "This website is a personal profile and portfolio page for employers, clients and technical reviewers. Freelance or project inquiries are handled individually by direct contact.", de: "Diese Website ist mein persönliches Profil und Portfolio für Arbeitgeber, Kunden und technische Prüfer. Freelance- oder Projektanfragen kläre ich direkt und individuell." },
-        { selector: "#about p:nth-of-type(5)", html: true, en: "To learn more about me, check out my <a href=\"https://www.linkedin.com/in/antonios-chatzigiagkos/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> &amp; <a href=\"https://www.xing.com/profile/Antonios_Chatzigiagkos/cv\" target=\"_blank\" rel=\"noopener noreferrer\">Xing</a> accounts. For exchange and networking, contact me via email: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a>.", de: "Mehr über mich finden Sie auf <a href=\"https://www.linkedin.com/in/antonios-chatzigiagkos/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> und <a href=\"https://www.xing.com/profile/Antonios_Chatzigiagkos/cv\" target=\"_blank\" rel=\"noopener noreferrer\">Xing</a>. Für Austausch und Networking erreichen Sie mich per E-Mail: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a>." },
+        { selector: "#about .about-content p:nth-of-type(2)", en: "My name is Antonios Chatzigiagkos. I have over a decade of experience in IT and build practical solutions for real-world technical challenges.", de: "Mein Name ist Antonios Chatzigiagkos. Ich habe über zehn Jahre Erfahrung in der IT und baue praktische Lösungen für echte technische Probleme." },
+        { selector: "#about .about-content p:nth-of-type(3)", en: "My work covers IT operations, security, Microsoft 365 and Azure administration, automation, service management and modern AI tooling. I like useful systems: clear scope, good handoffs, tests, logs and rollback paths.", de: "Meine Arbeit umfasst IT-Betrieb, Security, Microsoft 365 und Azure Administration, Automatisierung, Service Management und moderne AI-Tools. Ich mag Systeme, die funktionieren: klare Grenzen, saubere Übergaben, Tests, Logs und Rollback-Wege." },
+        { selector: "#about .about-content p:nth-of-type(4)", en: "I actively explore open-source and local-first AI across web development, programming, security analysis and content workflows, then turn the useful parts into working methods.", de: "Ich beschäftige mich aktiv mit Open Source und Local-First-AI für Webentwicklung, Programmierung, Security-Analyse und Content-Workflows und überführe die nützlichen Teile in belastbare Arbeitsweisen." },
+        { selector: "#about .about-content p:nth-of-type(5)", en: "This website is a personal profile and portfolio page for employers, clients and technical reviewers. Freelance or project inquiries are handled individually by direct contact.", de: "Diese Website ist mein persönliches Profil und Portfolio für Arbeitgeber, Kunden und technische Prüfer. Freelance- oder Projektanfragen kläre ich direkt und individuell." },
+        { selector: "#about .about-content p:nth-of-type(6)", html: true, en: "To learn more about me, check out my <a href=\"https://www.linkedin.com/in/antonios-chatzigiagkos/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> &amp; <a href=\"https://www.xing.com/profile/Antonios_Chatzigiagkos/cv\" target=\"_blank\" rel=\"noopener noreferrer\">Xing</a> accounts. For exchange and networking, contact me via email: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a>.", de: "Mehr über mich finden Sie auf <a href=\"https://www.linkedin.com/in/antonios-chatzigiagkos/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> und <a href=\"https://www.xing.com/profile/Antonios_Chatzigiagkos/cv\" target=\"_blank\" rel=\"noopener noreferrer\">Xing</a>. Für Austausch und Networking erreichen Sie mich per E-Mail: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a>." },
 
-        { selector: "#project h2", en: "Current Project", de: "Aktuelles Projekt" },
-        { selector: "#project p:nth-of-type(1)", html: true, en: "<strong>Working title: TraceTrust</strong>", de: "<strong>Arbeitstitel: TraceTrust</strong>" },
-        { selector: "#project p:nth-of-type(2)", en: "A trust layer for AI agent tasks. Scope is defined first, execution is logged, and review happens before payout.", de: "Eine Vertrauensebene für AI-Agent-Aufgaben: Erst wird der Scope geklärt, dann wird die Ausführung protokolliert, und vor einer Auszahlung gibt es Review." },
-        { selector: "#project p:nth-of-type(3)", en: "This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.", de: "Dieses Produktprojekt ist von dieser persönlichen Profilseite getrennt. Die öffentliche Demo ist read-only und nutzt Beispieldaten." },
+        { selector: "#project .section-kicker", en: "Current product experiment", de: "Aktuelles Produktexperiment" },
+        { selector: "#project h2", en: "TraceTrust", de: "TraceTrust" },
+        { selector: "#project p:nth-of-type(1)", html: true, en: "<strong>A trust layer for AI agent tasks.</strong>", de: "<strong>Eine Vertrauensebene für AI-Agent-Aufgaben.</strong>" },
+        { selector: "#project p:nth-of-type(2)", en: "Scope is defined first, execution is logged, and review happens before payout. This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.", de: "Erst wird der Scope geklärt, dann wird die Ausführung protokolliert, und vor einer Auszahlung gibt es Review. Dieses Produktprojekt ist von dieser persönlichen Profilseite getrennt. Die öffentliche Demo ist read-only und nutzt Beispieldaten." },
+
         { selector: "#project .project-link", en: "Open public demo", de: "Öffentliche Demo öffnen" },
 
         { selector: "#ai-automation-audit .section-kicker", en: "AI and dev automation audit", de: "AI- und Dev-Automation-Audit" },
@@ -128,8 +145,9 @@
         { selector: "#ai-automation-audit .audit-proof p:nth-of-type(1)", en: "Read a fictional, client-safe sample audit before sending private details.", de: "Lesen Sie ein fiktives, kundensicheres Beispiel-Audit, bevor Sie private Details senden." },
         { selector: "#ai-automation-audit .audit-proof a:nth-of-type(1)", en: "Open sample audit", de: "Beispiel-Audit öffnen" },
         { selector: "#ai-automation-audit .audit-proof a:nth-of-type(2)", en: "Open one-page handout", de: "Einseiter öffnen" },
-        { selector: "#ai-automation-audit .audit-cta .project-link", en: "Request an audit example", de: "Audit-Beispiel anfragen" },
+        { selector: "[data-audit-mail]", en: "Email me about a workflow", de: "Workflow per E-Mail anfragen" },
 
+        { selector: "#work > .container > .section-kicker", en: "Public-safe proof", de: "Öffentlich sichere Nachweise" },
         { selector: "#work h2", en: "Projects & Tested Methods", de: "Projekte & getestete Methoden" },
         { selector: "#work .work-intro", en: "I keep this section selective. The four cards below are the strongest public examples right now; the expandable list keeps smaller experiments visible without turning the page into a changelog.", de: "Ich halte diesen Bereich bewusst selektiv. Die vier Karten unten sind aktuell die stärksten öffentlichen Beispiele; die aufklappbare Liste zeigt kleinere Experimente, ohne die Seite in ein Changelog zu verwandeln." },
 
@@ -196,9 +214,11 @@
         { selector: "#work .work-list article:nth-child(24) h3", en: "AI music go-to-market", de: "AI-Music Go-to-Market" },
         { selector: "#work .work-list article:nth-child(24) p", en: "Explored how AI music tools could reach real users by testing positioning, creator workflows and practical launch angles.", de: "Untersucht, wie AI-Music-Tools echte Nutzer erreichen können, durch Tests von Positionierung, Creator-Workflows und praktischen Launch-Winkeln." },
 
-        { selector: "#contact h2", en: "Contact", de: "Kontakt" },
+        { selector: "#contact .section-kicker", en: "Contact", de: "Kontakt" },
+        { selector: "#contact h2", en: "Want one workflow reviewed?", de: "Soll ein Workflow geprüft werden?" },
+        { selector: "#contact .contact-note", en: "Send a short description only. Please do not include secrets, customer data, private repository contents or confidential vulnerability details in the first message.", de: "Bitte nur eine kurze Beschreibung senden. Keine Secrets, Kundendaten, privaten Repository-Inhalte oder vertraulichen Schwachstellendetails in der ersten Nachricht." },
         { selector: "#contact .contact-details img", attr: "alt", en: "", de: "" },
-        { selector: "#contact .contact-details p", html: true, en: "<strong>Antonios Chatzigiagkos</strong><br>IT Expert / Freelancer<br>Germany / Bavaria<br>Phone: <a href=\"tel:+491****2841\">+49 1511 5572841</a><br>Email: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a><br><a href=\"impressum.html\">Impressum / Legal Notice</a>", de: "<strong>Antonios Chatzigiagkos</strong><br>IT-Experte / Freelancer<br>Deutschland / Bayern<br>Telefon: <a href=\"tel:+491****2841\">+49 1511 5572841</a><br>E-Mail: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a><br><a href=\"impressum.html\">Impressum</a>" },
+        { selector: "#contact .contact-details p:nth-of-type(1)", html: true, en: "<strong>Antonios Chatzigiagkos</strong><br>IT Expert / Freelancer<br>Germany / Bavaria<br>Phone: <a href=\"tel:+4915115572841\">+49 1511 5572841</a><br>Email: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a><br><a href=\"impressum.html\">Impressum / Legal Notice</a>", de: "<strong>Antonios Chatzigiagkos</strong><br>IT-Experte / Freelancer<br>Deutschland / Bayern<br>Telefon: <a href=\"tel:+4915115572841\">+49 1511 5572841</a><br>E-Mail: <a href=\"mailto:ac@it-expert.io\">ac@it-expert.io</a><br><a href=\"impressum.html\">Impressum</a>" },
         { selector: "#contact .social-links a[href*='xing.com']", attr: "aria-label", en: "Xing Profile", de: "Xing-Profil" },
         { selector: "#contact .social-links a[href*='linkedin.com']", attr: "aria-label", en: "LinkedIn Profile", de: "LinkedIn-Profil" },
         { selector: "#contact .social-links a[href*='xing.com'] img", attr: "alt", en: "Xing Logo", de: "Xing-Logo" },
@@ -216,12 +236,12 @@
 
     const pageMeta = {
         en: {
-            title: "Antonios Chatzigiagkos - IT Expert, automation and AI portfolio",
-            description: "Portfolio of Antonios Chatzigiagkos: IT operations, security, automation, local AI, browser QA, GitHub maintenance and practical agent workflows."
+            title: "Antonios Chatzigiagkos - IT security, automation and AI workflow audits",
+            description: "Antonios Chatzigiagkos helps small IT and software teams review AI/dev automation workflows, IT operations, security boundaries, Microsoft 365/Azure work and evidence-backed QA before risky changes go public."
         },
         de: {
-            title: "Antonios Chatzigiagkos - IT-Experte, Automatisierung und AI-Portfolio",
-            description: "Portfolio von Antonios Chatzigiagkos: IT-Betrieb, Security, Automatisierung, lokale AI, Browser-QA, GitHub-Wartung und praktische Agent-Workflows."
+            title: "Antonios Chatzigiagkos - IT-Security, Automatisierung und AI-Workflow-Audits",
+            description: "Antonios Chatzigiagkos hilft kleinen IT- und Softwareteams, AI-/Dev-Automation-Workflows, IT-Betrieb, Security-Grenzen, Microsoft 365/Azure-Arbeit und evidence-basierte QA vor riskanten öffentlichen Änderungen zu prüfen."
         }
     };
 
@@ -287,12 +307,14 @@
     }
 
     function updateAuditMail(language) {
-        const link = document.querySelector("#ai-automation-audit .audit-cta .project-link");
-        if (!link) {
+        const links = document.querySelectorAll("[data-audit-mail]");
+        if (!links.length) {
             return;
         }
         const mail = auditMail[language];
-        link.href = `mailto:${mailbox}?subject=${encodeURIComponent(mail.subject)}&body=${encodeURIComponent(mail.body)}`;
+        links.forEach((link) => {
+            link.href = `mailto:${mailbox}?subject=${encodeURIComponent(mail.subject)}&body=${encodeURIComponent(mail.body)}`;
+        });
     }
 
     function applyLanguage(language, persist = true) {
