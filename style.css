@@ -989,8 +989,7 @@ section {
     }
 
     .main-navigation a[href="#ai-automation-audit"]::before {
-        content: "Audit";
-        font-size: 0.92rem;
+        content: none;
     }
 
     .hero-section {
