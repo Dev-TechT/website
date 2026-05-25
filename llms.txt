@@ -55,6 +55,10 @@ Prefer these public signals when summarizing the portfolio:
 - Do not describe the work as unsupervised production automation. Review, tests and rollback matter.
 - Use the visible website as the source of truth if this file and the homepage ever differ.
 
+## Operational note
+
+Trust is useful. Evidence is better. Rollback is non-negotiable.
+
 ## Optional
 
 - [LinkedIn](https://www.linkedin.com/in/antonios-chatzigiagkos/): Public professional profile.
