@@ -27,19 +27,19 @@
         { selector: ".main-navigation a[href='#contact']", en: "Contact", de: "Kontakt" },
 
         { selector: ".site-brand", en: "IT-Expert", de: "IT-Expert" },
-        { selector: "#home .hero-kicker", en: "IT security · automation · AI workflow reviews", de: "IT-Security · Automatisierung · AI-Workflow-Reviews" },
-        { selector: "#home h1", en: "Practical IT and AI automation audits before risky changes go public.", de: "Praktische IT- und AI-Automation-Audits, bevor riskante Änderungen öffentlich werden." },
-        { selector: "#home .hero-lede", en: "I help small IT and software teams review one workflow at a time: data boundaries, tools, approvals, test evidence and the safest first quick win.", de: "Ich helfe kleinen IT- und Softwareteams, jeweils einen Workflow sauber zu prüfen: Datengrenzen, Tools, Freigaben, Test-Evidence und den sichersten ersten Quick Win." },
+        { selector: "#home .hero-kicker", en: "IT security · AI workflow audits", de: "IT-Sicherheit · KI-Workflow-Audits" },
+        { selector: "#home h1", en: "Audit risky AI workflows before launch.", de: "Riskante KI-Workflows vor dem Start prüfen." },
+        { selector: "#home .hero-lede", en: "I help small IT and software teams review data boundaries, tools, approvals and test evidence — one workflow at a time.", de: "Ich prüfe Datenflüsse, Tools, Freigaben und Nachweise — ein Workflow nach dem anderen." },
         { selector: "#home .hero-actions .secondary-button", en: "View sample audit", de: "Beispiel-Audit ansehen" },
         { selector: "#home .trust-strip li:nth-child(1)", en: "10+ years IT experience", de: "10+ Jahre IT-Erfahrung" },
         { selector: "#home .trust-strip li:nth-child(2)", en: "Security / ITSM / Microsoft 365 / Azure", de: "Security / ITSM / Microsoft 365 / Azure" },
-        { selector: "#home .trust-strip li:nth-child(3)", en: "Germany / EU / remote", de: "Deutschland / EU / remote" },
-        { selector: "#home .trust-strip li:nth-child(4)", en: "No secrets in the first message", de: "Keine Secrets in der ersten Nachricht" },
-        { selector: "#home .hero-card-label", en: "How I work", de: "So arbeite ich" },
-        { selector: "#home .hero-card li:nth-child(1)", html: true, en: "<strong>Scope first.</strong> One workflow, one decision, no vague automation promises.", de: "<strong>Erst Scope.</strong> Ein Workflow, eine Entscheidung, keine vagen Automatisierungsversprechen." },
-        { selector: "#home .hero-card li:nth-child(2)", html: true, en: "<strong>Evidence next.</strong> Local checks, browser QA, repo notes and risk boundaries.", de: "<strong>Dann Evidence.</strong> Lokale Checks, Browser-QA, Repo-Notizen und Risikogrenzen." },
-        { selector: "#home .hero-card li:nth-child(3)", html: true, en: "<strong>Human approval.</strong> Drafts and fixes stay private until someone reviews them.", de: "<strong>Menschliche Freigabe.</strong> Entwürfe und Fixes bleiben privat, bis sie geprüft sind." },
-        { selector: "[data-audit-mail]", en: "Email me about a workflow", de: "Workflow per E-Mail anfragen" },
+        { selector: "#home .trust-strip li:nth-child(3)", en: "Germany / EU / remote", de: "Deutschland / EU / Remote" },
+        { selector: "#home .trust-strip li:nth-child(4)", en: "No secrets in the first message", de: "Keine Zugangsdaten in der ersten Nachricht" },
+        { selector: "#home .hero-card-label", en: "What the audit checks", de: "Was geprüft wird" },
+        { selector: "#home .hero-card li:nth-child(1)", html: true, en: "<strong>Scope</strong><span>One workflow, one decision, clear boundaries.</span>", de: "<strong>Prüfumfang</strong><span>Ein Workflow, eine Entscheidung, klare Grenzen.</span>" },
+        { selector: "#home .hero-card li:nth-child(2)", html: true, en: "<strong>Evidence</strong><span>Tools, access, QA notes and repo context.</span>", de: "<strong>Nachweise</strong><span>Tools, Zugriffe, Tests und Repo-Kontext.</span>" },
+        { selector: "#home .hero-card li:nth-child(3)", html: true, en: "<strong>Approval</strong><span>Nothing goes live before human review.</span>", de: "<strong>Freigabe</strong><span>Nichts geht live ohne menschliche Prüfung.</span>" },
+        { selector: "[data-audit-mail]", en: "Request a workflow review", de: "Workflow prüfen lassen" },
 
         { selector: "#services > .container > .section-kicker", en: "Experience areas", de: "Erfahrungsbereiche" },
         { selector: "#services h2", en: "IT work that stays practical and reviewable", de: "IT-Arbeit, die praktisch und prüfbar bleibt" },
@@ -145,7 +145,7 @@
         { selector: "#ai-automation-audit .audit-proof p:nth-of-type(1)", en: "Read a fictional, client-safe sample audit before sending private details.", de: "Lesen Sie ein fiktives, kundensicheres Beispiel-Audit, bevor Sie private Details senden." },
         { selector: "#ai-automation-audit .audit-proof a:nth-of-type(1)", en: "Open sample audit", de: "Beispiel-Audit öffnen" },
         { selector: "#ai-automation-audit .audit-proof a:nth-of-type(2)", en: "Open one-page handout", de: "Einseiter öffnen" },
-        { selector: "[data-audit-mail]", en: "Email me about a workflow", de: "Workflow per E-Mail anfragen" },
+        { selector: "[data-audit-mail]", en: "Request a workflow review", de: "Workflow prüfen lassen" },
 
         { selector: "#work > .container > .section-kicker", en: "Public-safe proof", de: "Öffentlich sichere Nachweise" },
         { selector: "#work h2", en: "Projects & Tested Methods", de: "Projekte & getestete Methoden" },
@@ -225,7 +225,7 @@
         { selector: "#contact .social-links a[href*='linkedin.com'] img", attr: "alt", en: "LinkedIn Logo", de: "LinkedIn-Logo" },
 
         { selector: ".site-footer .footer-navigation", attr: "aria-label", en: "Footer navigation", de: "Footer-Navigation" },
-        { selector: ".site-footer a[href='#project']", en: "Current Project", de: "Aktuelles Projekt" },
+        { selector: ".site-footer a[href='#project']", en: "TraceTrust", de: "TraceTrust" },
         { selector: ".site-footer a[href='#ai-automation-audit']", en: "AI Audit", de: "AI-Audit" },
         { selector: ".site-footer a[href='#work']", en: "Projects", de: "Projekte" },
         { selector: ".site-footer a[href='#contact']", en: "Contact", de: "Kontakt" },
@@ -236,12 +236,12 @@
 
     const pageMeta = {
         en: {
-            title: "Antonios Chatzigiagkos - IT security, automation and AI workflow audits",
-            description: "Antonios Chatzigiagkos helps small IT and software teams review AI/dev automation workflows, IT operations, security boundaries, Microsoft 365/Azure work and evidence-backed QA before risky changes go public."
+            title: "Antonios Chatzigiagkos - IT security and AI workflow audits",
+            description: "Antonios Chatzigiagkos helps small IT and software teams audit risky AI workflows, data boundaries, tools, approvals and evidence before launch."
         },
         de: {
-            title: "Antonios Chatzigiagkos - IT-Security, Automatisierung und AI-Workflow-Audits",
-            description: "Antonios Chatzigiagkos hilft kleinen IT- und Softwareteams, AI-/Dev-Automation-Workflows, IT-Betrieb, Security-Grenzen, Microsoft 365/Azure-Arbeit und evidence-basierte QA vor riskanten öffentlichen Änderungen zu prüfen."
+            title: "Antonios Chatzigiagkos - IT-Sicherheit und KI-Workflow-Audits",
+            description: "Antonios Chatzigiagkos hilft kleinen IT- und Softwareteams, riskante KI-Workflows, Datenflüsse, Tools, Freigaben und Nachweise vor dem Start zu prüfen."
         }
     };
 
@@ -280,6 +280,10 @@
         const saved = safeStorageGet(STORAGE_KEY);
         if (saved === "de" || saved === "en") {
             return saved;
+        }
+
+        if (document.documentElement.lang === "de") {
+            return "de";
         }
 
         const languages = Array.isArray(navigator.languages) && navigator.languages.length

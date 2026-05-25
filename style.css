@@ -84,9 +84,10 @@ h6 {
 }
 
 h1 {
-    max-width: 11.5ch;
-    font-size: clamp(2.6rem, 7vw, 5.8rem);
-    margin-bottom: 1.2rem;
+    max-width: 14ch;
+    font-size: clamp(2.55rem, 6.2vw, 5.35rem);
+    line-height: 0.98;
+    margin-bottom: 1.25rem;
 }
 
 h2 {
@@ -292,9 +293,10 @@ section {
 }
 
 .hero-section .secondary-button {
-    border-color: rgba(255, 255, 255, 0.72);
-    background: rgba(255, 255, 255, 0.96);
-    color: var(--navy);
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    box-shadow: none;
 }
 
 .hero-section .secondary-button:hover,
@@ -311,23 +313,44 @@ section {
 
 /* Hero */
 .hero-section {
+    position: relative;
     min-height: calc(100vh - 64px);
     display: flex;
     align-items: center;
-    padding: clamp(44px, 6vh, 72px) 0;
+    padding: clamp(56px, 7vh, 88px) 0;
+    overflow: hidden;
     background:
-        radial-gradient(circle at 78% 18%, rgba(77, 182, 172, 0.24), transparent 28%),
-        linear-gradient(135deg, rgba(36, 42, 50, 0.96), rgba(48, 55, 64, 0.96)),
-        url('./assets/images/hero-background.png') center / auto no-repeat;
+        radial-gradient(circle at 78% 18%, rgba(77, 182, 172, 0.2), transparent 26%),
+        radial-gradient(circle at 14% 82%, rgba(255, 255, 255, 0.055), transparent 30%),
+        linear-gradient(135deg, #20272f 0%, #29323b 48%, #343d45 100%);
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
+.hero-section::before,
+.hero-visual {
+    content: "";
+    position: absolute;
+    inset: 8% -12% auto auto;
+    width: min(46vw, 560px);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(77, 182, 172, 0.16), transparent 68%);
+    pointer-events: none;
+    contain: layout paint;
+}
+
+.hero-section::before {
+    display: none;
+}
+
 .hero-container {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-    gap: clamp(28px, 5vw, 70px);
+    position: relative;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+    gap: clamp(32px, 6vw, 84px);
     align-items: center;
+    z-index: 1;
 }
 
 .hero-section h1,
@@ -340,12 +363,16 @@ section {
 
 .hero-kicker {
     color: #bff3ee;
+    max-width: 34ch;
+    letter-spacing: 0.16em;
 }
 
 .hero-lede {
     color: #e5edf1;
-    max-width: 58ch;
-    margin-bottom: 1.4rem;
+    max-width: 51ch;
+    margin-bottom: 1.35rem;
+    font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+    line-height: 1.62;
 }
 
 .hero-actions {
@@ -359,7 +386,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    max-width: 760px;
+    max-width: 680px;
 }
 
 .trust-strip li {
@@ -371,11 +398,29 @@ section {
 }
 
 .hero-card {
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    padding: clamp(22px, 4vw, 34px);
-    box-shadow: var(--shadow);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.125), rgba(255, 255, 255, 0.07));
+    border-radius: 24px;
+    padding: clamp(24px, 4vw, 36px);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(16px);
+}
+
+.hero-card-brand {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-card-brand img {
+    width: 42px;
+    height: 42px;
 }
 
 .hero-card-label {
@@ -387,12 +432,42 @@ section {
 }
 
 .hero-card ol {
-    list-style: decimal;
-    padding-left: 1.25rem;
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    counter-reset: audit-steps;
 }
 
-.hero-card li + li {
-    margin-top: 1rem;
+.hero-card li {
+    counter-increment: audit-steps;
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: start;
+}
+
+.hero-card li::before {
+    content: counter(audit-steps, decimal-leading-zero);
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background: rgba(77, 182, 172, 0.2);
+    color: #bff3ee;
+    font-weight: 850;
+    font-size: 0.78rem;
+}
+
+.hero-card strong,
+.hero-card span {
+    display: block;
+    grid-column: 2;
+}
+
+.hero-card strong {
+    margin-bottom: 0.15rem;
 }
 
 /* AI automation audit section */
@@ -879,7 +954,7 @@ section {
         order: 3;
         flex-basis: 100%;
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 6px;
         padding-bottom: 2px;
     }
@@ -888,27 +963,31 @@ section {
         min-width: 0;
     }
 
-    .main-navigation li:nth-child(1),
     .main-navigation li:nth-child(2),
-    .main-navigation li:nth-child(3) {
-        grid-column: span 2;
-    }
-
-    .main-navigation li:nth-child(4),
-    .main-navigation li:nth-child(5) {
-        grid-column: span 3;
+    .main-navigation li:nth-child(3),
+    .main-navigation li:nth-child(4) {
+        display: none;
     }
 
     .main-navigation a:not(.site-brand) {
-        padding: 9px 4px;
+        padding: 9px 8px;
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         background: rgba(255, 255, 255, 0.08);
+    }
+
+    .main-navigation a[href="#ai-automation-audit"] {
+        font-size: 0;
+    }
+
+    .main-navigation a[href="#ai-automation-audit"]::before {
+        content: "Audit";
+        font-size: 0.92rem;
     }
 
     .hero-section {
         min-height: auto;
-        padding: 48px 0 60px;
+        padding: 44px 0 58px;
     }
 
     .hero-container,
@@ -947,8 +1026,8 @@ section {
     }
 
     h1 {
-        max-width: 12ch;
-        font-size: clamp(2.45rem, 13vw, 3.8rem);
+        max-width: 11.5ch;
+        font-size: clamp(2.35rem, 11.2vw, 3.5rem);
     }
 
     .site-brand {
