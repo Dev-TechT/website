@@ -12,21 +12,24 @@ const BASE = "http://127.0.0.1:8087";
 const USER_DATA_DIR = "/tmp/it-expert-language-smoke-profile";
 const CHROMIUM = process.env.CHROMIUM_PATH || "/snap/bin/chromium";
 
-function requestJson(url) {
+function request(url, options = {}) {
     return new Promise((resolve, reject) => {
-        http.get(url, (res) => {
+        const req = http.request(url, options, (res) => {
             let body = "";
             res.setEncoding("utf8");
             res.on("data", (chunk) => { body += chunk; });
-            res.on("end", () => {
-                try {
-                    resolve(JSON.parse(body));
-                } catch (error) {
-                    reject(error);
-                }
-            });
-        }).on("error", reject);
+            res.on("end", () => resolve({ status: res.statusCode, headers: res.headers, body }));
+        });
+        req.on("error", reject);
+        if (options.body) {
+            req.write(options.body);
+        }
+        req.end();
     });
+}
+
+function requestJson(url) {
+    return request(url).then((response) => JSON.parse(response.body));
 }
 
 function sleep(ms) {
@@ -123,6 +126,23 @@ function decodeFrames(buffer) {
     return { messages, remaining: buffer.slice(offset) };
 }
 
+async function waitForPageTarget(urlPart = BASE) {
+    for (let i = 0; i < 60; i += 1) {
+        const targets = await requestJson(`http://127.0.0.1:${PORT}/json`);
+        const page = targets.find((target) => (
+            target.type === "page" &&
+            target.webSocketDebuggerUrl &&
+            typeof target.url === "string" &&
+            target.url.startsWith(urlPart)
+        ));
+        if (page) {
+            return page;
+        }
+        await sleep(250);
+    }
+    throw new Error("No debuggable site page target found");
+}
+
 async function connectWebSocket(wsUrl) {
     const net = require("net");
     const crypto = require("crypto");
@@ -184,7 +204,16 @@ async function run() {
     fs.rmSync(USER_DATA_DIR, { recursive: true, force: true });
     fs.mkdirSync(USER_DATA_DIR, { recursive: true });
 
-    const chromium = spawn(CHROMIUM, [
+    const response = await request(`${BASE}/`);
+    if (response.status !== 200 || !response.body.includes('data-language-option="de"')) {
+        throw new Error(`Local site did not serve the language switcher at ${BASE}/`);
+    }
+
+    const pageTarget = await request(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(`${BASE}/`)}`, {
+        method: "PUT"
+    }).catch(() => null);
+
+    const chromium = pageTarget ? null : spawn(CHROMIUM, [
         "--headless=new",
         "--no-sandbox",
         `--remote-debugging-port=${PORT}`,
@@ -194,15 +223,13 @@ async function run() {
     ], { stdio: ["ignore", "pipe", "pipe"] });
 
     let stderr = "";
-    chromium.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
+    if (chromium) {
+        chromium.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
+    }
 
     try {
         await waitForDevTools();
-        const targets = await requestJson(`http://127.0.0.1:${PORT}/json`);
-        const page = targets.find((target) => target.type === "page" && target.webSocketDebuggerUrl);
-        if (!page) {
-            throw new Error("No debuggable page target found");
-        }
+        const page = await waitForPageTarget();
         const ws = await connectWebSocket(page.webSocketDebuggerUrl);
         await wsRequest(ws, "Runtime.enable");
         await wsRequest(ws, "Page.enable");
@@ -211,9 +238,14 @@ async function run() {
 
         const result = await wsRequest(ws, "Runtime.evaluate", {
             returnByValue: true,
-            expression: `(() => {
+            awaitPromise: true,
+            expression: `(async () => {
+                await new Promise((resolve) => setTimeout(resolve, 350));
                 const de = document.querySelector('[data-language-option="de"]');
                 const en = document.querySelector('[data-language-option="en"]');
+                if (!de || !en) {
+                    throw new Error('Language switcher buttons not found');
+                }
                 de.click();
                 const afterDe = {
                     lang: document.documentElement.lang,
@@ -239,7 +271,10 @@ async function run() {
             })()`
         });
 
-        const value = result.result.value;
+        const value = result.result?.value;
+        if (!value || !value.afterDe || !value.afterEn) {
+            throw new Error(`Language smoke evaluation failed: ${JSON.stringify(result)}`);
+        }
         const failures = [];
         if (value.afterDe.lang !== "de") failures.push("DE click did not set html lang=de");
         if (value.afterDe.heading !== "Ihr professioneller IT-Experte") failures.push("DE heading mismatch");
@@ -259,7 +294,9 @@ async function run() {
         console.log("PASS: language switcher browser smoke passed");
         ws.socket.end();
     } finally {
-        chromium.kill("SIGTERM");
+        if (chromium) {
+            chromium.kill("SIGTERM");
+        }
         if (stderr.includes("ERROR")) {
             console.error(stderr.split("\n").filter(Boolean).slice(-5).join("\n"));
         }
