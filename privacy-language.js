@@ -72,6 +72,9 @@
         if (saved === "de" || saved === "en") {
             return saved;
         }
+        if (document.documentElement.lang === "de") {
+            return "de";
+        }
         const languages = Array.isArray(navigator.languages) && navigator.languages.length
             ? navigator.languages
             : [navigator.language || "en"];
