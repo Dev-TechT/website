@@ -249,23 +249,29 @@ async function run() {
                 de.click();
                 const afterDe = {
                     lang: document.documentElement.lang,
-                    heading: document.querySelector('#intro-statement h4').textContent,
+                    heading: document.querySelector('#home h1').textContent,
                     nav: [...document.querySelectorAll('.main-navigation a')].map(a => a.textContent),
                     dePressed: de.getAttribute('aria-pressed'),
                     enPressed: en.getAttribute('aria-pressed'),
                     scrollWidth: document.documentElement.scrollWidth,
                     clientWidth: document.documentElement.clientWidth,
-                    switcherTop: Math.round(document.querySelector('.language-switcher').getBoundingClientRect().top)
+                    switcherTop: Math.round(document.querySelector('.language-switcher').getBoundingClientRect().top),
+                    aboutKicker: document.querySelector('#about .section-kicker').textContent,
+                    aboutParagraphs: [...document.querySelectorAll('#about .about-content p:not(.section-kicker)')].map(p => p.textContent.trim()),
+                    projectLink: document.querySelector('#project .project-link').textContent
                 };
                 en.click();
                 const afterEn = {
                     lang: document.documentElement.lang,
-                    heading: document.querySelector('#intro-statement h4').textContent,
+                    heading: document.querySelector('#home h1').textContent,
                     nav: [...document.querySelectorAll('.main-navigation a')].map(a => a.textContent),
                     dePressed: de.getAttribute('aria-pressed'),
                     enPressed: en.getAttribute('aria-pressed'),
                     scrollWidth: document.documentElement.scrollWidth,
-                    clientWidth: document.documentElement.clientWidth
+                    clientWidth: document.documentElement.clientWidth,
+                    aboutKicker: document.querySelector('#about .section-kicker').textContent,
+                    aboutParagraphs: [...document.querySelectorAll('#about .about-content p:not(.section-kicker)')].map(p => p.textContent.trim()),
+                    projectLink: document.querySelector('#project .project-link').textContent
                 };
                 return { afterDe, afterEn };
             })()`
@@ -277,12 +283,20 @@ async function run() {
         }
         const failures = [];
         if (value.afterDe.lang !== "de") failures.push("DE click did not set html lang=de");
-        if (value.afterDe.heading !== "Ihr professioneller IT-Experte") failures.push("DE heading mismatch");
+        if (!value.afterDe.heading.includes("Praktische IT")) failures.push("DE heading mismatch");
         if (!value.afterDe.nav.includes("Über mich")) failures.push("DE nav missing Über mich");
+        if (value.afterDe.aboutKicker !== "Über mich") failures.push("DE about kicker mismatch");
+        if (!value.afterDe.aboutParagraphs[0]?.startsWith("Mein Name ist Antonios")) failures.push("DE about first paragraph mismatch");
+        if (value.afterDe.aboutParagraphs.length !== new Set(value.afterDe.aboutParagraphs).size) failures.push("DE about paragraphs contain duplicates");
+        if (value.afterDe.projectLink !== "Öffentliche Demo öffnen") failures.push("DE project link mismatch");
         if (value.afterDe.dePressed !== "true" || value.afterDe.enPressed !== "false") failures.push("DE aria-pressed state wrong");
         if (value.afterEn.lang !== "en") failures.push("EN click did not set html lang=en");
-        if (value.afterEn.heading !== "Your Professional IT-Expert") failures.push("EN heading mismatch");
-        if (!value.afterEn.nav.includes("About Me")) failures.push("EN nav missing About Me");
+        if (!value.afterEn.heading.includes("Practical IT")) failures.push("EN heading mismatch");
+        if (!value.afterEn.nav.includes("About")) failures.push("EN nav missing About");
+        if (value.afterEn.aboutKicker !== "About") failures.push("EN about kicker mismatch");
+        if (!value.afterEn.aboutParagraphs[0]?.startsWith("My name is Antonios")) failures.push("EN about first paragraph mismatch");
+        if (value.afterEn.aboutParagraphs.length !== new Set(value.afterEn.aboutParagraphs).size) failures.push("EN about paragraphs contain duplicates");
+        if (value.afterEn.projectLink !== "Open public demo") failures.push("EN project link mismatch");
         if (value.afterEn.dePressed !== "false" || value.afterEn.enPressed !== "true") failures.push("EN aria-pressed state wrong");
         if (value.afterDe.scrollWidth > value.afterDe.clientWidth + 1) failures.push("horizontal overflow after DE switch");
         if (value.afterEn.scrollWidth > value.afterEn.clientWidth + 1) failures.push("horizontal overflow after EN switch");

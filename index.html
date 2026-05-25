@@ -1,47 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonios Chatzigiagkos - IT Expert, automation and AI portfolio</title>
-    <meta name="description" content="Portfolio of Antonios Chatzigiagkos: IT operations, security, automation, local AI, browser QA, GitHub maintenance and practical agent workflows.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Antonios Chatzigiagkos - IT security, automation and AI workflow audits</title>
+    <meta name="description" content="Antonios Chatzigiagkos helps small IT and software teams review AI/dev automation workflows, IT operations, security boundaries, Microsoft 365/Azure work and evidence-backed QA before risky changes go public.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Antonios Chatzigiagkos - IT security, automation and AI workflow audits">
+    <meta property="og:description" content="Practical IT, security and AI/dev automation reviews with human approval gates, local-first evidence and clear data boundaries.">
+    <meta property="og:url" content="https://it-expert.io/">
+    <meta property="og:image" content="https://it-expert.io/assets/images/about-me-portrait.jpg">
+    <meta property="og:site_name" content="IT-Expert">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Antonios Chatzigiagkos - IT security, automation and AI workflow audits">
+    <meta name="twitter:description" content="Practical IT, security and AI/dev automation reviews with human approval gates, local-first evidence and clear data boundaries.">
+    <meta name="twitter:image" content="https://it-expert.io/assets/images/about-me-portrait.jpg">
     <link rel="canonical" href="https://it-expert.io/">
-    <link rel="alternate" hreflang="en" href="https://it-expert.io/">
-    <link rel="alternate" hreflang="de" href="https://it-expert.io/">
-    <link rel="alternate" hreflang="x-default" href="https://it-expert.io/">
     <link rel="stylesheet" href="style.css">
-    <!-- Favicons - Using relative paths to original location -->
     <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="data:,">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Antonios Chatzigiagkos",
-      "url": "https://it-expert.io/",
-      "image": "https://it-expert.io/assets/images/about-me-portrait.jpg",
-      "jobTitle": ["IT Expert", "Freelancer"],
-      "email": "mailto:ac@it-expert.io",
-      "telephone": "+49 1511 5572841",
-      "sameAs": [
-        "https://www.linkedin.com/in/antonios-chatzigiagkos/",
-        "https://www.xing.com/profile/Antonios_Chatzigiagkos/cv"
-      ],
-      "knowsAbout": [
-        "IT security",
-        "identity and access management",
-        "single sign-on",
-        "IT service management",
-        "Microsoft 365 and Azure administration",
-        "PowerShell automation",
-        "GDPR and ISO 27001 compliance",
-        "AI automation audits",
-        "developer workflow automation",
-        "browser QA automation",
-        "GitHub repository maintenance",
-        "local AI tools",
-        "Linux homelab monitoring"
-      ],
-      "description": "Antonios Chatzigiagkos works on practical IT operations, security, automation, local AI and agent-assisted workflows."
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://it-expert.io/#antonios",
+          "name": "Antonios Chatzigiagkos",
+          "url": "https://it-expert.io/",
+          "image": "https://it-expert.io/assets/images/about-me-portrait.jpg",
+          "jobTitle": ["IT Expert", "Freelancer"],
+          "email": "mailto:ac@it-expert.io",
+          "telephone": "+49 1511 5572841",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gangkofen",
+            "addressRegion": "Bavaria",
+            "addressCountry": "DE"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/antonios-chatzigiagkos/",
+            "https://www.xing.com/profile/Antonios_Chatzigiagkos/cv"
+          ],
+          "knowsAbout": [
+            "IT security",
+            "identity and access management",
+            "single sign-on",
+            "IT service management",
+            "Microsoft 365 and Azure administration",
+            "PowerShell automation",
+            "GDPR and ISO 27001 compliance support",
+            "AI automation audits",
+            "developer workflow automation",
+            "browser QA automation",
+            "GitHub repository maintenance",
+            "local AI tools",
+            "Linux homelab monitoring"
+          ],
+          "description": "Antonios Chatzigiagkos works on practical IT operations, security, automation, local AI and agent-assisted workflows."
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://it-expert.io/#service",
+          "name": "IT-Expert",
+          "url": "https://it-expert.io/",
+          "email": "mailto:ac@it-expert.io",
+          "telephone": "+49 1511 5572841",
+          "areaServed": ["Germany", "European Union", "Remote"],
+          "founder": { "@id": "https://it-expert.io/#antonios" },
+          "serviceType": ["AI automation audit", "IT security review", "Microsoft 365 and Azure administration", "Browser QA automation", "GitHub maintenance workflow review"],
+          "description": "Practical IT, security and AI/dev automation reviews for small teams, with human approval gates and clear data boundaries."
+        }
+      ]
     }
     </script>
 </head>
@@ -50,15 +81,15 @@
 
     <header class="site-header">
         <nav class="main-navigation" aria-label="Main navigation">
+            <a class="site-brand" href="#home" aria-label="IT-Expert home">IT-Expert</a>
             <ul>
-                <li><a href="#services">Background</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#project">Current Project</a></li>
                 <li><a href="#ai-automation-audit">AI Audit</a></li>
-                <li><a href="#work">Projects</a></li>
+                <li><a href="#services">Expertise</a></li>
+                <li><a href="#work">Proof</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="language-switcher" aria-label="Language selection">
+            <div class="language-switcher" role="group" aria-label="Language selection">
                 <button type="button" data-language-option="de" aria-pressed="false">DE</button>
                 <span aria-hidden="true">/</span>
                 <button type="button" data-language-option="en" aria-pressed="true">EN</button>
@@ -68,123 +99,34 @@
 
     <main id="main-content">
         <section id="home" class="hero-section">
-            <div class="container">
-                <!-- Removed hero text -->
-            </div>
-            <!-- Removed fixed back-to-top image link - can be added with CSS/HTML if needed -->
-        </section>
-
-        <section id="intro-statement" class="intro-section">
-            <div class="container">
-                <h4>Your Professional IT-Expert</h4>
-            </div>
-        </section>
-
-        <section id="services" class="services-section">
-            <div class="container">
-                <h2>Background &amp; Experience</h2>
-                <div class="service-item">
-                    <img src="./assets/images/service-security.jpg" alt="Abstract network security concept image" loading="lazy">
-                    <div class="service-content">
-                        <h3>Security</h3>
-                        <p>Topics I work with and continue to study in day-to-day IT security.</p>
-                        <ul>
-                            <li>Comprehensive Mobile Device Management Solutions</li>
-                            <li>Robust Privileged Access Security Implementation</li>
-                            <li>Advanced Network Security Configuration (incl. Private DNS)</li>
-                            <li>Tailored Workshops for IT Privacy &amp; Security Awareness</li>
-                            <li>Custom Monitoring System Implementation (e.g., Nagios-based)</li>
-                            <li>Thorough IT Auditing and Compliance Checks</li>
-                            <li>Integrated Identity and Access Management (IAM)</li>
-                            <li>Streamlined Single Sign-On (SSO) Solutions</li>
-                        </ul>
+            <div class="container hero-container">
+                <div class="hero-copy">
+                    <p class="section-kicker hero-kicker">IT security · automation · AI workflow reviews</p>
+                    <h1>Practical IT and AI automation audits before risky changes go public.</h1>
+                    <p class="hero-lede">I help small IT and software teams review one workflow at a time: data boundaries, tools, approvals, test evidence and the safest first quick win.</p>
+                    <div class="hero-actions" aria-label="Primary actions">
+                        <a class="button primary-button" data-audit-mail="true" href="mailto:ac@it-expert.io?subject=AI%20automation%20audit%20inquiry&body=Hi%20Antonios%2C%0A%0AI%E2%80%99d%20like%20to%20ask%20about%20a%20small%20AI/dev%20automation%20audit.%0A%0AWorkflow%20I%20want%20to%20improve%3A%0ATeam/company%20type%3A%0ACurrent%20tools%3A%0AData%20sensitivity%3A%20public%20/%20internal%20/%20sensitive%20/%20unsure%0AWhat%20would%20count%20as%20useful%20after%20two%20weeks%3A%0A%0AI%20will%20not%20include%20secrets%2C%20credentials%2C%20customer%20data%2C%20private%20repo%20contents%20or%20vulnerability%20details%20in%20this%20first%20message.">Email me about a workflow</a>
+                        <a class="button secondary-button" href="sample-audit.html">View sample audit</a>
                     </div>
+                    <ul class="trust-strip" aria-label="Trust signals">
+                        <li>10+ years IT experience</li>
+                        <li>Security / ITSM / Microsoft 365 / Azure</li>
+                        <li>Germany / EU / remote</li>
+                        <li>No secrets in the first message</li>
+                    </ul>
                 </div>
-                <div class="service-item reverse">
-                   <img src="./assets/images/service-management.jpg" alt="Business meeting discussing management topics" loading="lazy">
-                     <div class="service-content">
-                        <h3>Management</h3>
-                        <p>Topics I have worked on in IT operations, governance and team processes.</p>
-                        <ul>
-                            <li>ITIL Best Practice Implementation</li>
-                            <li>Incident Management Process Optimization</li>
-                            <li>Proactive Problem Management Strategies</li>
-                            <li>Effective Escalation Management Frameworks</li>
-                            <li>Strategic Provider and Vendor Management</li>
-                            <li>End-to-End IT Service Management (ITSM)</li>
-                            <li>Agile DevOps Team Leadership and Management</li>
-                        </ul>
-                    </div>
-                </div>
-                 <div class="service-item">
-                    <img src="./assets/images/service-digital-transformation.jpg" alt="Abstract image representing digital transformation" loading="lazy">
-                    <div class="service-content">
-                        <h3>Digital Transformation</h3>
-                        <p>Topics related to modernization, migration and practical automation.</p>
-                        <ul>
-                            <li>Hybrid Cloud and On-Premise Infrastructure Management</li>
-                            <li>Microsoft 365 &amp; Azure Cloud Administration (incl. Power Platform, SharePoint, Teams, Intune)</li>
-                            <li>Process Automation via PowerShell Scripting</li>
-                            <li>Microsoft Exchange Server Management and Migration</li>
-                            <li>Modern Cloud-Based HelpDesk Solutions</li>
-                            <li>Professional Website and E-commerce Platform Development</li>
-                            <li>Ensuring GDPR &amp; ISO 27001 Compliance</li>
-                        </ul>
-                    </div>
-                </div>
-                 <div class="service-item reverse">
-                    <img src="./assets/images/service-do-something-great.jpg" alt="Person working on a laptop in a creative setting" loading="lazy">
-                     <div class="service-content">
-                        <h3>Community &amp; Learning</h3>
-                        <p><strong>I also share knowledge with non-profit organizations through practical workshops:</strong></p>
-                        <ul>
-                            <li>Introduction to practical Open Source AI tools</li>
-                            <li>Leveraging AI for task automation and efficiency</li>
-                            <li>Using AI for creative content generation (text, images)</li>
-                            <li>Understanding ethical considerations and security in AI</li>
-                        </ul>
-                        <p>Open source projects I follow and support:</p>
-                        <p>
-                            <strong>
-                                <a href="https://github.com/searxng" target="_blank" rel="noopener noreferrer">searXNG</a>,
-                                <a href="https://github.com/tutao/tutanota" target="_blank" rel="noopener noreferrer">tutanota</a>,
-                                <a href="https://github.com/pi-hole/pi-hole" target="_blank" rel="noopener noreferrer">pi-hole</a>,
-                                <a href="https://github.com/mullvad" target="_blank" rel="noopener noreferrer">mullvad</a>,
-                                <a href="https://github.com/containers/" target="_blank" rel="noopener noreferrer">containers</a>
-                            </strong>
-                        </p>
-                    </div>
+                <div class="hero-card" aria-label="Audit method summary">
+                    <p class="hero-card-label">How I work</p>
+                    <ol>
+                        <li><strong>Scope first.</strong> One workflow, one decision, no vague automation promises.</li>
+                        <li><strong>Evidence next.</strong> Local checks, browser QA, repo notes and risk boundaries.</li>
+                        <li><strong>Human approval.</strong> Drafts and fixes stay private until someone reviews them.</li>
+                    </ol>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                 <img src="./assets/images/about-me-portrait.jpg" alt="Portrait of Antonios Chatzigiagkos" loading="lazy">
-                 <div class="about-content">
-                    <h2>About Me</h2>
-                    <p>My name is Antonios Chatzigiagkos. I have over a decade of experience in IT and build practical solutions for real-world technical challenges.</p>
-                    <p>My work covers IT operations, security, Microsoft 365 and Azure administration, automation, service management and modern AI tooling. I like useful systems: clear scope, good handoffs, tests, logs and rollback paths.</p>
-                    <p>I actively explore open-source and local-first AI across web development, programming, security analysis and content workflows, then turn the useful parts into working methods.</p>
-                    <p>This website is a personal profile and portfolio page for employers, clients and technical reviewers. Freelance or project inquiries are handled individually by direct contact.</p>
-                    <p>To learn more about me, check out my <a href="https://www.linkedin.com/in/antonios-chatzigiagkos/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &amp; <a href="https://www.xing.com/profile/Antonios_Chatzigiagkos/cv" target="_blank" rel="noopener noreferrer">Xing</a> accounts. For exchange and networking, contact me via email: <a href="mailto:ac@it-expert.io">ac@it-expert.io</a>.</p>
-                 </div>
-            </div>
-        </section>
-
-        <section id="project" class="project-section">
-            <div class="container project-container">
-                <h2>Current Project</h2>
-                <p><strong>Working title: TraceTrust</strong></p>
-                <p>A trust layer for AI agent tasks. Scope is defined first, execution is logged, and review happens before payout.</p>
-                <p>This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.</p>
-                <p>
-                    <a class="project-link" href="https://agent-marketplace-demo-nu.vercel.app/demo" target="_blank" rel="noopener noreferrer">Open public demo</a>
-                </p>
-            </div>
-        </section>
-
-        <section id="ai-automation-audit" class="audit-section">
+        <section id="ai-automation-audit" class="audit-section priority-audit-section">
             <div class="container audit-container">
                 <p class="section-kicker">AI and dev automation audit</p>
                 <h2>No-drama AI and dev automation</h2>
@@ -224,7 +166,7 @@
                     </article>
                 </div>
 
-                <div class="audit-flow" aria-label="How the audit works">
+                <div class="audit-flow" role="group" aria-label="How the audit works">
                     <h3>How it works</h3>
                     <ol>
                         <li><strong>Pick one workflow.</strong> A repo review, documentation process, QA checklist or support task is enough.</li>
@@ -266,18 +208,98 @@
                     <h3>Want to see the output first?</h3>
                     <p>Read a fictional, client-safe sample audit before sending private details.</p>
                     <p>
-                        <a class="project-link" href="sample-audit.html">Open sample audit</a>
-                        <a class="project-link secondary-link" href="audit-example.md">Open one-page handout</a>
+                        <a class="button secondary-button" href="sample-audit.html">Open sample audit</a>
+                        <a class="button text-button" href="audit-example.md">Open one-page handout</a>
                     </p>
                 </div>
 
-                <p class="audit-cta"><a class="project-link" href="mailto:ac@it-expert.io?subject=AI%20automation%20audit%20inquiry&body=Hi%20Antonios%2C%0A%0AI%E2%80%99d%20like%20to%20ask%20about%20a%20small%20AI/dev%20automation%20audit.%0A%0AWorkflow%20I%20want%20to%20improve%3A%0ATeam/company%20type%3A%0ACurrent%20tools%3A%0AData%20sensitivity%3A%20public%20/%20internal%20/%20sensitive%20/%20unsure%0AWhat%20would%20count%20as%20useful%20after%20two%20weeks%3A%0A%0AI%20will%20not%20include%20secrets%2C%20credentials%2C%20customer%20data%2C%20private%20repo%20contents%20or%20vulnerability%20details%20in%20this%20first%20message.">Request an audit example</a></p>
+                <p class="audit-cta"><a class="button primary-button" data-audit-mail="true" href="mailto:ac@it-expert.io?subject=AI%20automation%20audit%20inquiry&body=Hi%20Antonios%2C%0A%0AI%E2%80%99d%20like%20to%20ask%20about%20a%20small%20AI/dev%20automation%20audit.%0A%0AWorkflow%20I%20want%20to%20improve%3A%0ATeam/company%20type%3A%0ACurrent%20tools%3A%0AData%20sensitivity%3A%20public%20/%20internal%20/%20sensitive%20/%20unsure%0AWhat%20would%20count%20as%20useful%20after%20two%20weeks%3A%0A%0AI%20will%20not%20include%20secrets%2C%20credentials%2C%20customer%20data%2C%20private%20repo%20contents%20or%20vulnerability%20details%20in%20this%20first%20message.">Email me about a workflow</a></p>
             </div>
         </section>
 
+        <section id="services" class="services-section">
+            <div class="container">
+                <p class="section-kicker">Experience areas</p>
+                <h2>IT work that stays practical and reviewable</h2>
+                <p class="section-intro">The lists below preserve the full background, but the common thread is simple: clearer scope, safer access, better handoffs, tested changes and fewer surprises.</p>
+                <div class="service-item">
+                    <img src="./assets/images/service-security.jpg" alt="Abstract network security concept image" width="768" height="768" loading="lazy">
+                    <div class="service-content">
+                        <h3>Security</h3>
+                        <p>Topics I work with and continue to study in day-to-day IT security.</p>
+                        <ul>
+                            <li>Comprehensive Mobile Device Management Solutions</li>
+                            <li>Robust Privileged Access Security Implementation</li>
+                            <li>Advanced Network Security Configuration (incl. Private DNS)</li>
+                            <li>Tailored Workshops for IT Privacy &amp; Security Awareness</li>
+                            <li>Custom Monitoring System Implementation (e.g., Nagios-based)</li>
+                            <li>Thorough IT Auditing and Compliance Checks</li>
+                            <li>Integrated Identity and Access Management (IAM)</li>
+                            <li>Streamlined Single Sign-On (SSO) Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-item reverse">
+                    <img src="./assets/images/service-management.jpg" alt="Business meeting discussing management topics" width="1024" height="682" loading="lazy">
+                    <div class="service-content">
+                        <h3>Management</h3>
+                        <p>Topics I have worked on in IT operations, governance and team processes.</p>
+                        <ul>
+                            <li>ITIL Best Practice Implementation</li>
+                            <li>Incident Management Process Optimization</li>
+                            <li>Proactive Problem Management Strategies</li>
+                            <li>Effective Escalation Management Frameworks</li>
+                            <li>Strategic Provider and Vendor Management</li>
+                            <li>End-to-End IT Service Management (ITSM)</li>
+                            <li>Agile DevOps Team Leadership and Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="./assets/images/service-digital-transformation.jpg" alt="Abstract image representing digital transformation" width="1024" height="683" loading="lazy">
+                    <div class="service-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Topics related to modernization, migration and practical automation.</p>
+                        <ul>
+                            <li>Hybrid Cloud and On-Premise Infrastructure Management</li>
+                            <li>Microsoft 365 &amp; Azure Cloud Administration (incl. Power Platform, SharePoint, Teams, Intune)</li>
+                            <li>Process Automation via PowerShell Scripting</li>
+                            <li>Microsoft Exchange Server Management and Migration</li>
+                            <li>Modern Cloud-Based HelpDesk Solutions</li>
+                            <li>Professional Website and E-commerce Platform Development</li>
+                            <li>GDPR and ISO 27001 compliance support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-item reverse">
+                    <img src="./assets/images/service-do-something-great.jpg" alt="Person working on a laptop in a creative setting" width="1024" height="683" loading="lazy">
+                    <div class="service-content">
+                        <h3>Community &amp; Learning</h3>
+                        <p><strong>I also share knowledge with non-profit organizations through practical workshops:</strong></p>
+                        <ul>
+                            <li>Introduction to practical Open Source AI tools</li>
+                            <li>Leveraging AI for task automation and efficiency</li>
+                            <li>Using AI for creative content generation (text, images)</li>
+                            <li>Understanding ethical considerations and security in AI</li>
+                        </ul>
+                        <p>Open source projects I follow and support:</p>
+                        <p class="open-source-links">
+                            <strong>
+                                <a href="https://github.com/searxng" target="_blank" rel="noopener noreferrer">searXNG</a>,
+                                <a href="https://github.com/tutao/tutanota" target="_blank" rel="noopener noreferrer">tutanota</a>,
+                                <a href="https://github.com/pi-hole/pi-hole" target="_blank" rel="noopener noreferrer">pi-hole</a>,
+                                <a href="https://github.com/mullvad" target="_blank" rel="noopener noreferrer">mullvad</a>,
+                                <a href="https://github.com/containers/" target="_blank" rel="noopener noreferrer">containers</a>
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="work" class="work-section">
             <div class="container work-container">
+                <p class="section-kicker">Public-safe proof</p>
                 <h2>Projects &amp; Tested Methods</h2>
                 <p class="work-intro">I keep this section selective. The four cards below are the strongest public examples right now; the expandable list keeps smaller experiments visible without turning the page into a changelog.</p>
 
@@ -310,121 +332,77 @@
                 <details class="work-more">
                     <summary>More project notes and tested methods</summary>
                     <div class="work-list">
-                        <article>
-                            <h3>Browser QA automation</h3>
-                            <p>Built repeatable browser checks for demo flows, logout behavior, task detail pages, theme switching, invoice forms and trust UI.</p>
-                        </article>
-                        <article>
-                            <h3>Dependency security remediation</h3>
-                            <p>Reduced a web app npm audit from reported issues to zero, then checked lint, tests and production build instead of treating the audit output as the finish line.</p>
-                        </article>
-                        <article>
-                            <h3>Security Questionnaire / Trust Evidence Pack</h3>
-                            <p>Built a private, synthetic package that organizes questionnaire answers, evidence owners, freshness status and approval gates before any real customer security data is touched.</p>
-                        </article>
-                        <article>
-                            <h3>DORA ICT Register Preflight</h3>
-                            <p>Built a local spreadsheet-first preflight for small ICT providers answering DORA-driven customer due-diligence requests. It is evidence organization, not legal or compliance certification.</p>
-                        </article>
-                        <article>
-                            <h3>Acquire-ready Technical Data Room Kit</h3>
-                            <p>Built a private kit for micro-SaaS technical diligence: architecture notes, repository inventory, dependency evidence, runbooks, access prompts and buyer FAQ material using demo data.</p>
-                        </article>
-                        <article>
-                            <h3>Finance Exception Radar</h3>
-                            <p>Built a local CSV report for invoice and receivable/payable anomalies using synthetic sample data, summary JSON and validator checks. It stays local and read-only by design.</p>
-                        </article>
-                        <article>
-                            <h3>TenderOps Revenue Kit</h3>
-                            <p>Built a private bid-pack prototype that turns public tender notices into a bid/no-bid memo, source notes and a short buyer-safe sample. It is a proof package, not a procurement promise.</p>
-                        </article>
-                        <article>
-                            <h3>Accessibility Snapshot</h3>
-                            <p>Built a small page triage check that flags common accessibility issues with selectors and plain notes for developers. Useful before a real WCAG audit, not a replacement for one.</p>
-                        </article>
-                        <article>
-                            <h3>Responsible security and bug bounty testing</h3>
-                            <p>Tested apps in a responsible, private-first way: scoped targets, safe reproduction steps, and clear reports for teams to fix.</p>
-                        </article>
-                        <article>
-                            <h3>Homelab operations and monitoring</h3>
-                            <p>Operate a private Linux homelab with self-hosted collaboration, search, automation and local AI services, backed by health checks for uptime, disk, memory and web endpoints.</p>
-                        </article>
-                        <article>
-                            <h3>Local and private AI stack</h3>
-                            <p>Set up local AI tools for private search, drafting and experimentation without sending every task to a hosted service.</p>
-                        </article>
-                        <article>
-                            <h3>Agent workflow hardening</h3>
-                            <p>Turned loose agent runs into safer workflows with checks, logs, clearer handoffs and review points before anything important changes.</p>
-                        </article>
-                        <article>
-                            <h3>Agent-assisted idea scoring</h3>
-                            <p>Built a lightweight scoring flow to compare commercial ideas by market signal, effort, risk and personal fit before investing more time.</p>
-                        </article>
-                        <article>
-                            <h3>Paid repo maintenance workflow</h3>
-                            <p>Tested a workflow for finding real maintenance work, checking buyer signals, preparing fixes and avoiding vague low-trust tasks.</p>
-                        </article>
-                        <article>
-                            <h3>TraceTrust / Agent Marketplace</h3>
-                            <p>Built a read-only public demo for a trust-first AI agent workflow: scoped tasks, execution evidence, reviewer decisions and payout evidence.</p>
-                        </article>
-                        <article>
-                            <h3>Payment rails and pilot economics</h3>
-                            <p>Compared marketplace payment patterns and chose a EUR-first pilot path. The reason is simple: less friction, clearer accounting and better dispute handling for early validation.</p>
-                        </article>
-                        <article>
-                            <h3>OpenClaw browser threads spike</h3>
-                            <p>Prototyped multi-conversation browser UX for an agent interface behind an experimental flag. Kept the live runtime untouched and verified behavior in an isolated browser test lane.</p>
-                        </article>
-                        <article>
-                            <h3>OpenViking memory for agents</h3>
-                            <p>Set up local semantic memory for agent sessions with OpenViking and local embeddings, then added watchdog checks so search, recall and runtime health stay visible.</p>
-                        </article>
-                        <article>
-                            <h3>Hermes / OpenClaw migration</h3>
-                            <p>Migrated useful OpenClaw routines into Hermes, cleaned up stale services and kept rollback notes. The focus was boring on purpose: preserve what works, remove what silently breaks.</p>
-                        </article>
-                        <article>
-                            <h3>Matrix-based agent delivery</h3>
-                            <p>Recovered Matrix delivery for local agent notifications, including self-signed TLS handling, room trust rules and smoke tests with real Matrix events.</p>
-                        </article>
-                        <article>
-                            <h3>Nextcloud-backed task system</h3>
-                            <p>Kept Nextcloud Tables as the source of truth for tasks, with local mirrors only used for automation and summaries. This avoids the usual mess of two competing task systems.</p>
-                        </article>
-                        <article>
-                            <h3>A2UI structured output spike</h3>
-                            <p>Tested small UI cards for agent outputs such as health checks, approval decisions and research shortlists. Useful for review-heavy work; less useful for raw coding logs.</p>
-                        </article>
-                        <article>
-                            <h3>Agent method review</h3>
-                            <p>Reviewed outside agent methods and only adopted the useful parts: rollback-ready change checklists, compact handoffs, blast-radius reviews and plain-language output checks.</p>
-                        </article>
-                        <article>
-                            <h3>AI music go-to-market</h3>
-                            <p>Explored how AI music tools could reach real users by testing positioning, creator workflows and practical launch angles.</p>
-                        </article>
+                        <article><h3>Browser QA automation</h3><p>Built repeatable browser checks for demo flows, logout behavior, task detail pages, theme switching, invoice forms and trust UI.</p></article>
+                        <article><h3>Dependency security remediation</h3><p>Reduced a web app npm audit from reported issues to zero, then checked lint, tests and production build instead of treating the audit output as the finish line.</p></article>
+                        <article><h3>Security Questionnaire / Trust Evidence Pack</h3><p>Built a private, synthetic package that organizes questionnaire answers, evidence owners, freshness status and approval gates before any real customer security data is touched.</p></article>
+                        <article><h3>DORA ICT Register Preflight</h3><p>Built a local spreadsheet-first preflight for small ICT providers answering DORA-driven customer due-diligence requests. It is evidence organization, not legal or compliance certification.</p></article>
+                        <article><h3>Acquire-ready Technical Data Room Kit</h3><p>Built a private kit for micro-SaaS technical diligence: architecture notes, repository inventory, dependency evidence, runbooks, access prompts and buyer FAQ material using demo data.</p></article>
+                        <article><h3>Finance Exception Radar</h3><p>Built a local CSV report for invoice and receivable/payable anomalies using synthetic sample data, summary JSON and validator checks. It stays local and read-only by design.</p></article>
+                        <article><h3>TenderOps Revenue Kit</h3><p>Built a private bid-pack prototype that turns public tender notices into a bid/no-bid memo, source notes and a short buyer-safe sample. It is a proof package, not a procurement promise.</p></article>
+                        <article><h3>Accessibility Snapshot</h3><p>Built a small page triage check that flags common accessibility issues with selectors and plain notes for developers. Useful before a real WCAG audit, not a replacement for one.</p></article>
+                        <article><h3>Responsible security and bug bounty testing</h3><p>Tested apps in a responsible, private-first way: scoped targets, safe reproduction steps, and clear reports for teams to fix.</p></article>
+                        <article><h3>Homelab operations and monitoring</h3><p>Operate a private Linux homelab with self-hosted collaboration, search, automation and local AI services, backed by health checks for uptime, disk, memory and web endpoints.</p></article>
+                        <article><h3>Local and private AI stack</h3><p>Set up local AI tools for private search, drafting and experimentation without sending every task to a hosted service.</p></article>
+                        <article><h3>Agent workflow hardening</h3><p>Turned loose agent runs into safer workflows with checks, logs, clearer handoffs and review points before anything important changes.</p></article>
+                        <article><h3>Agent-assisted idea scoring</h3><p>Built a lightweight scoring flow to compare commercial ideas by market signal, effort, risk and personal fit before investing more time.</p></article>
+                        <article><h3>Paid repo maintenance workflow</h3><p>Tested a workflow for finding real maintenance work, checking buyer signals, preparing fixes and avoiding vague low-trust tasks.</p></article>
+                        <article><h3>TraceTrust / Agent Marketplace</h3><p>Built a read-only public demo for a trust-first AI agent workflow: scoped tasks, execution evidence, reviewer decisions and payout evidence.</p></article>
+                        <article><h3>Payment rails and pilot economics</h3><p>Compared marketplace payment patterns and chose a EUR-first pilot path. The reason is simple: less friction, clearer accounting and better dispute handling for early validation.</p></article>
+                        <article><h3>OpenClaw browser threads spike</h3><p>Prototyped multi-conversation browser UX for an agent interface behind an experimental flag. Kept the live runtime untouched and verified behavior in an isolated browser test lane.</p></article>
+                        <article><h3>OpenViking memory for agents</h3><p>Set up local semantic memory for agent sessions with OpenViking and local embeddings, then added watchdog checks so search, recall and runtime health stay visible.</p></article>
+                        <article><h3>Hermes / OpenClaw migration</h3><p>Migrated useful OpenClaw routines into Hermes, cleaned up stale services and kept rollback notes. The focus was boring on purpose: preserve what works, remove what silently breaks.</p></article>
+                        <article><h3>Matrix-based agent delivery</h3><p>Recovered Matrix delivery for local agent notifications, including self-signed TLS handling, room trust rules and smoke tests with real Matrix events.</p></article>
+                        <article><h3>Nextcloud-backed task system</h3><p>Kept Nextcloud Tables as the source of truth for tasks, with local mirrors only used for automation and summaries. This avoids the usual mess of two competing task systems.</p></article>
+                        <article><h3>A2UI structured output spike</h3><p>Tested small UI cards for agent outputs such as health checks, approval decisions and research shortlists. Useful for review-heavy work; less useful for raw coding logs.</p></article>
+                        <article><h3>Agent method review</h3><p>Reviewed outside agent methods and only adopted the useful parts: rollback-ready change checklists, compact handoffs, blast-radius reviews and plain-language output checks.</p></article>
+                        <article><h3>AI music go-to-market</h3><p>Explored how AI music tools could reach real users by testing positioning, creator workflows and practical launch angles.</p></article>
                     </div>
                 </details>
             </div>
         </section>
 
+        <section id="about" class="about-section">
+            <div class="container">
+                <img src="./assets/images/about-me-portrait.jpg" alt="Portrait of Antonios Chatzigiagkos" width="300" height="262" loading="lazy">
+                <div class="about-content">
+                    <p class="section-kicker">About</p>
+                    <h2>About Me</h2>
+                    <p>My name is Antonios Chatzigiagkos. I have over a decade of experience in IT and build practical solutions for real-world technical challenges.</p>
+                    <p>My work covers IT operations, security, Microsoft 365 and Azure administration, automation, service management and modern AI tooling. I like useful systems: clear scope, good handoffs, tests, logs and rollback paths.</p>
+                    <p>I actively explore open-source and local-first AI across web development, programming, security analysis and content workflows, then turn the useful parts into working methods.</p>
+                    <p>This website is a personal profile and portfolio page for employers, clients and technical reviewers. Freelance or project inquiries are handled individually by direct contact.</p>
+                    <p>To learn more about me, check out my <a href="https://www.linkedin.com/in/antonios-chatzigiagkos/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &amp; <a href="https://www.xing.com/profile/Antonios_Chatzigiagkos/cv" target="_blank" rel="noopener noreferrer">Xing</a> accounts. For exchange and networking, contact me via email: <a href="mailto:ac@it-expert.io">ac@it-expert.io</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="project-section">
+            <div class="container project-container">
+                <p class="section-kicker">Current product experiment</p>
+                <h2>TraceTrust</h2>
+                <p><strong>A trust layer for AI agent tasks.</strong></p>
+                <p>Scope is defined first, execution is logged, and review happens before payout. This product effort is separate from this personal profile page. The public demo is read-only and uses sample data.</p>
+                <p><a class="button secondary-button project-link" href="https://agent-marketplace-demo-nu.vercel.app/demo" target="_blank" rel="noopener noreferrer">Open public demo</a></p>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
-             <div class="container">
-                <h2>Contact</h2>
+            <div class="container">
+                <p class="section-kicker">Contact</p>
+                <h2>Want one workflow reviewed?</h2>
+                <p class="contact-note">Send a short description only. Please do not include secrets, customer data, private repository contents or confidential vulnerability details in the first message.</p>
                 <div class="contact-details">
-                    <img src="./assets/images/contact-graphic.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <img src="./assets/images/contact-graphic.jpg" alt="" aria-hidden="true" width="300" height="175" loading="lazy">
                     <hr>
                     <p><strong>Antonios Chatzigiagkos</strong><br>IT Expert / Freelancer<br>Germany / Bavaria<br>Phone: <a href="tel:+4915115572841">+49 1511 5572841</a><br>Email: <a href="mailto:ac@it-expert.io">ac@it-expert.io</a><br><a href="impressum.html">Impressum / Legal Notice</a></p>
+                    <p><a class="button primary-button" data-audit-mail="true" href="mailto:ac@it-expert.io?subject=AI%20automation%20audit%20inquiry&body=Hi%20Antonios%2C%0A%0AI%E2%80%99d%20like%20to%20ask%20about%20a%20small%20AI/dev%20automation%20audit.%0A%0AWorkflow%20I%20want%20to%20improve%3A%0ATeam/company%20type%3A%0ACurrent%20tools%3A%0AData%20sensitivity%3A%20public%20/%20internal%20/%20sensitive%20/%20unsure%0AWhat%20would%20count%20as%20useful%20after%20two%20weeks%3A%0A%0AI%20will%20not%20include%20secrets%2C%20credentials%2C%20customer%20data%2C%20private%20repo%20contents%20or%20vulnerability%20details%20in%20this%20first%20message.">Email me about a workflow</a></p>
                     <hr>
                     <div class="social-links">
                         <a href="https://www.xing.com/profile/Antonios_Chatzigiagkos/cv" target="_blank" rel="noopener noreferrer" aria-label="Xing Profile">
-                            <img src="./assets/images/xing-logo.png" alt="Xing Logo" loading="lazy">
+                            <img src="./assets/images/xing-logo.png" alt="Xing Logo" width="35" height="34" loading="lazy">
                         </a>
                         <a href="https://www.linkedin.com/in/antonios-chatzigiagkos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                            <img src="./assets/images/linkedin-logo.png" alt="LinkedIn Logo" loading="lazy">
+                            <img src="./assets/images/linkedin-logo.png" alt="LinkedIn Logo" width="35" height="34" loading="lazy">
                         </a>
                     </div>
                 </div>
@@ -436,9 +414,9 @@
         <div class="container">
             <nav class="footer-navigation" aria-label="Footer navigation">
                 <ul>
-                    <li><a href="#project">Current Project</a></li>
                     <li><a href="#ai-automation-audit">AI Audit</a></li>
-                    <li><a href="#work">Projects</a></li>
+                    <li><a href="#services">Expertise</a></li>
+                    <li><a href="#work">Proof</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="impressum.html">Impressum</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
@@ -446,9 +424,7 @@
                     <li><a href="llms.txt">Agent guide</a></li>
                 </ul>
             </nav>
-            <div class="copyright">
-                Copyright © 2026 IT-Expert
-            </div>
+            <div class="copyright">Copyright © 2026 IT-Expert</div>
         </div>
     </footer>
 
