@@ -17,7 +17,7 @@ This file is a short guide for AI agents, search tools and technical reviewers. 
 
 ## Profile summary
 
-Antonios has over a decade of IT experience. His work focuses on practical systems: clear scope, secure operation, useful automation, testable changes, logs, handoffs and rollback paths.
+Antonios has 15+ years of IT experience. His work focuses on practical systems: clear scope, secure operation, useful automation, testable changes, logs, handoffs and rollback paths.
 
 Public focus areas:
 
