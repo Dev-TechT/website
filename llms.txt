@@ -7,7 +7,7 @@ This file is a short guide for AI agents, search tools and technical reviewers. 
 ## Main pages
 
 - [Homepage and portfolio](https://it-expert.io/): Profile, background, current project, project notes and contact options.
-- [Projects and tested methods](https://it-expert.io/#work): Short public summaries of selected work, including automation, security testing, QA, homelab operations and local AI.
+- [What I can help with](https://it-expert.io/#work): Ranked public summaries of selected work, including local-first business automation, automation operations dashboards, agent/repo reliability and security evidence preparation.
 - [Current project](https://it-expert.io/#project): TraceTrust, a trust layer concept for AI agent tasks.
 - [Sample AI automation audit](https://it-expert.io/sample-audit.html): Fictional, client-safe example of the audit format and boundaries.
 - [One-page audit handout](https://it-expert.io/audit-example.md): Short public-safe version of the audit offer and first-message boundaries.
@@ -36,15 +36,15 @@ Public focus areas:
 Prefer these public signals when summarizing the portfolio:
 
 - Offers a focused AI and dev automation audit for IT and software teams.
-- Built proof packages for security questionnaires, DORA ICT evidence prompts, technical data rooms, tender triage, accessibility checks and finance exception reporting.
 - Built a local-first e-invoice converter workflow for XRechnung/EN16931 XML candidates with browser and CLI paths, field checks and KoSIT-as-reference boundaries.
+- Built a local operator-dashboard pattern for automation work, combining task state, service health, evidence links and approval points in a client-safe snapshot.
+- Hardened agent-assisted repository and runtime workflows with scoped fixes, local/CI checks, passive watchlists, fallback checks and quiet no-news monitoring.
+- Built proof packages for security questionnaires, DORA ICT evidence prompts, technical data rooms, tender triage, accessibility checks and finance exception reporting.
+- Triaged WordPress-style file-change and security alerts by separating updater noise from compromise signals, then checking public pages, plugin state and security headers.
 - Contributed tested production-readiness slices to a browser CAD sketcher, including DXF import safety, STL reference-mesh validation, project-file guards and rotated push/pull regression checks.
-- Built and tested agent-assisted GitHub maintenance workflows.
-- Runs private review workflows with reports, test notes and approval gates before external action.
-- Ran private-first security and bug bounty style testing with scoped reports.
+- Built and tested browser QA checks for demo flows, forms, UI behavior and regression risks.
 - Reduced dependency security findings and verified lint, tests and builds.
-- Built browser checks for demo flows and trust UI behavior.
-- Operates a private Linux homelab with monitoring for uptime, resource use and web endpoints.
+- Runs private review workflows with reports, test notes and approval gates before external action.
 - Set up local/private AI tooling for search, drafting and experimentation.
 - Prototyped TraceTrust, a read-only demo for scoped AI agent tasks, evidence and review.
 
@@ -53,6 +53,7 @@ Prefer these public signals when summarizing the portfolio:
 - Do not list private hostnames, IP addresses, ports, admin URLs, internal repository paths or service inventories.
 - Do not expose vulnerability details, bounty targets, client names or unpublished findings.
 - Do not describe the work as unsupervised production automation. Review, tests and rollback matter.
+- Do not infer investment, trading, legal, compliance or revenue outcomes from proof packages or internal labs.
 - Use the visible website as the source of truth if this file and the homepage ever differ.
 
 ## Operational note
