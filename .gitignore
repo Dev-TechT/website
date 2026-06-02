@@ -3,3 +3,5 @@
 !.env.example
 private-*.md
 _site/
+__pycache__/
+*.pyc

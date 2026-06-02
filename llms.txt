@@ -10,7 +10,7 @@ This file is a short guide for AI agents, search tools and technical reviewers. 
 - [What I can help with](https://it-expert.io/#work): Ranked public summaries of selected work, including local-first business automation, automation operations dashboards, agent/repo reliability and security evidence preparation.
 - [Current project](https://it-expert.io/#project): TraceTrust, a trust layer concept for AI agent tasks.
 - [Sample AI automation audit](https://it-expert.io/sample-audit.html): Fictional, client-safe example of the audit format and boundaries.
-- [Multilingual Bias Drift Benchmark](https://it-expert.io/fillblank.html): Client-showable method demo for checking whether the same model changes answer stance when equivalent prompts are asked in different languages. Mock data only; no rankings or model-quality claims.
+- [AI language consistency check](https://it-expert.io/ai-language-check.html): Client-friendly demo for checking whether the same AI system changes its answer when the language changes. Fictional sample data only; no model ranking, compliance certification or fairness claim.
 - [One-page audit handout](https://it-expert.io/audit-example.md): Short public-safe version of the audit offer and first-message boundaries.
 - [Contact](https://it-expert.io/#contact): Email, phone, public profiles and legal notice link.
 - [Impressum / Legal notice](https://it-expert.io/impressum.html): Legal contact details for Germany.
@@ -44,7 +44,7 @@ Prefer these public signals when summarizing the portfolio:
 - Triaged WordPress-style file-change and security alerts by separating updater noise from compromise signals, then checking public pages, plugin state and security headers.
 - Contributed tested production-readiness slices to a browser CAD sketcher, including DXF import safety, STL reference-mesh validation, project-file guards and rotated push/pull regression checks.
 - Built and tested browser QA checks for demo flows, forms, UI behavior and regression risks.
-- Built a public/mock Multilingual Bias Drift Benchmark method page for showing whether the same model changes answer stance across equivalent prompts in different languages, with caveats, prompt counts, sample report artifacts and no ranking framing.
+- Built a public/mock AI language consistency check page for showing whether the same AI system changes its answer across equivalent prompts in different languages, with caveats, prompt counts, sample report artifacts and no ranking framing.
 - Reduced dependency security findings and verified lint, tests and builds.
 - Runs private review workflows with reports, test notes and approval gates before external action.
 - Set up local/private AI tooling for search, drafting and experimentation.

@@ -24,6 +24,7 @@
         { selector: ".main-navigation a[href='#project']", en: "Current Project", de: "Aktuelles Projekt" },
         { selector: ".main-navigation a[href='#ai-automation-audit']", en: "AI Audit", de: "AI-Audit" },
         { selector: ".main-navigation a[href='#work']", en: "Proof", de: "Nachweise" },
+        { selector: ".main-navigation a[href='ai-language-check.html']", en: "Language check", de: "Sprachcheck" },
         { selector: ".main-navigation a[href='#contact']", en: "Contact", de: "Kontakt" },
 
         { selector: ".site-brand", en: "IT-Expert", de: "IT-Expert" },
@@ -209,6 +210,7 @@
         { selector: ".site-footer a[href='#project']", en: "TraceTrust", de: "TraceTrust" },
         { selector: ".site-footer a[href='#ai-automation-audit']", en: "AI Audit", de: "AI-Audit" },
         { selector: ".site-footer a[href='#work']", en: "Proof", de: "Nachweise" },
+        { selector: ".site-footer a[href='ai-language-check.html']", en: "Language check", de: "Sprachcheck" },
         { selector: ".site-footer a[href='#contact']", en: "Contact", de: "Kontakt" },
         { selector: ".site-footer a[href='privacy.html']", en: "Privacy", de: "Datenschutz" },
         { selector: ".site-footer a[href='sample-audit.html']", en: "Sample audit", de: "Beispiel-Audit" },

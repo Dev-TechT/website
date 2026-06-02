@@ -8,6 +8,7 @@ Static portfolio and service website for Antonios Chatzigiagkos, published from 
 - `style.css` — site styling
 - `privacy.html` and `impressum.html` — public legal/contact pages
 - `sample-audit.html` and `audit-example.md` — example AI automation audit material
+- `ai-language-check.html` and `fillblank.html` — client-friendly AI language consistency check plus legacy redirect
 - `assets/images/` — local image assets
 - `.github/workflows/static.yml` — GitHub Pages deployment workflow
 

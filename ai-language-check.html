@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AI language consistency check - IT-Expert</title>
+    <meta name="description" content="Client-friendly demo of an AI language consistency check: same question, same AI system, different language, using fictional sample data and clear limits.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI language consistency check">
+    <meta property="og:description" content="Same question, same AI system, different language: a client-friendly demo for spotting answer changes across languages. Fictional sample data only.">
+    <meta property="og:url" content="https://it-expert.io/ai-language-check.html">
+    <meta property="og:site_name" content="IT-Expert">
+    <link rel="canonical" href="https://it-expert.io/ai-language-check.html">
+    <link rel="stylesheet" href="style.css?v=fillblank-client-friendly-20260602">
+    <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="data:,">
+    <script src="fillblank-language.js" defer></script>
+</head>
+<body class="fillblank-page">
+    <a class="skip-link screen-reader-text" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <a class="site-brand" href="index.html#home" aria-label="IT-Expert home">IT-Expert</a>
+            <ul>
+                <li><a href="index.html#ai-automation-audit">AI Audit</a></li>
+                <li><a href="index.html#services">Expertise</a></li>
+                <li><a href="index.html#work">Proof</a></li>
+                <li><a href="ai-language-check.html" aria-current="page">Language check</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="language-switcher" role="group" aria-label="Language selection">
+                <button type="button" data-language-option="de" aria-pressed="false">DE</button>
+                <span aria-hidden="true">/</span>
+                <button type="button" data-language-option="en" aria-pressed="true">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="fillblank-hero" aria-labelledby="fillblank-title">
+            <div class="container fillblank-hero-grid">
+                <div>
+                    <p class="section-kicker">Client demo</p>
+                    <h1 id="fillblank-title">AI language consistency check</h1>
+                    <p class="hero-lede">Same question. Same AI system. Different language. The check shows whether the answer changes in a way a client should review before using AI in a real workflow.</p>
+                    <div class="fillblank-caveat" role="note" aria-label="Important interpretation caveat">
+                        <strong>Important:</strong> This page uses fictional sample data. It does not rank AI models, certify compliance, or prove that a system is fair or unfair.
+                    </div>
+                </div>
+                <aside class="fillblank-status-card" aria-label="Check summary">
+                    <p class="hero-card-label">What is checked?</p>
+                    <dl>
+                        <div><dt>Same</dt><dd>question meaning + AI settings</dd></div>
+                        <div><dt>Changed</dt><dd>language only</dd></div>
+                        <div><dt>Result</dt><dd>where the answer stays stable or shifts</dd></div>
+                        <div><dt>Data</dt><dd>fictional demo data · no client data</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="fillblank-summary-section" aria-labelledby="fillblank-summary-title">
+            <div class="container">
+                <p class="section-kicker">Plain outcome</p>
+                <h2 id="fillblank-summary-title">A quick way to find language-based answer changes</h2>
+                <div class="fillblank-metric-grid" aria-label="Check explanation cards">
+                    <article class="fillblank-metric"><span>Sample questions</span><strong>127</strong><small>fictional examples used for demos and repeatable checks</small></article>
+                    <article class="fillblank-metric"><span>Languages</span><strong>12</strong><small>English, German, Greek and a small 10-language pilot</small></article>
+                    <article class="fillblank-metric"><span>Main question</span><strong>shift?</strong><small>does the answer change when only the language changes?</small></article>
+                    <article class="fillblank-metric"><span>Client use</span><strong>review</strong><small>a conversation starter before testing real workflows</small></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="fillblank-visual-section" aria-labelledby="fillblank-visual-title">
+            <div class="container fillblank-wide-container">
+                <div class="fillblank-section-heading">
+                    <p class="section-kicker">Example output</p>
+                    <h2 id="fillblank-visual-title">Where an answer changes by language</h2>
+                    <p>This table is illustrative. It shows the kind of pattern a review can catch before a multilingual AI workflow reaches customers or staff.</p>
+                </div>
+                <div class="heatmap-wrap" role="region" aria-label="Mock language consistency table" tabindex="0">
+                    <table class="fillblank-heatmap fillblank-drift-table">
+                        <caption>Example only: prompt counts are sample sizes, not scores.</caption>
+                        <thead>
+                            <tr><th scope="col">Question area</th><th scope="col">English — 40 prompts</th><th scope="col">Spanish — pilot</th><th scope="col">German — 39 prompts</th><th scope="col">Review signal</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">women in leadership</th><td><span class="stance-pill stance-anti">stereotype</span></td><td><span class="stance-pill stance-pro">counter-stereotype</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-4"><strong>needs review</strong></td></tr>
+                            <tr><th scope="row">technical competence</th><td><span class="stance-pill stance-neutral">neutral</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-1"><strong>looks stable</strong></td></tr>
+                            <tr><th scope="row">family role assumption</th><td><span class="stance-pill stance-anti">stereotype</span></td><td><span class="stance-pill stance-void">refusal / blank</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-3"><strong>check manually</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="fillblank-method-section" aria-labelledby="fillblank-method-title">
+            <div class="container fillblank-wide-container">
+                <div class="fillblank-method-panel">
+                    <div>
+                        <p class="section-kicker">How it works</p>
+                        <h2 id="fillblank-method-title">Simple enough for a first client call</h2>
+                    </div>
+                    <div class="fillblank-chip-list" aria-label="Answer review labels">
+                        <span class="stance-pill stance-anti">stereotype</span>
+                        <span class="stance-pill stance-pro">counter-stereotype</span>
+                        <span class="stance-pill stance-neutral">neutral / unclear</span>
+                        <span class="stance-pill stance-void">refusal / blank</span>
+                    </div>
+                    <div class="fillblank-run-grid" aria-label="Check workflow">
+                        <article class="fillblank-run-card">
+                            <h3>1. Pick the workflow</h3>
+                            <p>Choose one real area to test later, such as support replies, HR wording, documentation, sales text or internal knowledge search.</p>
+                        </article>
+                        <article class="fillblank-run-card">
+                            <h3>2. Use safe sample data first</h3>
+                            <p>Start with fictional or public examples so the method can be reviewed without exposing customer data, private files or credentials.</p>
+                        </article>
+                        <article class="fillblank-run-card">
+                            <h3>3. Review the differences</h3>
+                            <p>The output highlights places where the answer changes by language, then a human decides whether that matters for the business case.</p>
+                        </article>
+                    </div>
+                    <ul class="fillblank-short-notes">
+                        <li>Useful before a multilingual chatbot, helpdesk, document workflow or internal assistant goes live.</li>
+                        <li>Shows review points and failure counts instead of hiding them inside a single score.</li>
+                        <li>Real client runs, named model results and publication stay separate and approval-based.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="fillblank-cards-section" aria-labelledby="fillblank-client-title">
+            <div class="container fillblank-wide-container">
+                <div class="fillblank-section-heading">
+                    <p class="section-kicker">Client value</p>
+                    <h2 id="fillblank-client-title">What a client gets from this</h2>
+                    <p>A practical check for multilingual AI risk: clear examples, cautious wording, and a short list of what should be reviewed before automation is trusted with real users or real data.</p>
+                </div>
+                <div class="fillblank-example-grid">
+                    <article>
+                        <h3>Find blind spots</h3>
+                        <p>A German-only or English-only test can miss answer changes that appear in another language.</p>
+                    </article>
+                    <article>
+                        <h3>Keep the review honest</h3>
+                        <p>Refusals, blanks and errors are counted separately, not treated as success.</p>
+                    </article>
+                    <article>
+                        <h3>Decide the next safe step</h3>
+                        <p>The result can become a private client packet, a smaller pilot, or a recommendation not to automate yet.</p>
+                    </article>
+                </div>
+                <p class="fillblank-actions">
+                    <a class="button primary-button" href="index.html#contact">Discuss this check</a>
+                    <a class="button secondary-button" href="index.html#work">View related work</a>
+                    <a class="button text-button" href="https://github.com/Dev-TechT/multilingual-bias-drift-benchmark" target="_blank" rel="noopener noreferrer">Technical method notes</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html#ai-automation-audit">AI Audit</a></li>
+                    <li><a href="index.html#services">Expertise</a></li>
+                    <li><a href="index.html#work">Proof</a></li>
+                    <li><a href="ai-language-check.html">Language check</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="sample-audit.html">Sample audit</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="llms.txt">Agent guide</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">Copyright © 2026 IT-Expert</div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -19,7 +19,9 @@ REQUIRED_FILES = [
     "robots.txt",
     "sitemap.xml",
     "CNAME",
+    "ai-language-check.html",
     "fillblank.html",
+    "fillblank-language.js",
     "fillblank-sample-report.html",
 ]
 
@@ -72,36 +74,40 @@ def local_path_for(url: str, source: Path) -> Path | None:
 
 
 def validate_fillblank_page(path: Path, text: str) -> list[str]:
-    if path.name != "fillblank.html":
+    if path.name != "ai-language-check.html":
         return []
 
     errors: list[str] = []
     required_snippets = [
-        "Multilingual Bias Drift Benchmark",
-        "Same question. Same model. Different language.",
-        "The goal is to find language-driven answer drift",
-        "anti / stereotype",
-        "pro / counter-stereotype",
-        "neutral / uncertainty preserved",
+        "AI language consistency check",
+        "Same question. Same AI system. Different language.",
+        "fictional sample data",
+        "Language check",
+        "language-switcher",
+        "fillblank-language.js",
+        "stereotype",
+        "counter-stereotype",
+        "neutral / unclear",
         "English — 40 prompts",
         "German — 39 prompts",
-        "Greek — 39 prompts",
-        "10-language pilot — 10 prompts",
-        "noindex,nofollow",
+        "small 10-language pilot",
+        "index,follow",
     ]
     for snippet in required_snippets:
         if snippet not in text:
-            errors.append(f"{path.name}: missing bias-drift framing snippet {snippet!r}")
+            errors.append(f"{path.name}: missing language-check framing snippet {snippet!r}")
 
     scan_text = text
     safe_context_snippets = [
         "not a score",
+        "not scores",
         "not proof that a model is biased or unbiased",
+        "does not rank AI models",
         "no rankings",
         "no certification",
-        "no real model results are shown here: no rankings, no certification, no proof that a model is safe, fair, biased, or unbiased",
         "not a model ranking",
         "not a model ranking or compliance claim",
+        "no model ranking, compliance certification or fairness claim",
     ]
     for snippet in safe_context_snippets:
         scan_text = scan_text.replace(snippet, "")
@@ -109,8 +115,11 @@ def validate_fillblank_page(path: Path, text: str) -> list[str]:
     forbidden_patterns = [
         r"\bFill-in-the-Blank Behavior Profile\b",
         r"\bFillblank Eval Kit\b",
+        r"\bMultilingual Bias Drift Benchmark\b",
         r"\bgithub\.com/Dev-TechT/" + r"fillblank" + r"-eval-kit\b",
         r"\bTooling name\b",
+        r"\bproduction-style benchmark flow\b",
+        r"\bpublic-safe data\b",
         r"\bEN n=\d+\b",
         r"\bDE n=\d+\b",
         r"\bEL n=\d+\b",
