@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     "robots.txt",
     "sitemap.xml",
     "CNAME",
+    "fillblank.html",
 ]
 
 
@@ -69,11 +70,72 @@ def local_path_for(url: str, source: Path) -> Path | None:
     return (source.parent / clean).resolve()
 
 
+def validate_fillblank_page(path: Path, text: str) -> list[str]:
+    if path.name != "fillblank.html":
+        return []
+
+    errors: list[str] = []
+    required_snippets = [
+        "Multilingual Bias Drift Benchmark",
+        "Same question. Same model. Different language.",
+        "The goal is to find language-driven answer drift",
+        "anti / stereotype",
+        "pro / counter-stereotype",
+        "neutral / uncertainty preserved",
+        "English — 42 prompts",
+        "German — 38 prompts",
+        "Greek — 37 prompts",
+        "10-language pilot — 10 prompts",
+        "noindex,nofollow",
+    ]
+    for snippet in required_snippets:
+        if snippet not in text:
+            errors.append(f"{path.name}: missing bias-drift framing snippet {snippet!r}")
+
+    scan_text = text
+    safe_context_snippets = [
+        "not a score",
+        "not proof that a model is biased or unbiased",
+        "no rankings",
+        "no certification",
+    ]
+    for snippet in safe_context_snippets:
+        scan_text = scan_text.replace(snippet, "")
+
+    forbidden_patterns = [
+        r"\bFill-in-the-Blank Behavior Profile\b",
+        r"\bFillblank Eval Kit\b",
+        r"\bTooling name\b",
+        r"\bEN n=\d+\b",
+        r"\bDE n=\d+\b",
+        r"\bEL n=\d+\b",
+        r"\bTop-language smoke\b",
+        r"\bleaderboard\b",
+        r"\bscoreboard\b",
+        r"\bmodel ranking\b",
+        r"\branked model\b",
+        r"\bbest model\b",
+        r"\bwinner\b",
+        r"\bsafe model\b",
+        r"\bunsafe model\b",
+        r"\balignment proof\b",
+        r"\bsafety proof\b",
+        r"\bsafety certification\b",
+        r"\bfairness proof\b",
+    ]
+    for pattern in forbidden_patterns:
+        if re.search(pattern, scan_text, re.IGNORECASE):
+            errors.append(f"{path.name}: forbidden leaderboard/ranking claim matched {pattern!r}")
+
+    return errors
+
+
 def validate_html(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8")
     parser = LinkAndImageParser()
     parser.feed(text)
     errors: list[str] = []
+    errors.extend(validate_fillblank_page(path, text))
 
     if "<html" not in text.lower():
         errors.append(f"{path.name}: missing <html> tag")

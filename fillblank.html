@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Multilingual Bias Drift Benchmark - IT-Expert</title>
+    <meta name="description" content="Local-only prototype for a multilingual bias-drift benchmark: each model gets the same questions in different languages, then answer stance differences are compared. Mock data only.">
+    <meta name="robots" content="noindex,nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Multilingual Bias Drift Benchmark">
+    <meta property="og:description" content="Same question, same model, different language: a mock public page for checking whether answer stance changes across languages.">
+    <meta property="og:url" content="https://it-expert.io/fillblank.html">
+    <meta property="og:site_name" content="IT-Expert">
+    <link rel="canonical" href="https://it-expert.io/fillblank.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="data:,">
+</head>
+<body class="fillblank-page">
+    <a class="skip-link screen-reader-text" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <a class="site-brand" href="index.html" aria-label="IT-Expert home">IT-Expert</a>
+            <ul>
+                <li><a href="index.html#ai-automation-audit">AI Audit</a></li>
+                <li><a href="index.html#services">Expertise</a></li>
+                <li><a href="index.html#work">Proof</a></li>
+                <li><a href="sample-audit.html">Sample</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="fillblank-hero" aria-labelledby="fillblank-title">
+            <div class="container fillblank-hero-grid">
+                <div>
+                    <p class="section-kicker">Multilingual model-bias check</p>
+                    <h1 id="fillblank-title">Multilingual Bias Drift Benchmark</h1>
+                    <p class="hero-lede">Same question. Same model. Different language. Compare whether the answer stance changes when only the language changes.</p>
+                    <div class="fillblank-caveat" role="note" aria-label="Important interpretation caveat">
+                        <strong>Purpose:</strong> The goal is to find language-driven answer drift. Mock page only: no real model results, no rankings, no certification.
+                    </div>
+                </div>
+                <aside class="fillblank-status-card" aria-label="Benchmark status">
+                    <p class="hero-card-label">What changes?</p>
+                    <dl>
+                        <div><dt>Fixed</dt><dd>question meaning + model settings</dd></div>
+                        <div><dt>Varies</dt><dd>language</dd></div>
+                        <div><dt>Signal</dt><dd>answer stance drift</dd></div>
+                        <div><dt>Status</dt><dd>mock example · no real model results</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="fillblank-summary-section" aria-labelledby="fillblank-summary-title">
+            <div class="container">
+                <p class="section-kicker">Quick read</p>
+                <h2 id="fillblank-summary-title">Did the same model shift by language?</h2>
+                <div class="fillblank-metric-grid" aria-label="Benchmark explanation cards">
+                    <article class="fillblank-metric"><span>Questions</span><strong>127</strong><small>public examples</small></article>
+                    <article class="fillblank-metric"><span>Language slices</span><strong>4</strong><small>English — 42 prompts · German — 38 prompts · Greek — 37 prompts · 10-language pilot — 10 prompts</small></article>
+                    <article class="fillblank-metric"><span>Main signal</span><strong>drift</strong><small>stance changes by language</small></article>
+                    <article class="fillblank-metric"><span>Current data</span><strong>mock</strong><small>real runs need approval</small></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="fillblank-visual-section" aria-labelledby="fillblank-visual-title">
+            <div class="container fillblank-wide-container">
+                <div class="fillblank-section-heading">
+                    <p class="section-kicker">Same-question drift matrix</p>
+                    <h2 id="fillblank-visual-title">Stance by language</h2>
+                    <p>Example only: one model, one question group, translated prompts.</p>
+                </div>
+                <div class="heatmap-wrap" role="region" aria-label="Mock same-question language drift table" tabindex="0">
+                    <table class="fillblank-heatmap fillblank-drift-table">
+                        <caption>Mock example: “42 prompts” means count in that language slice, not a score.</caption>
+                        <thead>
+                            <tr><th scope="col">Question group</th><th scope="col">English — 42 prompts</th><th scope="col">Spanish — pilot</th><th scope="col">German — 38 prompts</th><th scope="col">Signal</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">women in leadership</th><td><span class="stance-pill stance-anti">anti / stereotype</span></td><td><span class="stance-pill stance-pro">pro / counter-stereotype</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-4"><strong>high drift</strong></td></tr>
+                            <tr><th scope="row">technical competence</th><td><span class="stance-pill stance-neutral">neutral</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-1"><strong>low drift</strong></td></tr>
+                            <tr><th scope="row">family role assumption</th><td><span class="stance-pill stance-anti">anti / stereotype</span></td><td><span class="stance-pill stance-void">refusal / void</span></td><td><span class="stance-pill stance-neutral">neutral</span></td><td class="tone-3"><strong>medium drift</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="fillblank-method-section" aria-labelledby="fillblank-method-title">
+            <div class="container fillblank-wide-container">
+                <div class="fillblank-method-panel fillblank-compact-panel">
+                    <div>
+                        <p class="section-kicker">Legend</p>
+                        <h2 id="fillblank-method-title">How to read it</h2>
+                    </div>
+                    <div class="fillblank-chip-list" aria-label="Answer stance legend">
+                        <span class="stance-pill stance-anti">anti / stereotype</span>
+                        <span class="stance-pill stance-pro">pro / counter-stereotype</span>
+                        <span class="stance-pill stance-neutral">neutral / uncertainty preserved</span>
+                        <span class="stance-pill stance-void">refusal / void</span>
+                    </div>
+                    <ul class="fillblank-short-notes">
+                        <li>Same underlying question across language versions.</li>
+                        <li>Stance label = review signal, not automatic proof.</li>
+                        <li>Private holdouts and real named model results stay blocked until approved.</li>
+                    </ul>
+                    <p><a class="button primary-button" href="https://github.com/Dev-TechT/fillblank-eval-kit" target="_blank" rel="noopener noreferrer">Open GitHub project</a> <a class="button secondary-button" href="index.html#contact">Discuss this check</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html#ai-automation-audit">AI Audit</a></li>
+                    <li><a href="index.html#work">Proof</a></li>
+                    <li><a href="sample-audit.html">Sample audit</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="llms.txt">Agent guide</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">Copyright © 2026 IT-Expert</div>
+        </div>
+    </footer>
+</body>
+</html>

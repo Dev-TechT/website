@@ -48,7 +48,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           cp -R assets _site/assets
-          cp 404.html CNAME audit-example.md impressum.html index.html language.js llms.txt privacy.html privacy-language.js robots.txt sample-audit.html sitemap.xml style.css _site/
+          cp 404.html CNAME audit-example.md fillblank.html impressum.html index.html language.js llms.txt privacy.html privacy-language.js robots.txt sample-audit.html sitemap.xml style.css _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
