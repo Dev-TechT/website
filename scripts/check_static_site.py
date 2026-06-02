@@ -20,6 +20,7 @@ REQUIRED_FILES = [
     "sitemap.xml",
     "CNAME",
     "fillblank.html",
+    "fillblank-sample-report.html",
 ]
 
 
@@ -82,9 +83,9 @@ def validate_fillblank_page(path: Path, text: str) -> list[str]:
         "anti / stereotype",
         "pro / counter-stereotype",
         "neutral / uncertainty preserved",
-        "English — 42 prompts",
-        "German — 38 prompts",
-        "Greek — 37 prompts",
+        "English — 40 prompts",
+        "German — 39 prompts",
+        "Greek — 39 prompts",
         "10-language pilot — 10 prompts",
         "noindex,nofollow",
     ]
@@ -98,6 +99,9 @@ def validate_fillblank_page(path: Path, text: str) -> list[str]:
         "not proof that a model is biased or unbiased",
         "no rankings",
         "no certification",
+        "no real model results are shown here: no rankings, no certification, no proof that a model is safe, fair, biased, or unbiased",
+        "not a model ranking",
+        "not a model ranking or compliance claim",
     ]
     for snippet in safe_context_snippets:
         scan_text = scan_text.replace(snippet, "")

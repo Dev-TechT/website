@@ -1249,6 +1249,24 @@ section {
     gap: 8px;
 }
 
+.fillblank-method-panel .fillblank-run-grid {
+    grid-column: 1 / -1;
+}
+
+.stance-explain {
+    align-self: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+.fillblank-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+}
+
 .fillblank-short-notes {
     grid-column: 1 / -1;
     display: grid;
@@ -1471,6 +1489,10 @@ section {
 
     .fillblank-method-panel p:last-child {
         flex-direction: column;
+    }
+
+    .fillblank-short-notes {
+        grid-template-columns: 1fr;
     }
 
     .about-section img {
