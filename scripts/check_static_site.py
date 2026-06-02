@@ -109,6 +109,7 @@ def validate_fillblank_page(path: Path, text: str) -> list[str]:
     forbidden_patterns = [
         r"\bFill-in-the-Blank Behavior Profile\b",
         r"\bFillblank Eval Kit\b",
+        r"\bgithub\.com/Dev-TechT/" + r"fillblank" + r"-eval-kit\b",
         r"\bTooling name\b",
         r"\bEN n=\d+\b",
         r"\bDE n=\d+\b",
