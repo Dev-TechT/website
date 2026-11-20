@@ -10,6 +10,7 @@ This file is a short guide for AI agents, search tools and technical reviewers. 
 - [What I can help with](https://it-expert.io/#work): Ranked public summaries of selected work, including local-first business automation, automation operations dashboards, agent/repo reliability and security evidence preparation.
 - [Current project](https://it-expert.io/#project): TraceTrust, a trust layer concept for AI agent tasks.
 - [Sample AI automation audit](https://it-expert.io/sample-audit.html): Fictional, client-safe example of the audit format and boundaries.
+- [Sentinel Swarm](https://it-expert.io/labs/sentinel-swarm/): Browse CISA KEV and FIRST EPSS for defensive vulnerability triage. The basemap does not show attack locations.
 - [AI language consistency check](https://it-expert.io/ai-language-check.html): Client-friendly demo for checking whether the same AI system changes its answer when the language changes. Fictional sample data only; no model ranking, compliance certification or fairness claim.
 - [One-page audit handout](https://it-expert.io/audit-example.md): Short public-safe version of the audit offer and first-message boundaries.
 - [Contact](https://it-expert.io/#contact): Email, phone, public profiles and legal notice link.

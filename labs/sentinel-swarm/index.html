@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Search and triage known exploited vulnerabilities using a dated CISA KEV snapshot and FIRST EPSS probabilities when available.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+    <title>Sentinel Swarm | IT-Expert Labs</title>
+    <link rel="canonical" href="https://it-expert.io/labs/sentinel-swarm/">
+    <link rel="icon" href="../../assets/images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./sentinel.css">
+    <script src="./sentinel.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="../../">
+                <img src="../../assets/images/logo.svg" width="26" height="26" alt="">
+                <span>IT-Expert <span class="brand-labs">/ Labs</span></span>
+            </a>
+            <nav aria-label="Page navigation">
+                <a href="#advisories">Advisories</a>
+                <a href="#basemap">Basemap</a>
+                <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="container hero-layout">
+                <div>
+                    <h1 id="page-title">Sentinel Swarm</h1>
+                    <p class="hero-intro">Triage known exploited vulnerabilities from CISA’s Known Exploited Vulnerabilities (KEV) Catalog.</p>
+                </div>
+
+                <div class="snapshot">
+                    <p id="snapshot-status" class="snapshot-status" role="status">Snapshot pending</p>
+                    <dl id="snapshot-metadata" class="snapshot-metadata" hidden>
+                        <div>
+                            <dt>CISA release (UTC)</dt>
+                            <dd><time id="release-date"></time></dd>
+                        </div>
+                        <div>
+                            <dt>Catalog total</dt>
+                            <dd id="catalog-total"></dd>
+                        </div>
+                        <div>
+                            <dt>EPSS date (UTC)</dt>
+                            <dd id="epss-date">Unavailable</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="advisories container" id="advisories" aria-labelledby="advisories-title">
+            <h2 id="advisories-title">Known exploited vulnerabilities</h2>
+
+            <form class="filters" id="filters" role="search" aria-label="Filter advisories">
+                <div class="field">
+                    <label for="search">Search advisories</label>
+                    <input id="search" type="search" placeholder="CVE, vendor or product" autocomplete="off" disabled>
+                </div>
+                <div class="field">
+                    <label for="vendor">Vendor</label>
+                    <select id="vendor" disabled>
+                        <option value="">All vendors</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="sort">Sort by</label>
+                    <select id="sort" aria-describedby="epss-explanation" disabled>
+                        <option value="date">Date added (newest)</option>
+                        <option value="epss">EPSS (highest first)</option>
+                    </select>
+                </div>
+                <button id="clear-filters" type="button" disabled>Clear filters</button>
+            </form>
+
+            <p class="epss-explanation" id="epss-explanation">EPSS estimates the probability of exploitation in the wild in the next 30 days. Assess severity and risk to your organization separately. <a href="https://www.first.org/epss/">EPSS by FIRST</a></p>
+            <p id="startup-fallback">If the snapshot doesn’t load, reload this page or <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">browse the original CISA catalog</a>.</p>
+            <div class="results-bar">
+                <p class="results-status" id="results-status" role="status" aria-atomic="true"></p>
+                <nav class="pagination" id="pagination" aria-label="Advisory pages" hidden>
+                    <button id="previous-page" type="button">Previous page</button>
+                    <button id="next-page" type="button">Next page</button>
+                </nav>
+            </div>
+            <ul class="results" id="results" aria-label="Advisory results"></ul>
+            <nav class="pagination pagination-end" id="pagination-end" aria-label="Advisory pages" hidden>
+                <button id="previous-page-end" type="button">Previous page</button>
+                <button id="next-page-end" type="button">Next page</button>
+            </nav>
+        </section>
+
+        <section class="geographic-reference" id="basemap" aria-labelledby="basemap-title">
+            <div class="container reference-layout">
+                <div>
+                    <h2 id="basemap-title">World basemap</h2>
+                    <p>Explore the Natural Earth land and coordinate grid.</p>
+                </div>
+                <figure class="map">
+                    <div class="map-stage">
+                        <img id="world-map" src="./assets/world.svg" alt="World landmasses with a latitude and longitude grid" hidden>
+                        <p id="map-fallback">Basemap unavailable</p>
+                    </div>
+                    <div id="map-controls" class="map-controls" role="group" aria-label="Basemap controls" hidden>
+                        <button id="map-zoom-in" type="button">Zoom in</button>
+                        <button id="map-zoom-out" type="button">Zoom out</button>
+                        <button id="map-pan-up" type="button">Pan up</button>
+                        <button id="map-pan-down" type="button">Pan down</button>
+                        <button id="map-pan-left" type="button">Pan left</button>
+                        <button id="map-pan-right" type="button">Pan right</button>
+                        <button id="map-reset" type="button">Reset map</button>
+                        <span id="map-zoom-status" role="status" aria-atomic="true"></span>
+                    </div>
+                    <figcaption>Made with Natural Earth. Geographic reference only. No observations are plotted.</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <span>Sentinel Swarm · IT-Expert Labs</span>
+            <nav aria-label="Legal">
+                <a href="../../impressum.html">Legal notice</a>
+                <a href="../../privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
