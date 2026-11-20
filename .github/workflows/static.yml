@@ -7,11 +7,11 @@ on:
   pull_request:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: '23 14 * * *'
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "pages"
@@ -29,9 +29,18 @@ jobs:
           python-version: "3.x"
       - name: Validate static site
         run: python3 scripts/check_static_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test Sentinel Swarm
+        run: node --test scripts/check_sentinel_swarm.js
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: validate
     environment:
       name: github-pages
@@ -45,10 +54,13 @@ jobs:
       - name: Build Pages artifact directory
         run: |
           set -euo pipefail
-          rm -rf _site
-          mkdir -p _site
-          cp -R assets _site/assets
-          cp 404.html CNAME ai-language-check.html audit-example.md fillblank.html fillblank-language.js fillblank-sample-report.html impressum.html index.html language.js llms.txt privacy.html privacy-language.js robots.txt sample-audit.html sitemap.xml style.css _site/
+          bash scripts/build_pages.sh
+          if ! timeout 120s python3 scripts/build_sentinel_kev.py --with-epss _site/labs/sentinel-swarm/data/kev.json; then
+            if [[ "${{ github.event_name }}" == schedule ]]; then
+              exit 1  # Leave the currently served release intact.
+            fi
+            echo '::warning::Feed refresh failed; deploying the bundled dated snapshot.'
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
