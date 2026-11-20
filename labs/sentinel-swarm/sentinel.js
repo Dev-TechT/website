@@ -109,9 +109,9 @@
 
     const map = byId("world-map");
     const mapStage = byId("map-stage");
-    const mapHint = byId("map-hint");
     const mapFallback = byId("map-fallback");
     const mapControls = byId("map-controls");
+    const mapRegions = byId("map-regions");
     const zoomStatus = byId("map-zoom-status");
     const maxZoom = 4;
     const panStep = 20;
@@ -143,7 +143,11 @@
         panDown.setAttribute("aria-disabled", String(y === -edge));
         panLeft.setAttribute("aria-disabled", String(x === edge));
         panRight.setAttribute("aria-disabled", String(x === -edge));
+        for (const button of panButtons) button.hidden = zoom === 1;
         resetMap.setAttribute("aria-disabled", String(zoom === 1));
+        for (const region of regions) {
+            region.button.setAttribute("aria-pressed", String(zoom === region.zoom && x === region.x && y === region.y));
+        }
     }
 
     const zoomIn = bindControl("map-zoom-in", () => setMapView(zoom + 1));
@@ -153,6 +157,18 @@
     const panLeft = bindControl("map-pan-left", () => setMapView(zoom, x + panStep));
     const panRight = bindControl("map-pan-right", () => setMapView(zoom, x - panStep));
     const resetMap = bindControl("map-reset", () => setMapView(1, 0, 0));
+    const panButtons = [panUp, panDown, panLeft, panRight];
+    const regions = [
+        { id: "europe", longitude: 15, latitude: 50, zoom: 3 },
+        { id: "americas", longitude: -85, latitude: 12, zoom: 2 },
+        { id: "asia", longitude: 95, latitude: 35, zoom: 3 },
+    ].map(({ id, longitude, latitude, zoom }) => {
+        // The plate carrée basemap spans 360° horizontally and 180° vertically.
+        const x = -longitude / 360 * 100 * zoom;
+        const y = latitude / 180 * 100 * zoom;
+        const button = bindControl(`map-region-${id}`, () => setMapView(zoom, x, y));
+        return { button, zoom, x, y };
+    });
 
     const mapKeys = new Map([
         ["+", zoomIn], ["=", zoomIn], ["-", zoomOut], ["−", zoomOut],
@@ -213,7 +229,7 @@
         map.hidden = !hasMap;
         mapFallback.hidden = hasMap;
         mapControls.hidden = !hasMap;
-        mapHint.hidden = !hasMap;
+        mapRegions.hidden = !hasMap;
         mapStage.tabIndex = hasMap ? 0 : -1;
         if (!hasMap && drag) endDrag({ pointerId: drag.id });
         if (hasMap) setMapView(zoom);
@@ -243,6 +259,7 @@
     byId("catalog-total").textContent = numberFormat.format(data.catalogTotal);
     if (data.epssDate) byId("epss-date").replaceChildren(dateElement(data.epssDate));
     byId("snapshot-metadata").hidden = false;
+    snapshotStatus.className = "visually-hidden";
     snapshotStatus.textContent = "Snapshot loaded";
 
     if (!data.entries.length) {
