@@ -71,14 +71,37 @@ class Element {
         this.listeners.set(name, listeners);
     }
 
-    emit(name) {
+    emit(name, properties = {}) {
+        const event = { ...properties, defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
         for (const listener of this.listeners.get(name) ?? []) {
-            listener({ preventDefault() {} });
+            listener(event);
         }
+        return event;
+    }
+
+    getBoundingClientRect() {
+        return { left: 10, top: 20, width: 540, height: 270 };
+    }
+
+    setPointerCapture(id) {
+        this.capturedPointer = id;
+    }
+
+    hasPointerCapture(id) {
+        return this.capturedPointer === id;
+    }
+
+    releasePointerCapture(id) {
+        assert.equal(this.capturedPointer, id);
+        this.capturedPointer = undefined;
     }
 
     focus() {
         this.document.activeElement = this;
+    }
+
+    click() {
+        this.emit("click");
     }
 }
 
@@ -148,7 +171,11 @@ test("static baseline has accessible controls, local resources and explicit map 
         assert.match(html, new RegExp(`<button id="${id}" type="button">[^<]+</button>`));
     }
     assert.match(html, /<figcaption>[^<]*No observations are plotted\./);
-    assert.ok(html.indexOf('id="filters"') < html.indexOf('id="world-map"'));
+    assert.ok(html.indexOf('id="world-map"') < html.indexOf('id="filters"'));
+    assert.match(html, /daily snapshot/i);
+    assert.match(html, /no live feed, telemetry, or agent detection/i);
+    assert.match(read("sentinel.css"), /touch-action:\s*pan-y/);
+    assert.match(read("sentinel.css"), /prefers-reduced-motion:\s*no-preference/);
     assert.match(html, /<a href="\.\.\/\.\.\/impressum\.html">Legal notice<\/a>/);
     assert.match(html, /<a href="\.\.\/\.\.\/privacy\.html">Privacy<\/a>/);
     assert.match(html, /EPSS estimates the probability of exploitation in the wild in the next 30 days\. Assess severity and risk to your organization separately\./);
@@ -183,6 +210,7 @@ test("the full snapshot loads with release, count, and latest additions first", 
     assert.equal(element("world-map").hidden, true);
     assert.equal(element("map-fallback").hidden, false);
     assert.equal(element("map-controls").hidden, true);
+    assert.equal(element("map-stage").tabIndex, -1);
 });
 
 test("EPSS preserves CISA dates and shows probabilities with their own UTC date", async () => {
@@ -202,6 +230,10 @@ test("EPSS preserves CISA dates and shows probabilities with their own UTC date"
     const nvd = rows[0].children[1].children[2].children[2];
     assert.equal(nvd.tagName, "a");
     assert.equal(nvd.href, "https://nvd.nist.gov/vuln/detail/CVE-2025-1003");
+    const cve = rows[0].children[0].children[0];
+    assert.equal(cve.tagName, "a");
+    assert.equal(cve.textContent, "CVE-2025-1003");
+    assert.equal(cve.href, nvd.href);
 });
 
 test("EPSS date and scores may be omitted independently", async () => {
@@ -357,6 +389,7 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
     assert.equal(map.hidden, false);
     assert.equal(element("map-fallback").hidden, true);
     assert.equal(controls.hidden, false);
+    assert.equal(element("map-stage").tabIndex, 0);
     assert.equal(zoomOut.getAttribute("aria-disabled"), "true");
     click("pan-left");
     assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
@@ -388,6 +421,53 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
     assert.equal(map.hidden, true);
     assert.equal(element("map-fallback").hidden, false);
     assert.equal(controls.hidden, true);
+});
+
+test("focused keyboard controls, anchored double-click and captured drag share map bounds", async () => {
+    const { ready, element, document } = start({ mapWidth: 540 });
+    await ready;
+    const stage = element("map-stage");
+    const map = element("world-map");
+    const key = (value, properties) => stage.emit("keydown", { key: value, ...properties }).defaultPrevented;
+    const pointer = (type, clientX, clientY, pointerId = 7) =>
+        stage.emit(type, { clientX, clientY, pointerId, isPrimary: true, button: 0 });
+    assert.equal(key("+"), false);
+    pointer("pointerdown", 280, 155);
+    assert.equal(stage.capturedPointer, undefined);
+    stage.focus();
+    assert.equal(key("ArrowLeft"), false);
+    assert.equal(key("+", { ctrlKey: true }), false);
+    assert.equal(key("+"), true);
+    assert.equal(key("ArrowRight"), true);
+    assert.equal(map.style.transform, "translate(-20%, 0%) scale(2)");
+    assert.equal(key("Home"), true);
+    stage.emit("dblclick", { clientX: 415, clientY: 155 });
+    assert.equal(map.style.transform, "translate(-25%, 0%) scale(2)");
+    pointer("pointerdown", 280, 155);
+    assert.equal(document.activeElement, stage);
+    assert.equal(stage.capturedPointer, 7);
+    assert.equal(stage.getAttribute("data-map-state"), "dragging");
+    pointer("pointermove", 415, 290, 8);
+    assert.equal(map.style.transform, "translate(-25%, 0%) scale(2)");
+    pointer("pointermove", 415, 290);
+    assert.equal(map.style.transform, "translate(0%, 50%) scale(2)");
+    pointer("pointermove", 955, -250);
+    assert.equal(map.style.transform, "translate(50%, -50%) scale(2)");
+    pointer("pointermove", 901, -223);
+    assert.equal(map.style.transform, "translate(40%, -40%) scale(2)");
+    pointer("pointercancel", 901, -223);
+    assert.equal(stage.capturedPointer, undefined);
+    assert.equal(stage.getAttribute("data-map-state"), "zoomed");
+    pointer("pointermove", 0, 0);
+    assert.equal(map.style.transform, "translate(40%, -40%) scale(2)");
+    assert.equal(key("−"), true);
+    assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
+    for (let i = 0; i < 5; i += 1) stage.emit("dblclick", { clientX: 280, clientY: 155 });
+    assert.equal(element("map-zoom-status").textContent, "4× zoom");
+    stage.emit("dblclick", { clientX: 280, clientY: 155, shiftKey: true });
+    assert.equal(element("map-zoom-status").textContent, "3× zoom");
+    assert.equal(key("0"), true);
+    assert.equal(element("map-zoom-status").textContent, "1× zoom");
 });
 
 test("a valid empty snapshot has its own status and keeps the filters disabled", async () => {
@@ -426,6 +506,7 @@ test("bad responses and untrusted snapshot structure fail closed", async (t) => 
         "null EPSS": { data: snapshot([{ ...first, epss: null }]) },
         "entry after release": { data: snapshot([{ ...first, added: "2026-11-19" }]) },
         "invalid CVE identifier": { data: snapshot([{ ...first, id: "<strong>CVE</strong>" }]) },
+        "CVE identifier with URL suffix": { data: snapshot([{ ...first, id: `${first.id}/../other` }]) },
         "invalid action field": { data: snapshot([{ ...first, action: {} }]) },
     };
     for (const [name, inputs] of Object.entries(cases)) {
