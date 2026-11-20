@@ -22,22 +22,45 @@
                 <span>IT-Expert <span class="brand-labs">/ Labs</span></span>
             </a>
             <nav aria-label="Page navigation">
-                <a href="#advisories">Advisories</a>
                 <a href="#basemap">Basemap</a>
+                <a href="#advisories">Advisories</a>
                 <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalog</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content" tabindex="-1">
-        <section class="hero" aria-labelledby="page-title">
+        <div class="hero">
             <div class="container hero-layout">
-                <div>
+                <div class="hero-heading">
                     <h1 id="page-title">Sentinel Swarm</h1>
-                    <p class="hero-intro">Triage known exploited vulnerabilities from CISA’s Known Exploited Vulnerabilities (KEV) Catalog.</p>
+                    <p class="hero-intro">A daily snapshot from CISA’s Known Exploited Vulnerabilities catalog, with FIRST EPSS scores when available.</p>
                 </div>
 
+                <section class="geographic-reference" id="basemap" aria-labelledby="basemap-title">
+                    <h2 id="basemap-title">World basemap</h2>
+                    <figure class="map">
+                        <div id="map-stage" class="map-stage" tabindex="-1" role="group" aria-labelledby="basemap-title" aria-describedby="map-hint">
+                            <img id="world-map" src="./assets/world.svg" alt="World landmasses with a latitude and longitude grid" draggable="false" hidden>
+                            <p id="map-fallback">Basemap unavailable</p>
+                        </div>
+                        <div id="map-controls" class="map-controls" role="group" aria-label="Basemap controls" hidden>
+                            <button id="map-zoom-in" type="button">Zoom in</button>
+                            <button id="map-zoom-out" type="button">Zoom out</button>
+                            <button id="map-pan-up" type="button">Pan up</button>
+                            <button id="map-pan-down" type="button">Pan down</button>
+                            <button id="map-pan-left" type="button">Pan left</button>
+                            <button id="map-pan-right" type="button">Pan right</button>
+                            <button id="map-reset" type="button">Reset map</button>
+                            <span id="map-zoom-status" role="status" aria-atomic="true"></span>
+                        </div>
+                        <figcaption>Made with Natural Earth. Geographic reference only. No observations are plotted.</figcaption>
+                        <p id="map-hint" class="map-hint" hidden>On a computer, drag when zoomed or double-click to zoom. On touchscreens, use the pan buttons so you can still scroll the page. With the map focused, use arrow keys to pan, +/− to zoom, or Home to reset.</p>
+                    </figure>
+                </section>
+
                 <div class="snapshot">
+                    <p class="snapshot-schedule">Refresh scheduled daily at 14:23 UTC. This public page has no live feed, telemetry, or agent detection.</p>
                     <p id="snapshot-status" class="snapshot-status" role="status">Snapshot pending</p>
                     <dl id="snapshot-metadata" class="snapshot-metadata" hidden>
                         <div>
@@ -55,7 +78,7 @@
                     </dl>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section class="advisories container" id="advisories" aria-labelledby="advisories-title">
             <h2 id="advisories-title">Known exploited vulnerabilities</h2>
@@ -97,31 +120,6 @@
             </nav>
         </section>
 
-        <section class="geographic-reference" id="basemap" aria-labelledby="basemap-title">
-            <div class="container reference-layout">
-                <div>
-                    <h2 id="basemap-title">World basemap</h2>
-                    <p>Explore the Natural Earth land and coordinate grid.</p>
-                </div>
-                <figure class="map">
-                    <div class="map-stage">
-                        <img id="world-map" src="./assets/world.svg" alt="World landmasses with a latitude and longitude grid" hidden>
-                        <p id="map-fallback">Basemap unavailable</p>
-                    </div>
-                    <div id="map-controls" class="map-controls" role="group" aria-label="Basemap controls" hidden>
-                        <button id="map-zoom-in" type="button">Zoom in</button>
-                        <button id="map-zoom-out" type="button">Zoom out</button>
-                        <button id="map-pan-up" type="button">Pan up</button>
-                        <button id="map-pan-down" type="button">Pan down</button>
-                        <button id="map-pan-left" type="button">Pan left</button>
-                        <button id="map-pan-right" type="button">Pan right</button>
-                        <button id="map-reset" type="button">Reset map</button>
-                        <span id="map-zoom-status" role="status" aria-atomic="true"></span>
-                    </div>
-                    <figcaption>Made with Natural Earth. Geographic reference only. No observations are plotted.</figcaption>
-                </figure>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">

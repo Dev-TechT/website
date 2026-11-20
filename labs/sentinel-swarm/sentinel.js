@@ -80,13 +80,16 @@
         metadata.className = "entry-meta";
         const added = textElement("span", "Added ");
         added.append(dateElement(entry.added));
-        metadata.append(textElement("span", entry.id, "cve"), added);
+        const nvdUrl = `https://nvd.nist.gov/vuln/detail/${entry.id}`;
+        const cve = textElement("a", entry.id, "cve");
+        cve.href = nvdUrl;
+        metadata.append(cve, added);
 
         const content = document.createElement("div");
         content.className = "entry-content";
         const action = document.createElement("details");
         const nvd = textElement("a", "View CVE record in NVD");
-        nvd.href = `https://nvd.nist.gov/vuln/detail/${entry.id}`;
+        nvd.href = nvdUrl;
         action.append(textElement("summary", "CISA required action"), textElement("p", entry.action), nvd);
         content.append(textElement("h3", entry.product), textElement("p", entry.vendor, "entry-vendor"), action);
 
@@ -105,6 +108,8 @@
     }
 
     const map = byId("world-map");
+    const mapStage = byId("map-stage");
+    const mapHint = byId("map-hint");
     const mapFallback = byId("map-fallback");
     const mapControls = byId("map-controls");
     const zoomStatus = byId("map-zoom-status");
@@ -113,6 +118,7 @@
     let zoom = 1;
     let x = 0;
     let y = 0;
+    let drag = null;
 
     function bindControl(id, action) {
         const button = byId(id);
@@ -123,11 +129,12 @@
     }
 
     function setMapView(nextZoom, nextX = x, nextY = y) {
-        zoom = nextZoom;
+        zoom = Math.max(1, Math.min(maxZoom, nextZoom));
         const edge = (zoom - 1) * 50;
         x = Math.max(-edge, Math.min(edge, nextX));
         y = Math.max(-edge, Math.min(edge, nextY));
         map.style.transform = `translate(${x}%, ${y}%) scale(${zoom})`;
+        mapStage.setAttribute("data-map-state", drag ? "dragging" : zoom > 1 ? "zoomed" : "resting");
         const zoomText = `${zoom}× zoom`;
         if (zoomStatus.textContent !== zoomText) zoomStatus.textContent = zoomText;
         zoomIn.setAttribute("aria-disabled", String(zoom === maxZoom));
@@ -147,11 +154,68 @@
     const panRight = bindControl("map-pan-right", () => setMapView(zoom, x - panStep));
     const resetMap = bindControl("map-reset", () => setMapView(1, 0, 0));
 
+    const mapKeys = new Map([
+        ["+", zoomIn], ["=", zoomIn], ["-", zoomOut], ["−", zoomOut],
+        ["ArrowUp", panUp], ["ArrowDown", panDown], ["ArrowLeft", panLeft], ["ArrowRight", panRight],
+        ["Home", resetMap], ["0", resetMap],
+    ]);
+    mapStage.addEventListener("keydown", (event) => {
+        if (map.hidden || document.activeElement !== mapStage || event.altKey || event.ctrlKey || event.metaKey) return;
+        const control = mapKeys.get(event.key);
+        if (!control || control.getAttribute("aria-disabled") === "true") return;
+        event.preventDefault();
+        control.click();
+    });
+
+    mapStage.addEventListener("dblclick", (event) => {
+        if (map.hidden) return;
+        const nextZoom = zoom + (event.shiftKey ? -1 : 1);
+        if (nextZoom < 1 || nextZoom > maxZoom) return;
+        const { left, top, width, height } = mapStage.getBoundingClientRect();
+        const anchorX = (event.clientX - left) / width * 100 - 50;
+        const anchorY = (event.clientY - top) / height * 100 - 50;
+        const scale = nextZoom / zoom;
+        setMapView(nextZoom, anchorX + (x - anchorX) * scale, anchorY + (y - anchorY) * scale);
+    });
+
+    mapStage.addEventListener("pointerdown", (event) => {
+        if (map.hidden || !event.isPrimary || event.button !== 0 || drag) return;
+        if (event.pointerType !== "touch") mapStage.focus({ preventScroll: true });
+        if (zoom === 1) return;
+        mapStage.setPointerCapture(event.pointerId);
+        drag = { id: event.pointerId, x: event.clientX, y: event.clientY };
+        mapStage.setAttribute("data-map-state", "dragging");
+    });
+
+    mapStage.addEventListener("pointermove", (event) => {
+        if (drag?.id !== event.pointerId) return;
+        const { width, height } = mapStage.getBoundingClientRect();
+        const dx = (event.clientX - drag.x) / width * 100;
+        const dy = (event.clientY - drag.y) / height * 100;
+        drag.x = event.clientX;
+        drag.y = event.clientY;
+        setMapView(zoom, x + dx, y + dy);
+    });
+
+    function endDrag(event) {
+        if (drag?.id !== event.pointerId) return;
+        drag = null;
+        mapStage.setAttribute("data-map-state", zoom > 1 ? "zoomed" : "resting");
+        if (mapStage.hasPointerCapture(event.pointerId)) mapStage.releasePointerCapture(event.pointerId);
+    }
+
+    for (const event of ["pointerup", "pointercancel", "lostpointercapture"]) {
+        mapStage.addEventListener(event, endDrag);
+    }
+
     const updateMap = () => {
         const hasMap = map.naturalWidth > 0;
         map.hidden = !hasMap;
         mapFallback.hidden = hasMap;
         mapControls.hidden = !hasMap;
+        mapHint.hidden = !hasMap;
+        mapStage.tabIndex = hasMap ? 0 : -1;
+        if (!hasMap && drag) endDrag({ pointerId: drag.id });
         if (hasMap) setMapView(zoom);
     };
     map.addEventListener("load", updateMap);
