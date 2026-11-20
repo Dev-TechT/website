@@ -167,18 +167,29 @@ test("static baseline has accessible controls, local resources and explicit map 
     assert.match(html, /role="status"/);
     assert.match(html, /<p id="startup-fallback">[^<]+<a href="https:\/\/www\.cisa\.gov\//);
     assert.match(html, /id="world-map"[^>]*src="\.\/assets\/world\.svg"[^>]*alt="[^"]+"/);
-    for (const id of ["map-zoom-in", "map-zoom-out", "map-pan-up", "map-pan-down", "map-pan-left", "map-pan-right", "map-reset", "previous-page", "next-page"]) {
+    for (const id of ["previous-page", "next-page"]) {
         assert.match(html, new RegExp(`<button id="${id}" type="button">[^<]+</button>`));
     }
-    assert.match(html, /<figcaption>[^<]*No observations are plotted\./);
+    for (const [id, label] of Object.entries({
+        "zoom-in": "Zoom in", "zoom-out": "Zoom out", reset: "Reset map",
+        "pan-up": "Pan up", "pan-down": "Pan down", "pan-left": "Pan left", "pan-right": "Pan right",
+    })) {
+        assert.match(html, new RegExp(`<button id="map-${id}" type="button" aria-label="${label}"[^>]*><span aria-hidden="true">[^<]+</span></button>`));
+    }
+    assert.match(html, /<figcaption>Made with Natural Earth<\/figcaption>/);
+    assert.match(html, /<span class="map-notice">No live observations<\/span>/);
+    assert.match(html, /aria-labelledby="map-regions-label" hidden>/);
+    assert.match(html, /id="map-regions-label">Geographic navigation<\/span>/);
+    for (const name of ["Europe", "Americas", "Asia"]) {
+        assert.ok(html.includes(`<button id="map-region-${name.toLowerCase()}" type="button" aria-pressed="false">${name}</button>`));
+    }
     assert.ok(html.indexOf('id="world-map"') < html.indexOf('id="filters"'));
-    assert.match(html, /daily snapshot/i);
-    assert.match(html, /no live feed, telemetry, or agent detection/i);
+    assert.match(html, /<p class="hero-intro">Advisory explorer · No agent telemetry<\/p>/);
     assert.match(read("sentinel.css"), /touch-action:\s*pan-y/);
     assert.match(read("sentinel.css"), /prefers-reduced-motion:\s*no-preference/);
     assert.match(html, /<a href="\.\.\/\.\.\/impressum\.html">Legal notice<\/a>/);
     assert.match(html, /<a href="\.\.\/\.\.\/privacy\.html">Privacy<\/a>/);
-    assert.match(html, /EPSS estimates the probability of exploitation in the wild in the next 30 days\. Assess severity and risk to your organization separately\./);
+    assert.match(html, /30-day exploitation probability/);
     assert.ok(html.includes(`<a href="${firstEpss}">EPSS by FIRST</a>`));
     assert.match(html, /href="\.\/sentinel\.css"/);
     assert.match(html, /<script src="\.\/sentinel\.js" defer><\/script>/);
@@ -210,6 +221,7 @@ test("the full snapshot loads with release, count, and latest additions first", 
     assert.equal(element("world-map").hidden, true);
     assert.equal(element("map-fallback").hidden, false);
     assert.equal(element("map-controls").hidden, true);
+    assert.equal(element("map-regions").hidden, true);
     assert.equal(element("map-stage").tabIndex, -1);
 });
 
@@ -377,6 +389,7 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
     await ready;
     const map = element("world-map");
     const controls = element("map-controls");
+    const regions = element("map-regions");
     const zoomIn = element("map-zoom-in");
     const zoomOut = element("map-zoom-out");
     const reset = element("map-reset");
@@ -384,13 +397,17 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
         for (let index = 0; index < count; index += 1) element(`map-${name}`).emit("click");
     };
     assert.equal(controls.hidden, true);
+    assert.equal(regions.hidden, true);
     map.naturalWidth = 540;
     map.emit("load");
     assert.equal(map.hidden, false);
     assert.equal(element("map-fallback").hidden, true);
     assert.equal(controls.hidden, false);
+    assert.equal(regions.hidden, false);
     assert.equal(element("map-stage").tabIndex, 0);
     assert.equal(zoomOut.getAttribute("aria-disabled"), "true");
+    const panButtons = ["up", "down", "left", "right"].map((direction) => element(`map-pan-${direction}`));
+    assert.ok(panButtons.every((button) => button.hidden));
     click("pan-left");
     assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
 
@@ -399,6 +416,7 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
     assert.equal(document.activeElement, zoomIn);
     assert.equal(zoomIn.getAttribute("aria-disabled"), "true");
     assert.equal(element("map-zoom-status").textContent, "4× zoom");
+    assert.ok(panButtons.every((button) => !button.hidden && button.getAttribute("aria-disabled") === "false"));
     click("pan-up");
     click("pan-left");
     assert.equal(map.style.transform, "translate(20%, 20%) scale(4)");
@@ -416,11 +434,62 @@ test("basemap controls load independently, clamp zoom and pan, and reset", async
     assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
     assert.equal(element("map-zoom-status").textContent, "1× zoom");
     assert.equal(reset.getAttribute("aria-disabled"), "true");
+    assert.ok(panButtons.every((button) => button.hidden));
     map.naturalWidth = 0;
     map.emit("error");
     assert.equal(map.hidden, true);
     assert.equal(element("map-fallback").hidden, false);
     assert.equal(controls.hidden, true);
+    assert.equal(regions.hidden, true);
+});
+
+test("each region centers its projected coordinates from the world view and reset restores the 2:1 map", async () => {
+    const { ready, element, document } = start({ mapWidth: 540 });
+    await ready;
+    const map = element("world-map");
+    const reset = element("map-reset");
+    const { width, height } = element("map-stage").getBoundingClientRect();
+    assert.equal(width, 2 * height);
+    assert.match(read("assets/world.svg"), /viewBox="0 0 540 270"/);
+    // Projected centers in the asset's 540 × 270 coordinate space.
+    const regions = [
+        { button: element("map-region-europe"), point: [292.5, 60], zoom: 3 },
+        { button: element("map-region-americas"), point: [142.5, 117], zoom: 2 },
+        { button: element("map-region-asia"), point: [412.5, 82.5], zoom: 3 },
+    ];
+
+    function assertRegion(region) {
+        const transform = map.style.transform.match(/^translate\(([-\d.]+)%, ([-\d.]+)%\) scale\((\d+)\)$/);
+        assert.ok(transform, map.style.transform);
+        const [x, y, scale] = transform.slice(1).map(Number);
+        const [mapX, mapY] = region.point;
+        assert.equal(scale, region.zoom);
+        assert.ok(Math.abs((mapX - width / 2) * scale + x / 100 * width) < 1e-9, "Longitude is centered");
+        assert.ok(Math.abs((mapY - height / 2) * scale + y / 100 * height) < 1e-9, "Latitude is centered");
+        assert.equal(reset.getAttribute("aria-disabled"), "false");
+        for (const choice of regions) {
+            assert.equal(choice.button.getAttribute("aria-pressed"), String(choice === region));
+        }
+    }
+
+    for (const region of regions) {
+        assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
+        region.button.focus();
+        region.button.emit("click");
+        assertRegion(region);
+        assert.equal(document.activeElement, region.button);
+        reset.emit("click");
+        assert.equal(map.style.transform, "translate(0%, 0%) scale(1)");
+        assert.equal(reset.getAttribute("aria-disabled"), "true");
+        assert.ok(regions.every(({ button }) => button.getAttribute("aria-pressed") === "false"));
+    }
+
+    for (const region of regions) {
+        region.button.emit("click");
+        assertRegion(region);
+    }
+    element("map-pan-left").emit("click");
+    assert.ok(regions.every(({ button }) => button.getAttribute("aria-pressed") === "false"));
 });
 
 test("focused keyboard controls, anchored double-click and captured drag share map bounds", async () => {
